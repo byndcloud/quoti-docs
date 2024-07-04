@@ -3,26 +3,21 @@
 
 Aqui está uma visão geral ampla e organizada do Quoti, dividida em seções específicas para descrever suas capacidades e funcionalidades:
 
-O Quoti é uma plataforma low-code corporativa inovadora, projetada para revolucionar a gestão empresarial e comunicação. Oferece soluções adaptáveis e seguras para a construção de aplicações corporativas, enfatizando a agilidade e eficiência.
+O Quoti é uma plataforma low-code corporativa inovadora, projetada para construção de software de maneira ágil, segura e personalizável. Oferece soluções adaptáveis e seguras para a construção de aplicações corporativas, enfatizando a agilidade e eficiência. O Quoti possibilita que aplicações complexas sejam construídas em minutos além de promover as melhores práticas de mercado, desempenho muito acima das soluções low-code concorrentes e principalmente maior poder de personalização das interfaces.
 
 ## Características Principais
 
-### Gestão de Projetos
-Facilita a colaboração e a gestão de projetos com ferramentas avançadas para planejar, executar e monitorar atividades em tempo real.
+### Construção de bases de dados
+Através do Quoti é possível construir bases de dados no-code que já entregam nativamente Endpoints e interfaces, além dos diversos componentes de UI do Quoti serem nativamente plugáveis e configuráveis para funcionarem com essas bases de dados.
 
-### Comunicação Eficiente
-Fornece soluções integradas para melhorar a comunicação entre equipes e com clientes, otimizando o fluxo de informações.
+### Gatilhos e Workflows
+Todas as interações no Quoti podem ser construídas com facilidade a partir de Workflows (Ferramenta no-code para construção de fluxos) a ferramenta de Workflows do Quoti já possui mais de 8.000 nós de integrações com sistemas e serviços de terceiros além de possuir nós e gatilhos para interagir com o Quoti.
 
-### Análise e Relatórios
-Permite a geração de relatórios detalhados, oferecendo insights valiosos para tomada de decisões estratégicas.
+### Auditoria
+Permite a geração de relatórios detalhados, oferecendo insights valiosos para tomada de decisões estratégicas. Além de possibilitar investigação detalhada a respeito de ocorrências ou incidentes.
 
 ### Personalização e Integração
-Oferece flexibilidade para personalizar a plataforma conforme as necessidades específicas das empresas, com opções de integração com outros sistemas.
-
-## Capacidades de Desenvolvimento
-
-### Databases Customizáveis
-Possibilita a criação de databases personalizados, ajudando na gestão de dados de forma eficiente e segura.
+Oferece flexibilidade para personalizar a plataforma conforme as necessidades específicas das empresas, com opções de integração com outros sistemas e construção da própria ID visual.
 
 ### Autenticação Versátil
 Suporta múltiplos métodos de autenticação, garantindo acesso seguro e facilitado à plataforma.

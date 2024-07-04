@@ -29,6 +29,7 @@ nav:
         - Adicionar e gerenciar extensões no menu: ./under-development.md
         - Gerenciamento de versões das extensões: ./under-development.md
   - Desenvolvimento:
+    - Qt-database: ./dev/qt-database.md
     - FormsFlow avançado: ./under-development.md
     - Gestão de databases: 
       - Criação e edição: ./under-development.md
