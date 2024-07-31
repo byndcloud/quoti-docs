@@ -1,0 +1,7 @@
+﻿Name,Assign,Description,Highlight,Status,Type
+Alterações e melhorias na autenticação de usuários,QUOTI,,,Done,Improvement
+Corrige problema com autenticação de usuário que em alguns casos estava retornando 404 ao invés de 401,QUOTI,,,Done,Fixed
+Otimizações para o endpoint de listagem de posts voltado para melhorar performance para os cenários dos ambientes educacionais,"ERUDIO, LMS",,,Done,Fixed
+Feature de pagamento,QUOTI,,,Done,Feature
+Melhoria nas funcionalidades do chat,"CSM, ERUDIO, LMS, QUOTI",,,Done,Improvement
+Deleta presenças relacionadas quando um evento for excluído,"ERUDIO, LMS",,,Done,Improvement
