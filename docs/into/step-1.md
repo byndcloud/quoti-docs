@@ -14,7 +14,7 @@ Para começar a usar a plataforma Quoti, o primeiro passo é criar uma organiza�
     - **Descrição do Projeto**: Um breve texto explicando o que você pretende fazer com o Quoti e quais aplicações pretende desenvolver. Isso ajuda a equipe da Beyond a entender suas necessidades e a oferecer um suporte mais personalizado.
 
 ## Por que Solicitar a Beyond?
-- Atualmente, o processo de criação de organizações no Quoti ainda é realizado manualmente pela equipe da Beyond porque a plataforma está em fase de testes.
+- Atualmente, o processo de criação de organizações no Quoti é completamente automatizado e um ambiente novo é criado em menos de 2 minutos. Porém, ainda não realizamos a liberação de criação em larga escala, portanto, para você possuir um ambiente Quoti precisa ser previamente autorizado pela equipe da Beyond.
 - Este procedimento garante que todas as organizações sejam configuradas corretamente e que os usuários recebam o suporte necessário para começar.
 - A previsão é que, em breve, os usuários poderão criar e configurar suas próprias organizações (`orgSlug`) diretamente na plataforma Quoti, tornando o processo mais ágil e independente.
 
