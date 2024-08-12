@@ -30,5 +30,5 @@ A documentação é criada com o MkDocs, um gerador de sites estáticos rápido,
 
 ## Como rodar o projeto localmente
 Rode, na raiz:
-1. `pip install -r requirements.txt  `
+1. `pip install -r requirements.txt`
 2. `mkdocs serve`
