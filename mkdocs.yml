@@ -73,6 +73,10 @@ nav:
     - Ambiente CSM: ./faq/csm/index.md
   - Glossário: ./glossary/index.md
   - Documentação Antiga: ./doc-antiga/home.md
+  - Quoti Databases:
+    - Visão geral: ./quoti-databases/index.md
+    - Operações básicas: ./quoti-databases/basic-ops.md
+    - Por que não usar NoSQL?: ./quoti-databases/why-not-nosql.md
 
 extra_css:
   - ./style.css
