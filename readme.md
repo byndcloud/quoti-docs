@@ -28,3 +28,7 @@ Para contribuir, siga os passos:
 
 A documentação é criada com o MkDocs, um gerador de sites estáticos rápido, simples e visualmente agradável, focado na construção de documentação de projetos. Os arquivos de origem da documentação são escritos em Markdown e configurados com um único arquivo de configuração YAML.
 
+## Como rodar o projeto localmente
+Rode, na raiz:
+1. `pip install -r requirements.txt  `
+2. `mkdocs serve`
