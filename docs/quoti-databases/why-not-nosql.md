@@ -1,5 +1,3 @@
-# Por que Não Usar um Banco NoSQL?
-
 Atualmente, a BeyondCo utiliza bancos de dados SQL. Substituir o uso das Quoti Databases por um banco NoSQL acarretaria em alguns desafios significativos:
 
 -   **Aumento de Custo**: Manter dois bancos de dados separados (um SQL e um NoSQL) elevaria os custos operacionais.
