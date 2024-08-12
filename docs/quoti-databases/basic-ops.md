@@ -9,7 +9,7 @@ Assim como em qualquer banco de dados não-relacional, é possível realizar as 
 
 1. criar uma Quoti Database.
 
-2. criar uma instância nessa Quoti Database.
+2. criar uma instância nesta Quoti Database.
 
 3. editar uma instância.
 
@@ -39,11 +39,11 @@ Adicionalmente, na nossa interface, permitimos:
 3. Na seção de `Propriedades`, escreva o nome da sua Quoti Database.
 ![imagem do *pop-up* de "Nova Base de Dados" na aba de "Propriedades"](https://firebasestorage.googleapis.com/v0/b/beyond-quoti.appspot.com/o/beyond%2F2024%2F08%2F73f2aae41e44b6df01a33f66d9507b58.png?alt=media&token=aa1cc077-bc21-46df-aa80-85ce35246677)
 
-4. Na seção de `Hooks` , você pode, opcionalmennte, criar Quoti Hooks para a sua Quoti Database. Quoti Hooks serão explicados em uma seção posterior a essa.![imagem do *pop-up* de "Nova Base de Dados" na aba de "Hooks"](https://firebasestorage.googleapis.com/v0/b/beyond-quoti.appspot.com/o/beyond%2F2024%2F08%2F3203de5a0e01fa310752b5adfddfcf4a.png?alt=media&token=7cfe7490-fb5b-4ab5-a8ed-36269fa4006d)
+4. Na seção de `Hooks` , você pode, opcionalmente, criar Quoti Hooks para a sua Quoti Database. Quoti Hooks serão explicados em uma seção posterior a essa.![imagem do *pop-up* de "Nova Base de Dados" na aba de "Hooks"](https://firebasestorage.googleapis.com/v0/b/beyond-quoti.appspot.com/o/beyond%2F2024%2F08%2F3203de5a0e01fa310752b5adfddfcf4a.png?alt=media&token=7cfe7490-fb5b-4ab5-a8ed-36269fa4006d)
 
-5. Na seção de `Propriedades`, clique em `Continuar`, para criar o esquema da
-   sua quoti-database. Em seguida, clique em `Adicionar Campo` . A sua
-   quoti-database não será criada com sucesso se não tiver algum campo.![imagem
+5. Na seção de `Propriedades`, clique em `Continuar` para criar o esquema da
+   sua Quoti Database. Em seguida, clique em `Adicionar Campo` . A sua
+   Quoti Database não será criada com sucesso se não tiver algum campo.![imagem
    do *pop-up* de "Nova Base de Dados" na aba de "Propriedades" com
    seta para o botão de "Continuar"](https://firebasestorage.googleapis.com/v0/b/beyond-quoti.appspot.com/o/beyond%2F2024%2F08%2F25b7ae290e085ae572da8abedc3b6855.png?alt=media&token=a18da52a-4eb8-4255-a22c-23ebadcb13fb)
   ![magem
@@ -70,7 +70,7 @@ Adicionalmente, na nossa interface, permitimos:
     >      ![Múltipla Escolha e Caixas de seleção](https://firebasestorage.googleapis.com/v0/b/beyond-quoti.appspot.com/o/beyond%2F2024%2F08%2F7d0e142cdc42297acb856b480e9746b3.png?alt=media&token=de6ca438-e5b8-4bae-bc5d-29c517be8b1e)
     > 
     >   - **O campo de Anexo deve ter o formato de arquivo a ser aceito e o tamanho máximo do arquivo.** Adicionalmente, é possível definir se
-    > deve-se aceitar apenas um, ou múltiplos arquivos:
+    > deve-se aceitar apenas um ou múltiplos arquivos:
     > ![Anexo](https://firebasestorage.googleapis.com/v0/b/beyond-quoti.appspot.com/o/beyond%2F2024%2F08%2Fb2217a7b92cbfda0f39e8adfd93e5742.png?alt=media&token=7708667f-31ec-4637-8117-85bec620c1d6)
 
 
@@ -84,10 +84,12 @@ Adicionalmente, na nossa interface, permitimos:
 1. Encontre a sua Quoti Database e clique no ícone de `Acessar database`.
 ![Interface de Gestão de bases de dados com seta para o ícone de "Acessar database"](https://firebasestorage.googleapis.com/v0/b/beyond-quoti.appspot.com/o/beyond%2F2024%2F08%2Fc3c85ad676ec34a4a4f1528930250b9b.png?alt=media&token=02de2485-528e-402f-ae33-3470c2456f97)
 
-2. Clique em `Novo` e você terá a opção de criar uma instância individualmente, ou de criar instâncias em lote, a partir de um arquivo de planilha.
+2. Clique em `Novo` e escolha entre a opção de criar uma instância
+   individualmente e a opção de criar instâncias em lote, a partir de um arquivo de
+   planilha.
 ![Interface de Gestão da quoti database criada com seta para o botão de "Novo"](https://firebasestorage.googleapis.com/v0/b/beyond-quoti.appspot.com/o/beyond%2F2024%2F08%2F8780424c38e03c24a501a0252aaec066.png?alt=media&token=a493f1bb-20a4-4754-9716-56b1d19acf68)
 
-3. Fim! A criação de instâncias é super simples.
+3. Pronto! A criação de instâncias é super simples.
 
 > No caso de arquivos anexos, você terá acesso ao link desse arquivo no firebase.
 > ![Interface de Gestão da quoti database criada com seta para os links dos
