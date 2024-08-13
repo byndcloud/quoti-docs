@@ -77,6 +77,9 @@ nav:
     - Visão geral: ./quoti-databases/index.md
     - Operações básicas: ./quoti-databases/basic-ops.md
     - Por que não usar NoSQL?: ./quoti-databases/why-not-nosql.md
+    - Materialização de tabelas: ./quoti-databases/materialization.md
+    - Webhooks: ./quoti-databases/webhooks.md
+    - APIs: ./quoti-databases/api.md
 
 extra_css:
   - ./style.css
@@ -110,6 +113,7 @@ markdown_extensions:
   - def_list
   - footnotes
   - md_in_html
+  - callouts
   - toc:
       permalink: true
 
