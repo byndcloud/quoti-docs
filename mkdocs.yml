@@ -119,6 +119,7 @@ markdown_extensions:
       permalink: true
 
   # Python Markdown Extensions
+  - mdx_truly_sane_lists
   - pymdownx.arithmatex:
       generic: true
   - pymdownx.betterem:
