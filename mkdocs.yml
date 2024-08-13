@@ -42,6 +42,7 @@ nav:
         - CRUD: ./development/cli/extensions/crud.md
         - Integrações: ./under-development.md 
         - Permissões: ./under-development.md
+    - Workflows: ./development/workflow/index.md
   - Avançados:
     - Single Sign-On (SSO) com Quoti: ./sso
     - Configuração com:
