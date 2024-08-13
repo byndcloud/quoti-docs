@@ -42,7 +42,7 @@ Você pode cadastrar um novo webhook através do botão “+ Novo”
 ![CleanShot 2024-08-12 at 9 .44.11@2x.png](https://storage.googleapis.com/beyond-quoti.appspot.com/docs/qtdatabases/webhooks/CleanShot_2024-08-12_at_9_.44.112x.png)
 
 1. **Tipo de hook**
-    - Para webhooks de Quoti Databases, você deve selecionar sempre o tipo “table”..
+    - Para webhooks de Quoti Databases, você deve selecionar sempre o tipo “table”.
 2. **Nome do recurso**
     - Aqui você deve escolher o nome da sua tabela que acionará os hooks.
 3. **Handler**
