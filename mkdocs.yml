@@ -89,6 +89,7 @@ nav:
     - Gerenciamento de tickets:
       - Workspace: ./qsm/workspace.md
       - Visão geral do agente: ./qsm/agentOverview.md
+    - Catálogo: ./qsm/catalog.md
 
 extra_css:
   - ./style.css
