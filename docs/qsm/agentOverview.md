@@ -54,8 +54,8 @@ Os gatilhos da página podem ser configurados pela propriedade **hooks**, confor
 ````javascript
 {
   "hooks":{
-    "ticketLoaded": "`\{\{` async ()=> { console.log('Esta mensagem será exibida sempre que o ticket for carregado'); } \}\}"
-    "created": "\{\{ async ()=> { console.log('Esta mensagem será exibida apenas uma vez quando a página for criada'); } \}\}"    
+    "ticketLoaded": "{{ double_keys_open }} async ()=> { console.log('Esta mensagem será exibida sempre que o ticket for carregado'); } {{ double_keys_close }}"
+    "created": "{{ double_keys_open }} async ()=> { console.log('Esta mensagem será exibida apenas uma vez quando a página for criada'); } {{ double_keys_close }}"    
   }
 }
 ````
@@ -89,7 +89,7 @@ Veja outra opção de configuração para a tab principal
     "icon": "mdi-folder",
     "showIcon": true,
     "hideCloseBtn": true, // proíbe o usuário de fechar a tab
-    "text": "\{\{ 'Processo ' + $ticket.id /}/}", // define o texto que será exibido na tab selecionada
+    "text": "{{ double_keys_open }} 'Processo ' + $ticket.id {{ double_keys_close }}", // define o texto que será exibido na tab selecionada
     "iconColor": "red"
   }
 }
@@ -101,7 +101,7 @@ Veja outra opção de configuração para a tab principal
 
 ````javascript
 {
-  "title": "\{\{ $ticket?.description /}/}",
+  "title": "{{ double_keys_open }} $ticket?.description {{ double_keys_close }}",
   "hideStatus": false,
   "titleCaption": "Processo de n°",
   "hideCreatedAt": false,
@@ -112,9 +112,9 @@ Veja outra opção de configuração para a tab principal
       "type": "general",
       "color": "primary",
       "dense": true,
-      "action": "\{\{ (input) => { return (async () => { await $updateTicket({id: $ticket.id, assignedToUser: $me?.id })})() } /}/}",
+      "action": "{{ double_keys_open }} (input) => { return (async () => { await $updateTicket({id: $ticket.id, assignedToUser: $me?.id })})() } {{ double_keys_close }}",
       "outlined": false,
-      "condition": "\{\{ (input) => { return $enableGetForMe && !$ticket.assignedToUser && $ticket.status === 'Pré-cadastrado' } /}/}",
+      "condition": "{{ double_keys_open }} (input) => { return $enableGetForMe && !$ticket.assignedToUser && $ticket.status === 'Pré-cadastrado' } {{ double_keys_close }}",
       "depressed": true,
       "dialogText": "Deseja ser o cadastrador responsável por este proceso?",
       "dialogTitle": "Pegar para mim",
@@ -126,10 +126,10 @@ Veja outra opção de configuração para a tab principal
       "type": "general",
       "color": "primary",
       "dense": true,
-      "action": "\{\{ (input) => { return (async () => { await $updateTicket({id: $ticket.id, assignedToUser: null})})() } /}/}",
+      "action": "{{ double_keys_open }} (input) => { return (async () => { await $updateTicket({id: $ticket.id, assignedToUser: null})})() } {{ double_keys_close }}",
       "outlined": false,
       "textProp": true,
-      "condition": "\{\{ (input) => { return $enableReturnToQueue && $ticket.status === 'Pré-cadastrado' } /}/}",
+      "condition": "{{ double_keys_open }} (input) => { return $enableReturnToQueue && $ticket.status === 'Pré-cadastrado' } {{ double_keys_close }}",
       "depressed": true,
       "dialogText": "Deseja devolver este processo para a fila?",
       "dialogTitle": "Devolver para a fila",
@@ -140,9 +140,9 @@ Veja outra opção de configuração para a tab principal
       "type": "general",
       "color": "primary",
       "dense": true,
-      "action": "\{\{ (input) => { return (async () => { $callWebhook('https://workflow.quoti.cloud/webhook/meu-webhook-teste', {body: {formResponseId: $ticket.ticketTypeFormResponseId} }) })() } /}/}",
+      "action": "{{ double_keys_open }} (input) => { return (async () => { $callWebhook('https://workflow.quoti.cloud/webhook/meu-webhook-teste', {body: {formResponseId: $ticket.ticketTypeFormResponseId} }) })() } {{ double_keys_close }}",
       "outlined": false,
-      "condition": "\{\{ (input) => { return $ticket?.status === 'Pré-cadastrado' && $ticket.assignedToUser === $me.id } /}/}",
+      "condition": "{{ double_keys_open }} (input) => { return $ticket?.status === 'Pré-cadastrado' && $ticket.assignedToUser === $me.id } {{ double_keys_close }}",
       "depressed": true,
       "dialogText": "Essa ação irá mudar o status do processo para Ativo, permitindo que outros perfis de usuários consigam tratá-lo. Certeza que deseja seguir com essa ação?",
       "dialogTitle": "Finalizar cadastro",
@@ -179,8 +179,8 @@ As extraTabs e sidebar são configuradas por um json com as seguintes propriedad
       },
       "saveBtn": "Salvar informações",
       "hideBody": false,
-      "userCanEditForm": "{{ double_keys_open }} $ticket.status === 'Pré-cadastrado' ? $ticket.assignedToUser === $me.id : $ticket.status !== 'Arquivado' && $me.userProfileId !== 100027 {{ double_keys_close }},
-      "saveFormsCallback": "{{ double_keys_open }} () => { $fetchTicket() } {{ double_keys_close }},
+      "userCanEditForm": "{{ double_keys_open }} $ticket.status === 'Pré-cadastrado' ? $ticket.assignedToUser === $me.id : $ticket.status !== 'Arquivado' && $me.userProfileId !== 100027 {{ double_keys_close }}",
+      "saveFormsCallback": "{{ double_keys_open }} () => { $fetchTicket() } {{ double_keys_close }}",
       "hideTicketPrimaryInfos": false
   }
 }
@@ -199,10 +199,10 @@ As extraTabs e sidebar são configuradas por um json com as seguintes propriedad
     "filter": {
       "or": [
         {
-          "ticketId": "{{ double_keys_open }} $ticket.id {{ double_keys_close }}
+          "ticketId": "{{ double_keys_open }} $ticket.id {{ double_keys_close }}"
         },
         {
-          "$ticketActions.parent_ticket_id$": "{{ double_keys_open }} $ticket.id {{ double_keys_close }}
+          "$ticketActions.parent_ticket_id$": "{{ double_keys_open }} $ticket.id {{ double_keys_close }}"
         }
       ]
     },
@@ -221,13 +221,13 @@ As extraTabs e sidebar são configuradas por um json com as seguintes propriedad
       ]
     },
     "contextId": "ticketActionProcesso",
-    "allowWrite": "{{ double_keys_open }} $userCanCreateAction {{ double_keys_close }},
+    "allowWrite": "{{ double_keys_open }} $userCanCreateAction {{ double_keys_close }}",
     "ticketKind": "processos",
     "cardConfigs": {
       "type": {},
       "default": {
-        "body": "(ticketActionProcesso){{ double_keys_open }} action => '<h3>' +  $getTitle(action) + ' | ticketId: ' +  action.ticketId +  '</h3>' + $getBody(action) {{ double_keys_close }},
-        "footer": "{{ double_keys_open }} action => action.ticketActionCreator.name + ' • ' + $$moment(action.createdAt).format('lll') {{ double_keys_close }},
+        "body": "(ticketActionProcesso){{ double_keys_open }} action => '<h3>' +  $getTitle(action) + ' | ticketId: ' +  action.ticketId +  '</h3>' + $getBody(action) {{ double_keys_close }}",
+        "footer": "{{ double_keys_open }} action => action.ticketActionCreator.name + ' • ' + $$moment(action.createdAt).format('lll') {{ double_keys_close }}",
         "hideTitle": true,
         "hideSubtitle": true
       }
@@ -266,8 +266,8 @@ As extraTabs e sidebar são configuradas por um json com as seguintes propriedad
         "icon": "mdi-message-lock",
         "text": "Criar nota privada",
         "dense": true,
-        "action": "(ticketActionProcesso){{ double_keys_open }} () => $sendMessage('privateMessage') {{ double_keys_close }},
-        "loading": "(ticketActionProcesso){{ double_keys_open }} () => $sendingMessage {{ double_keys_close }},
+        "action": "(ticketActionProcesso){{ double_keys_open }} () => $sendMessage('privateMessage') {{ double_keys_close }}",
+        "loading": "(ticketActionProcesso){{ double_keys_open }} () => $sendingMessage {{ double_keys_close }}",
         "outlined": true,
         "condition": true,
         "depressed": true
@@ -291,7 +291,7 @@ As extraTabs e sidebar são configuradas por um json com as seguintes propriedad
   "databaseProps": {
     "table": "processos_envolvidos",
     "where": {
-      "processo_id": "{{ double_keys_open }} $ticket.id {{ double_keys_close }}
+      "processo_id": "{{ double_keys_open }} $ticket.id {{ double_keys_close }}"
     },
     "formId": 100314,
     "params": {
@@ -341,7 +341,7 @@ As extraTabs e sidebar são configuradas por um json com as seguintes propriedad
       {
         "name": "outros_advogados",
         "label": "Possui outros advogados",
-        "convert": "{{ double_keys_open }} (input) => { return input? 'Sim' : 'Não'} {{ double_keys_close }},
+        "convert": "{{ double_keys_open }} (input) => { return input? 'Sim' : 'Não'} {{ double_keys_close }}",
         "sortable": true
       },
       {
@@ -355,7 +355,7 @@ As extraTabs e sidebar são configuradas por um json com as seguintes propriedad
         "sortable": false
       }
     ],
-    "workflowVars": "{{ double_keys_open }} [{'name': 'ticket','value': $ticket}] {{ double_keys_close }},
+    "workflowVars": "{{ double_keys_open }} [{'name': 'ticket','value': $ticket}] {{ double_keys_close }}",
     "tableOriginIsView": true
   },
   "databaseEvents": {}
@@ -380,7 +380,7 @@ As extraTabs e sidebar são configuradas por um json com as seguintes propriedad
     {
       "name": "createdAt",
       "label": "Criado em",
-      "convert": "{{ double_keys_open }} (input) => { return $$moment(input).format('DD/MM/YYYY') } {{ double_keys_close }},
+      "convert": "{{ double_keys_open }} (input) => { return $$moment(input).format('DD/MM/YYYY') } {{ double_keys_close }}",
       "sortable": true
     },
     {
@@ -391,28 +391,28 @@ As extraTabs e sidebar são configuradas por um json com as seguintes propriedad
     {
       "name": "ticketType19AdditionalInfo.data_de_inicio_aditivo",
       "label": "Inicio de Vigência",
-      "convert": "{{ double_keys_open }} (input) => { return input ? $$moment(input).format('DD/MM/YYYY') : '-' } {{ double_keys_close }}
+      "convert": "{{ double_keys_open }} (input) => { return input ? $$moment(input).format('DD/MM/YYYY') : '-' } {{ double_keys_close }}"
     },
     {
       "name": "ticketType19AdditionalInfo.nova_data_de_termino",
       "label": "Fim de Vigência",
-      "convert": "{{ double_keys_open }} (input) => { return input ? $$moment(input).format('DD/MM/YYYY') : '-' } {{ double_keys_close }}
+      "convert": "{{ double_keys_open }} (input) => { return input ? $$moment(input).format('DD/MM/YYYY') : '-' } {{ double_keys_close }}"
     },
     {
       "name": "ticketType19AdditionalInfo.formalizacao_aditivo_prazo",
       "label": "Formalização",
-      "convert": "{{ double_keys_open }} (input) => { return input ? input : '-' } {{ double_keys_close }},
+      "convert": "{{ double_keys_open }} (input) => { return input ? input : '-' } {{ double_keys_close }}",
       "sortable": true
     },
     {
       "name": "ticketType19AdditionalInfo.valor_total_do_contrato",
       "label": "Valor original",
-      "convert": "{{ double_keys_open }} (input) => { return new Intl.NumberFormat('pt-BR', {  style: 'currency',currency: 'BRL' }).format(input/100) } {{ double_keys_close }}
+      "convert": "{{ double_keys_open }} (input) => { return new Intl.NumberFormat('pt-BR', {  style: 'currency',currency: 'BRL' }).format(input/100) } {{ double_keys_close }}"
     },
     {
       "name": "ticketType19AdditionalInfo.valor_total_com_reajuste",
       "label": "Valor Reajustado",
-      "convert": "{{ double_keys_open }} (input) => { return new Intl.NumberFormat('pt-BR', {  style: 'currency',currency: 'BRL' }).format(input/100) } {{ double_keys_close }}
+      "convert": "{{ double_keys_open }} (input) => { return new Intl.NumberFormat('pt-BR', {  style: 'currency',currency: 'BRL' }).format(input/100) } {{ double_keys_close }}"
     }
   ],
   "filter": {
@@ -493,7 +493,7 @@ As extraTabs e sidebar são configuradas por um json com as seguintes propriedad
       "not": 100007
     }
   },
-  "enableChangeAssignedToUserToAnyUser": "(ticketAgentOverview){{ double_keys_open }} !$isCancelled && !$isClosed && !$isSolved {{ double_keys_close }}
+  "enableChangeAssignedToUserToAnyUser": "(ticketAgentOverview){{ double_keys_open }} !$isCancelled && !$isClosed && !$isSolved {{ double_keys_close }}"
 }
 ````
 ---
@@ -512,7 +512,7 @@ A figura 15, mostra um exemplo da renderização do componente ticketPrimaryInfo
         "slug": "ticketPrimaryInfos",
         "props": {
           "class": "mt-2 ml-4",
-          "ticket": "{{ double_keys_open }} $ticket {{ double_keys_close }},
+          "ticket": "{{ double_keys_open }} $ticket {{ double_keys_close }}",
           "configs": {
             "infos": [
               {
@@ -520,7 +520,7 @@ A figura 15, mostra um exemplo da renderização do componente ticketPrimaryInfo
                 "text": "Status",
                 "label": "Status",
                 "modifier": {
-                  "value": "{{ double_keys_open }} $ticket?.status || 'Não identificado' {{ double_keys_close }}
+                  "value": "{{ double_keys_open }} $ticket?.status || 'Não identificado' {{ double_keys_close }}"
                 },
                 "modifierSlug": "text"
               },
@@ -538,7 +538,7 @@ A figura 15, mostra um exemplo da renderização do componente ticketPrimaryInfo
                 "text": "Data de cadastro",
                 "label": "Data de cadastro",
                 "modifier": {
-                  "value": "{{ double_keys_open }} $$moment($ticket?.createdAt).format('DD/MM/YYYY [às] HH:mm') || 'Não identificado' {{ double_keys_close }}
+                  "value": "{{ double_keys_open }} $$moment($ticket?.createdAt).format('DD/MM/YYYY [às] HH:mm') || 'Não identificado' {{ double_keys_close }}"
                 },
                 "modifierSlug": "text"
               },
@@ -547,7 +547,7 @@ A figura 15, mostra um exemplo da renderização do componente ticketPrimaryInfo
                 "text": "Pré cadastro",
                 "label": "Pré cadastro",
                 "modifier": {
-                  "value": "{{ double_keys_open }} $ticket?.ticketType100047AdditionalInfo?.Status_pre_cadastro || 'Não identificado' {{ double_keys_close }}
+                  "value": "{{ double_keys_open }} $ticket?.ticketType100047AdditionalInfo?.Status_pre_cadastro || 'Não identificado' {{ double_keys_close }}"
                 },
                 "modifierSlug": "text"
               }
