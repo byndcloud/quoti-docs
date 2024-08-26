@@ -91,6 +91,9 @@ nav:
       - Visão geral do atendente: ./qsm/agentOverview.md
     - Catálogo: ./qsm/catalog.md
 
+extra:
+  double_keys_open: '{{'
+  double_keys_close: '}}'
 extra_css:
   - ./style.css
 theme:

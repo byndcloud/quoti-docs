@@ -179,8 +179,8 @@ As extraTabs e sidebar são configuradas por um json com as seguintes propriedad
       },
       "saveBtn": "Salvar informações",
       "hideBody": false,
-      "userCanEditForm": "{{ $ticket.status === 'Pré-cadastrado' ? $ticket.assignedToUser === $me.id : $ticket.status !== 'Arquivado' && $me.userProfileId !== 100027 }}",
-      "saveFormsCallback": "{{ () => { $fetchTicket() } }}",
+      "userCanEditForm": "{{ double_keys_open }} $ticket.status === 'Pré-cadastrado' ? $ticket.assignedToUser === $me.id : $ticket.status !== 'Arquivado' && $me.userProfileId !== 100027 {{ double_keys_close }},
+      "saveFormsCallback": "{{ double_keys_open }} () => { $fetchTicket() } {{ double_keys_close }},
       "hideTicketPrimaryInfos": false
   }
 }
@@ -199,10 +199,10 @@ As extraTabs e sidebar são configuradas por um json com as seguintes propriedad
     "filter": {
       "or": [
         {
-          "ticketId": "{{ $ticket.id }}"
+          "ticketId": "{{ double_keys_open }} $ticket.id {{ double_keys_close }}
         },
         {
-          "$ticketActions.parent_ticket_id$": "{{ $ticket.id }}"
+          "$ticketActions.parent_ticket_id$": "{{ double_keys_open }} $ticket.id {{ double_keys_close }}
         }
       ]
     },
@@ -221,13 +221,13 @@ As extraTabs e sidebar são configuradas por um json com as seguintes propriedad
       ]
     },
     "contextId": "ticketActionProcesso",
-    "allowWrite": "{{ $userCanCreateAction }}",
+    "allowWrite": "{{ double_keys_open }} $userCanCreateAction {{ double_keys_close }},
     "ticketKind": "processos",
     "cardConfigs": {
       "type": {},
       "default": {
-        "body": "(ticketActionProcesso){{ action => '<h3>' +  $getTitle(action) + ' | ticketId: ' +  action.ticketId +  '</h3>' + $getBody(action) }}",
-        "footer": "{{ action => action.ticketActionCreator.name + ' • ' + $$moment(action.createdAt).format('lll') }}",
+        "body": "(ticketActionProcesso){{ double_keys_open }} action => '<h3>' +  $getTitle(action) + ' | ticketId: ' +  action.ticketId +  '</h3>' + $getBody(action) {{ double_keys_close }},
+        "footer": "{{ double_keys_open }} action => action.ticketActionCreator.name + ' • ' + $$moment(action.createdAt).format('lll') {{ double_keys_close }},
         "hideTitle": true,
         "hideSubtitle": true
       }
@@ -266,8 +266,8 @@ As extraTabs e sidebar são configuradas por um json com as seguintes propriedad
         "icon": "mdi-message-lock",
         "text": "Criar nota privada",
         "dense": true,
-        "action": "(ticketActionProcesso){{ () => $sendMessage('privateMessage') }}",
-        "loading": "(ticketActionProcesso){{ () => $sendingMessage }}",
+        "action": "(ticketActionProcesso){{ double_keys_open }} () => $sendMessage('privateMessage') {{ double_keys_close }},
+        "loading": "(ticketActionProcesso){{ double_keys_open }} () => $sendingMessage {{ double_keys_close }},
         "outlined": true,
         "condition": true,
         "depressed": true
@@ -291,7 +291,7 @@ As extraTabs e sidebar são configuradas por um json com as seguintes propriedad
   "databaseProps": {
     "table": "processos_envolvidos",
     "where": {
-      "processo_id": "{{ $ticket.id }}"
+      "processo_id": "{{ double_keys_open }} $ticket.id {{ double_keys_close }}
     },
     "formId": 100314,
     "params": {
@@ -341,7 +341,7 @@ As extraTabs e sidebar são configuradas por um json com as seguintes propriedad
       {
         "name": "outros_advogados",
         "label": "Possui outros advogados",
-        "convert": "{{ (input) => { return input? 'Sim' : 'Não'} }}",
+        "convert": "{{ double_keys_open }} (input) => { return input? 'Sim' : 'Não'} {{ double_keys_close }},
         "sortable": true
       },
       {
@@ -355,7 +355,7 @@ As extraTabs e sidebar são configuradas por um json com as seguintes propriedad
         "sortable": false
       }
     ],
-    "workflowVars": "{{ [{'name': 'ticket','value': $ticket}] }}",
+    "workflowVars": "{{ double_keys_open }} [{'name': 'ticket','value': $ticket}] {{ double_keys_close }},
     "tableOriginIsView": true
   },
   "databaseEvents": {}
@@ -380,7 +380,7 @@ As extraTabs e sidebar são configuradas por um json com as seguintes propriedad
     {
       "name": "createdAt",
       "label": "Criado em",
-      "convert": "{{ (input) => { return $$moment(input).format('DD/MM/YYYY') } }}",
+      "convert": "{{ double_keys_open }} (input) => { return $$moment(input).format('DD/MM/YYYY') } {{ double_keys_close }},
       "sortable": true
     },
     {
@@ -391,28 +391,28 @@ As extraTabs e sidebar são configuradas por um json com as seguintes propriedad
     {
       "name": "ticketType19AdditionalInfo.data_de_inicio_aditivo",
       "label": "Inicio de Vigência",
-      "convert": "{{ (input) => { return input ? $$moment(input).format('DD/MM/YYYY') : '-' } }}"
+      "convert": "{{ double_keys_open }} (input) => { return input ? $$moment(input).format('DD/MM/YYYY') : '-' } {{ double_keys_close }}
     },
     {
       "name": "ticketType19AdditionalInfo.nova_data_de_termino",
       "label": "Fim de Vigência",
-      "convert": "{{ (input) => { return input ? $$moment(input).format('DD/MM/YYYY') : '-' } }}"
+      "convert": "{{ double_keys_open }} (input) => { return input ? $$moment(input).format('DD/MM/YYYY') : '-' } {{ double_keys_close }}
     },
     {
       "name": "ticketType19AdditionalInfo.formalizacao_aditivo_prazo",
       "label": "Formalização",
-      "convert": "{{ (input) => { return input ? input : '-' } }}",
+      "convert": "{{ double_keys_open }} (input) => { return input ? input : '-' } {{ double_keys_close }},
       "sortable": true
     },
     {
       "name": "ticketType19AdditionalInfo.valor_total_do_contrato",
       "label": "Valor original",
-      "convert": "{{ (input) => { return new Intl.NumberFormat('pt-BR', {  style: 'currency',currency: 'BRL' }).format(input/100) } }}"
+      "convert": "{{ double_keys_open }} (input) => { return new Intl.NumberFormat('pt-BR', {  style: 'currency',currency: 'BRL' }).format(input/100) } {{ double_keys_close }}
     },
     {
       "name": "ticketType19AdditionalInfo.valor_total_com_reajuste",
       "label": "Valor Reajustado",
-      "convert": "{{ (input) => { return new Intl.NumberFormat('pt-BR', {  style: 'currency',currency: 'BRL' }).format(input/100) } }}"
+      "convert": "{{ double_keys_open }} (input) => { return new Intl.NumberFormat('pt-BR', {  style: 'currency',currency: 'BRL' }).format(input/100) } {{ double_keys_close }}
     }
   ],
   "filter": {
@@ -493,7 +493,7 @@ As extraTabs e sidebar são configuradas por um json com as seguintes propriedad
       "not": 100007
     }
   },
-  "enableChangeAssignedToUserToAnyUser": "(ticketAgentOverview){{ !$isCancelled && !$isClosed && !$isSolved }}"
+  "enableChangeAssignedToUserToAnyUser": "(ticketAgentOverview){{ double_keys_open }} !$isCancelled && !$isClosed && !$isSolved {{ double_keys_close }}
 }
 ````
 ---
@@ -512,7 +512,7 @@ A figura 15, mostra um exemplo da renderização do componente ticketPrimaryInfo
         "slug": "ticketPrimaryInfos",
         "props": {
           "class": "mt-2 ml-4",
-          "ticket": "{{ $ticket }}",
+          "ticket": "{{ double_keys_open }} $ticket {{ double_keys_close }},
           "configs": {
             "infos": [
               {
@@ -520,7 +520,7 @@ A figura 15, mostra um exemplo da renderização do componente ticketPrimaryInfo
                 "text": "Status",
                 "label": "Status",
                 "modifier": {
-                  "value": "{{ $ticket?.status || 'Não identificado' }}"
+                  "value": "{{ double_keys_open }} $ticket?.status || 'Não identificado' {{ double_keys_close }}
                 },
                 "modifierSlug": "text"
               },
@@ -538,7 +538,7 @@ A figura 15, mostra um exemplo da renderização do componente ticketPrimaryInfo
                 "text": "Data de cadastro",
                 "label": "Data de cadastro",
                 "modifier": {
-                  "value": "{{ $$moment($ticket?.createdAt).format('DD/MM/YYYY [às] HH:mm') || 'Não identificado' }}"
+                  "value": "{{ double_keys_open }} $$moment($ticket?.createdAt).format('DD/MM/YYYY [às] HH:mm') || 'Não identificado' {{ double_keys_close }}
                 },
                 "modifierSlug": "text"
               },
@@ -547,7 +547,7 @@ A figura 15, mostra um exemplo da renderização do componente ticketPrimaryInfo
                 "text": "Pré cadastro",
                 "label": "Pré cadastro",
                 "modifier": {
-                  "value": "{{ $ticket?.ticketType100047AdditionalInfo?.Status_pre_cadastro || 'Não identificado' }}"
+                  "value": "{{ double_keys_open }} $ticket?.ticketType100047AdditionalInfo?.Status_pre_cadastro || 'Não identificado' {{ double_keys_close }}
                 },
                 "modifierSlug": "text"
               }
