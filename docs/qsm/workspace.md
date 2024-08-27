@@ -368,6 +368,10 @@ da interface dentro de um ticket, injetando essas configurações diretamente na
 tela de visão geral do agente. Isso permite personalizar a experiência do agente
 ao interagir com os tickets.
 
+Esse _JSON_ possui o mesmo schema de configuração presente no tipo ou categoria
+do chamado, ou seja, o _JSON_ presente no tipo pode ser inteiramente copiado e
+passado para o Workspace, sem precisar de mudanças, e vice-versa.
+
 **Exemplo de configuração:**
 
 ```javascript
