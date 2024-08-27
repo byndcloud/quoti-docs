@@ -154,7 +154,7 @@ Veja outra opção de configuração para a tab principal
 }
 ````
 ## Configurando extraTabs e sidebar
-As propriedades extraTabs e sidebar utilizam o mesmo JSON Schema. Isso significa que uma configuração definida para uma tab na sidebar pode ser facilmente transferida para uma tab em extraTabs sem necessidade de modificar sua estrutura. Portanto, os exemplos apresentados para extraTabs são igualmente aplicáveis à sidebar, e vice-versa.
+As propriedades extraTabs e sidebar utilizam o mesmo JSON Schema. Isso significa que uma configuração definida para uma tab na sidebar pode ser facilmente transferida para uma tab em extraTabs sem necessidade de modificar sua estrutura. Portanto, os exemplos apresentados para extraTabs são igualmente aplicáveis à sidebar e vice-versa.
 Neste tópico, exploraremos algumas das opções e personalizações possíveis tanto para extraTabs quanto para sidebar.
 
 As extraTabs e sidebar são configuradas por um json com as seguintes propriedades comuns a todas as customizações:
@@ -561,13 +561,14 @@ A figura 15, mostra um exemplo da renderização do componente ticketPrimaryInfo
 
 ````
 Observe que através da propriedade `slot.children`, conseguimos especificar uma lista de componentes que serão renderizado nas extraTabs/sidebar. A seguir, veremos a lista de possíveis valores possível para a propriedade slug presente no objeto children.
-- **Informações do ticket**: representado pelo slug **ticketPrimaryInfos** e indicado para representar qualquer informação do ticket, podendo, inclusive, alterá-la. Exemplo: Exibir o status e o responsável pelo chamado.
+
+- **Informações do ticket**: representado pelo slug **ticketPrimaryInfos** e indicado para representar qualquer informação do ticket, podendo, inclusive, alterá-la. Exemplo: exibir o status e o responsável pelo chamado.
 - **Botões de ações**: representado pelo slug **actionButtons** e indicado para realizar ações dentro ou fora do ticket. Exemplo: renderizar um botão para mudar o status do ticket ou enviar um e-mail para o cliente.
-- **Seletor de cateforias**: representado pelo slug **categorySelector** e indicado para selecionar uma categoria de um chamado. Exemplo: permitir que o usuário mude a categoria do chamado.
+- **Seletor de categorias**: representado pelo slug **categorySelector** e indicado para selecionar uma categoria de um chamado. Exemplo: permitir que o usuário mude a categoria do chamado.
 - **Extensões**: representado pelo slug **qtExtension** e indicado para renderizar uma extensão instalada na organização. Exemplo: renderizar a extensão de gerenciamento global dos SLAs.
-- **Tabela simples**: representado pelo slug **csmTable** e indicado tabelas simples que não possuem relação com nenhum database ou view do quoti. Exemplo: Mostrar tabela de IMC com colunas Valor e Resultado. Na maioria dos caso, é mais aconselhado criar um database.
+- **Tabela simples**: representado pelo slug **csmTable** e indicado para tabelas simples que não possuem relação com nenhum database ou view do quoti. Exemplo: mostrar tabela de IMC com colunas Valor e Resultado. Na maioria dos casos, é mais aconselhado criar um database.
 - **Tabela de tickets**: representado pelo slug **ticketTable** e indicado para renderizar chamados sobre qualquer filtro. Exemplo: mostrar chamados da categoria X que estão com atendente Y.
-- **Databse**: representado pelo slug **qtDatabase** e indicado para renderizar qualquer database. Exemplo: mostrar databases que possuem uma relação semântica com o chamado.
+- **Database**: representado pelo slug **qtDatabase** e indicado para renderizar qualquer database. Exemplo: mostrar databases que possuem uma relação semântica com o chamado.
 
 Essa lista está em contínua atualização, contate-nos para saber todos os valores possíveis ou caso tenha uma sugestão sobre qual componente desejaria vê-lo nessa lista.
 
