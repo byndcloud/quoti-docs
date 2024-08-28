@@ -59,7 +59,7 @@ nav:
     - Como contribuir: 
       - Faça um fork: ./updates/how-to-contribute.md
       - Abrir uma Issues: ./updates/new-issues.md
-    - Tempaltes: 
+    - Templates: 
       - Issues: ./templates/issues.md
       - Pull Request: ./templates/pullRequests.md
       - Reports: ./templates/reports.md
@@ -80,6 +80,10 @@ nav:
     - Materialização de tabelas: ./quoti-databases/materialization.md
     - Webhooks: ./quoti-databases/webhooks.md
     - APIs: ./quoti-databases/api.md
+  - Formulários:
+    - FormFlows:
+      - Visão geral: ./forms/formflows/index.md
+      - Colocando em prática: ./forms/formflows/practice.md
 
 extra_css:
   - ./style.css
