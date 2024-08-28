@@ -59,18 +59,18 @@ nav:
       - Quoti CLI Avançado: ./under-development.md
       - Publicação no Marketplace: ./under-development.md
   - Comunidade:
-      - Como contribuir:
-          - Faça um fork: ./updates/how-to-contribute.md
-          - Abrir uma Issues: ./updates/new-issues.md
-      - Tempaltes:
-          - Issues: ./templates/issues.md
-          - Pull Request: ./templates/pullRequests.md
-          - Reports: ./templates/reports.md
-          - Meetings: ./templates/meetings.md
-      - Processo de revisão e atualização: ./under-development.md
-      - Feedback e contribuições dos usuários: ./under-development.md
-      - Anexos e Recursos Adicionais:
-          - Links úteis e recursos externos: ./under-development.md
+    - Como contribuir: 
+      - Faça um fork: ./updates/how-to-contribute.md
+      - Abrir uma Issues: ./updates/new-issues.md
+    - Templates: 
+      - Issues: ./templates/issues.md
+      - Pull Request: ./templates/pullRequests.md
+      - Reports: ./templates/reports.md
+      - Meetings: ./templates/meetings.md
+    - Processo de revisão e atualização: ./under-development.md
+    - Feedback e contribuições dos usuários: ./under-development.md
+    - Anexos e Recursos Adicionais:
+      - Links úteis e recursos externos: ./under-development.md
   - FAQ:
       - Gerais: ./faq/index.md
       - Ambiente CSM: ./faq/csm/index.md
@@ -93,6 +93,10 @@ nav:
       - Workspace: ./qsm/workspace.md
       - Visão geral do atendente: ./qsm/agentOverview.md
     - Catálogo: ./qsm/catalog.md
+  - Formulários:
+    - FormFlows:
+      - Visão geral: ./forms/formflows/index.md
+      - Colocando em prática: ./forms/formflows/practice.md
 
 extra:
   double_keys_open: '{{'
