@@ -14,9 +14,10 @@ graph LR
   B --> C[Oculta CPF];
   C --> D[Oculta CNPJ];
   D --> E[Oculta Razão social];
-  E --> F[Nome Fantasia];
-  F --> G[Endereço];
+  E --> F[Oculta Nome Fantasia];
+  F --> G[Oculta Endereço];
 ```
+
 - Exibir CPF ou CNPJ
 ``` mermaid
 graph LR
@@ -144,4 +145,11 @@ graph LR
 
 
 ### Fluxo 3 - Busca e preenchimento de campos com dados da empresa
+Vamos criar um novo fluxo dessa vez com o nome "Carrega dados da empresa". Para esse vamos querer que o primeiro nó seja o que observa por modificações em um campo. O campo observado será o campo de CNPJ. Então adicionamos um nó que verifica condições igual o fluxo anterior, porém a ação adicionada é do tipo que verifica condição atendida. Esse tipo de ação permite que você escreva condicionais mais complexas que apenas uma comparação de igualdade.
+
+Para buscarmos pelas informações da empresa precisamos que dois critérios sejam atendidos:
+- Que o campo CNPJ esteja preenchido completamente
+- 
+salvei algumas imagens na pasta screenshots com prints de onde parei
+$field.nome.isValid()
 https://publica.cnpj.ws/cnpj/34975590000190
