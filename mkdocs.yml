@@ -3,74 +3,76 @@ site_url: https://github.com/orgs/byndcloud
 site_description: Site description
 copyright: '<img src="https://beyondcompany.com.br/img/logo.62069458.svg" /> '
 nav:
-  - Início: 
-    - Visão geral do Quoti: ./index.md
-    - Propósito da documentação: ./into/purpose.md
-    - Primeiro Passo: ./into/step-1.md
-  - Usuário: 
-    - Visão geral: ./user/index.md
-    - Login e configurações: ./user/login.md
-    - Redefinição de senha: ./user/password-reset.md
-    - Gestão de usuários: ./user/user-management.md
-    - Perfis de usuários e gestão de menus: ./user/user-profile.md
-    - Informações gerais da organização: ./user/info-org.md
-    - Personalização de temas: ./user/theme.md
-  - Essenciais: 
-    - Gestão de grupos: ./essential/group-management.md
-    - Gestão de permissões: ./essential/permissions-management.md
-    - Gestão de métodos de login: ./essential/login-method-management.md
-    - Criação e gestão de formulários: 
-      - Introdução aos formulários: 
-        - Criação e edição de formulários: ./essential/forms/intro.md
-        - Utilização do CRUD via interface: ./essential/forms/crud.md
-        - Básico de FormsFlows: ./essential/forms/flow-init.md
-      - Extensões Quoti:
-        - Visão geral e exemplos: ./under-development.md
-        - Adicionar e gerenciar extensões no menu: ./under-development.md
-        - Gerenciamento de versões das extensões: ./under-development.md
+  - Início:
+      - Visão geral do Quoti: ./index.md
+      - Propósito da documentação: ./into/purpose.md
+      - Primeiro Passo: ./into/step-1.md
+  - Usuário:
+      - Visão geral: ./user/index.md
+      - Login e configurações: ./user/login.md
+      - Redefinição de senha: ./user/password-reset.md
+      - Gestão de usuários: ./user/user-management.md
+      - Perfis de usuários e gestão de menus: ./user/user-profile.md
+      - Informações gerais da organização: ./user/info-org.md
+      - Personalização de temas: ./user/theme.md
+  - Essenciais:
+      - Gestão de grupos: ./essential/group-management.md
+      - Gestão de permissões: ./essential/permissions-management.md
+      - Gestão de métodos de login: ./essential/login-method-management.md
+      - Criação e gestão de formulários:
+          - Introdução aos formulários:
+              - Criação e edição de formulários: ./essential/forms/intro.md
+              - Utilização do CRUD via interface: ./essential/forms/crud.md
+              - Básico de FormsFlows: ./essential/forms/flow-init.md
+          - Extensões Quoti:
+              - Visão geral e exemplos: ./under-development.md
+              - Adicionar e gerenciar extensões no menu: ./under-development.md
+              - Gerenciamento de versões das extensões: ./under-development.md
   - Desenvolvimento:
-    - Qt-database: ./dev/qt-database.md
-    - FormsFlow avançado: ./under-development.md
-    - Gestão de databases: 
-      - Criação e edição: ./under-development.md
-      - Utilização do CRUD (interface e API): ./under-development.md
-    - Desenvolvimento de extensões com Quoti CLI: 
-      - Introdução ao Quoti CLI: ./under-development.md
-      - Hello World: ./under-development.md
-      - Criação de extensões:
-        - Visão Geral: ./development/cli/extensions/index.md
-        - CRUD: ./development/cli/extensions/crud.md
-        - Integrações: ./under-development.md 
-        - Permissões: ./under-development.md
+      - Qt-database: ./dev/qt-database.md
+      - Componentes:
+          - Crud com qt-autocomplete: ./dev/components/crud-qt-autocomplete.md
+      - FormsFlow avançado: ./under-development.md
+      - Gestão de databases:
+          - Criação e edição: ./under-development.md
+          - Utilização do CRUD (interface e API): ./under-development.md
+      - Desenvolvimento de extensões com Quoti CLI:
+          - Introdução ao Quoti CLI: ./under-development.md
+          - Hello World: ./under-development.md
+          - Criação de extensões:
+              - Visão Geral: ./development/cli/extensions/index.md
+              - CRUD: ./development/cli/extensions/crud.md
+              - Integrações: ./under-development.md
+              - Permissões: ./under-development.md
   - Avançados:
-    - Single Sign-On (SSO) com Quoti: ./sso
-    - Configuração com:
-      - Okta: ./under-development.md
-      - Google: ./under-development.md
-      - Microsoft: ./under-development.md
-      - Outros: ./under-development.md
-    - Multi-tenancy: ./under-development.md
-    - Avançado em databases: 
-      - Tipos de campos customizados: ./under-development.md
-      - Hooks: ./under-development.md
-    - Quoti CLI Avançado: ./under-development.md
-    - Publicação no Marketplace: ./under-development.md
+      - Single Sign-On (SSO) com Quoti: ./sso
+      - Configuração com:
+          - Okta: ./under-development.md
+          - Google: ./under-development.md
+          - Microsoft: ./under-development.md
+          - Outros: ./under-development.md
+      - Multi-tenancy: ./under-development.md
+      - Avançado em databases:
+          - Tipos de campos customizados: ./under-development.md
+          - Hooks: ./under-development.md
+      - Quoti CLI Avançado: ./under-development.md
+      - Publicação no Marketplace: ./under-development.md
   - Comunidade:
-    - Como contribuir: 
-      - Faça um fork: ./updates/how-to-contribute.md
-      - Abrir uma Issues: ./updates/new-issues.md
-    - Tempaltes: 
-      - Issues: ./templates/issues.md
-      - Pull Request: ./templates/pullRequests.md
-      - Reports: ./templates/reports.md
-      - Meetings: ./templates/meetings.md
-    - Processo de revisão e atualização: ./under-development.md
-    - Feedback e contribuições dos usuários: ./under-development.md
-    - Anexos e Recursos Adicionais:
-      - Links úteis e recursos externos: ./under-development.md
+      - Como contribuir:
+          - Faça um fork: ./updates/how-to-contribute.md
+          - Abrir uma Issues: ./updates/new-issues.md
+      - Tempaltes:
+          - Issues: ./templates/issues.md
+          - Pull Request: ./templates/pullRequests.md
+          - Reports: ./templates/reports.md
+          - Meetings: ./templates/meetings.md
+      - Processo de revisão e atualização: ./under-development.md
+      - Feedback e contribuições dos usuários: ./under-development.md
+      - Anexos e Recursos Adicionais:
+          - Links úteis e recursos externos: ./under-development.md
   - FAQ:
-    - Gerais: ./faq/index.md
-    - Ambiente CSM: ./faq/csm/index.md
+      - Gerais: ./faq/index.md
+      - Ambiente CSM: ./faq/csm/index.md
   - Glossário: ./glossary/index.md
   - Documentação Antiga: ./doc-antiga/home.md
   - Quoti Databases:
@@ -145,5 +147,7 @@ markdown_extensions:
       custom_fences:
         - name: mermaid
           class: mermaid
-          format: !!python/name:pymdownx.superfences.fence_code_format
-  # locale: pt_BR
+          format:
+            !!python/name:pymdownx.superfences.fence_code_format # locale: pt_BR
+
+
