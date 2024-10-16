@@ -83,7 +83,17 @@ nav:
     - Materialização de tabelas: ./quoti-databases/materialization.md
     - Webhooks: ./quoti-databases/webhooks.md
     - APIs: ./quoti-databases/api.md
+  - QSM:
+    - Tickets: ./qsm/tickets.md
+    - Filas: ./qsm/queues.md
+    - Gerenciamento de tickets:
+      - Workspace: ./qsm/workspace.md
+      - Visão geral do atendente: ./qsm/agentOverview.md
+    - Catálogo: ./qsm/catalog.md
 
+extra:
+  double_keys_open: '{{'
+  double_keys_close: '}}'
 extra_css:
   - ./style.css
 theme:
