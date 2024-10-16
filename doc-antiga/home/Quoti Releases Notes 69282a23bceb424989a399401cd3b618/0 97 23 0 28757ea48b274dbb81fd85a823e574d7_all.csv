@@ -1,0 +1,7 @@
+﻿Name,Assign,Description,Highlight,Status,Type
+Atualização de dependências de bibliotecas e ferramentas no projeto,QUOTI,,Highlight,Done,Improvement
+Melhorias na gestão de turmas e carga horária,"ERUDIO, QUOTI",,,Done,Feature
+Adição e melhorias na interface de edição do chat ao vivo,QUOTI,,,Done,Fixed
+Melhorias na obtenção de métricas dos eventos educacionais dentro dos ambientes Quoti,"ERUDIO, LMS",,,Done,Feature
+Melhoria da validação de carga horária total de ações educacionais,"ERUDIO, LMS",,,Done,Feature
+Atualização da URL base,QUOTI,,,Done,Improvement
