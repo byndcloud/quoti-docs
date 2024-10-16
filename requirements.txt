@@ -3,3 +3,4 @@ mkdocs-material
 pymdown-extensions
 mkdocs-macros-plugin
 markdown-callouts
+mdx_truly_sane_lists
