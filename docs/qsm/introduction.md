@@ -1,7 +1,7 @@
 # Introdução
 
-O QSM é uma poderosa platsforma de gestão de serviços, que pode ser utilizada
-para tanto para gestão de serviços internos quanto para serviços externos
+O QSM é uma poderosa plataforma de gestão de serviços, que pode ser utilizada
+tanto para gestão de serviços internos quanto para serviços externos.
 
 **Gestão de Serviços Internos**
 
