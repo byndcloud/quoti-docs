@@ -84,8 +84,11 @@ nav:
     - Webhooks: ./quoti-databases/webhooks.md
     - APIs: ./quoti-databases/api.md
   - QSM:
-    - Tickets: ./qsm/tickets.md
-    - Filas: ./qsm/queues.md
+    - Introdução: ./qsm/introduction.md
+    - Conceitos Básicos: ./qsm/basic-concepts.md
+    # - Tipos de Tickets: ./qsm/ticket-types.md
+    # - Categorias: ./qsm/categories.md
+    # - Filas: ./qsm/queues.md
     - Gerenciamento de tickets:
       - Workspace: ./qsm/workspace.md
       - Visão geral do atendente: ./qsm/agentOverview.md
