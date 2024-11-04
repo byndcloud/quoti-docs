@@ -11,11 +11,12 @@ Sendo assim desejamos alcançar os seguintes fluxos:
 ``` mermaid
 graph LR
   A[Start] --> B{Formulário aberto};
-  B --> C[Oculta CPF];
-  C --> D[Oculta CNPJ];
-  D --> E[Oculta Razão social];
-  E --> F[Oculta Nome Fantasia];
-  F --> G[Oculta Endereço];
+  B --> C(Oculta);
+  C --> D[CPF];;
+  C --> E[CNPJ];
+  C --> F[Nome da empresa];
+  C --> G[Nome Fantasia];
+  C --> H[Endereço];
 ```
 
 - Exibir CPF ou CNPJ
@@ -30,7 +31,19 @@ graph LR
   F --> B;
 ```
 - Busca e preenchimento de campos com dados da empresa
-
+``` mermaid
+graph LR
+  A[Start] --> B{CNPJ Válido?};
+  B -->|Verdadeiro| C[Exibe Popup];
+  C --> D[Chamada a API];
+  D --> E[Exibe e preenche Nome da empresa];
+  E --> F[Exibe e preenche Nome Fantasia]; 
+  F --> G[Exibe e preenche Nome Fantasia];
+  G --> H[Oculta Popup];
+  H --> B;
+  B -->|Falso| Z[Não executa ação];
+  Z --> B;
+```
 
 ## Implementação
 
@@ -50,7 +63,7 @@ Clique em continuar e configure seu formulário com todos os campos necessários
 - Tipo de pessoa: múltipla escolha com opção "Pessoa física" ou "Pessoa jurídica";
 - CPF\: campo do tipo CPF;
 - CNPJ\: campo do tipo CNPJ;
-- Razão social: campo de resposta curta;
+- Nome da empresa: campo de resposta curta;
 - Nome Fantasia: campo de resposta curta;
 - Endereço: campo de resposta curta;
 
@@ -70,7 +83,7 @@ Nosso primeiro fluxo consiste em ocultar os campos que não queremos que sejam e
 
 - CPF
 - CNPJ
-- Razão social
+- Nome da empresa
 - Nome fantasia
 - Endereço
 
@@ -101,11 +114,12 @@ Com isso nosso fluxo 1 ficou com essa cara:
 ``` mermaid
 graph LR
   A[Start] --> B{Formulário aberto};
-  B --> C[Oculta CPF];
-  C --> D[Oculta CNPJ];
-  D --> E[Oculta Razão social];
-  E --> F[Nome Fantasia];
-  F --> G[Endereço];
+  B --> C(Oculta);
+  C --> D[CPF];;
+  C --> E[CNPJ];
+  C --> F[Nome da empresa];
+  C --> G[Nome Fantasia];
+  C --> H[Endereço];
 ```
 
 ### Fluxo 2 - Exibir CPF ou CNPJ
@@ -145,11 +159,56 @@ graph LR
 
 
 ### Fluxo 3 - Busca e preenchimento de campos com dados da empresa
-Vamos criar um novo fluxo dessa vez com o nome "Carrega dados da empresa". Para esse vamos querer que o primeiro nó seja o que observa por modificações em um campo. O campo observado será o campo de CNPJ. Então adicionamos um nó que verifica condições igual o fluxo anterior, porém a ação adicionada é do tipo que verifica condição atendida. Esse tipo de ação permite que você escreva condicionais mais complexas que apenas uma comparação de igualdade.
+Vamos criar um novo fluxo dessa vez com o nome "Carrega dados da empresa". Para esse vamos querer que o primeiro nó seja o que observa por modificações em um campo. O campo observado será **CNPJ**. Então adicionamos um nó que verifica condições igual o fluxo anterior, porém a ação adicionada é do tipo **Expressão**. Esse tipo de ação permite que você escreva condicionais mais complexas que apenas uma comparação de igualdade.
+Também é necessário adicionar o **Debounce de 1000ms** para que a verificação não seja feita toda vez que for preenchido um caractere no campo.
+![Ação de Expressão](https://storage.googleapis.com/quoti-docs-pictures/forms/formflows/flow%203%20-%20expression%20node%200.png)
 
-Para buscarmos pelas informações da empresa precisamos que dois critérios sejam atendidos:
-- Que o campo CNPJ esteja preenchido completamente
-- 
-salvei algumas imagens na pasta screenshots com prints de onde parei
-$field.nome.isValid()
-https://publica.cnpj.ws/cnpj/34975590000190
+Para buscarmos pelas informações da empresa precisamos que o CNPJ esteja preenchido corretamente, utilizando a condição `$field.CNPJ.response.length === 18`.
+
+Iremos fazer uma chamada à API que não é imediata, para isso existe um tipo de nó / ação para exibirmos um Popup de carregamento para o usuário. Basta escolher o tipo de nó de **controle de Popup** e escolher o tipo como **loading**. Lembre-se de colocar para **Exibir** conforme abaixo:
+![alt text](https://storage.googleapis.com/quoti-docs-pictures/forms/formflows/flow%203%20loading%20popup.png)
+
+Uma vez exibindo o carregamento, executamos a chamada à API. Adicione um novo no do tipo de **Chamar uma API ou Endpoint**.
+
+O endpoint chamado será `https://publica.cnpj.ws/cnpj/{cnpj}`. O `cnpj` precisa estar no formato apenas de números. Se você reparar `$field.CNPJ.response` está mascarado, logo precisamos apenas dos números.
+
+No campo da URL do webhook, assim como em todos os outros campos com essa aparência, é possível utilizar expressões javascript. Para utilizálos basta escrever `{{ double_keys_open }} (seu código) {{double_keys_close}}`.
+
+Obs.: Na ação de expressão não é necessário a utilização das chaves duplas visto que já é convertido para Javascript automaticamente.
+
+Fazemos: `https://publica.cnpj.ws/cnpj/{{ double_keys_open }}  String($field.CNPJ.response).replace(/\D/g, "") {{ double_keys_close }} `
+
+![Url da chamada](https://storage.googleapis.com/quoti-docs-pictures/forms/formflows/flow%203%20url%20call.png)
+
+Os próximos nós deverão usar o retorno dessa chamada para exibir e preencher programaticamente os campos da empresa. Para isso temos a variável `$output`, onde podemos acessar:
+
+- Nome da empresa: `{{ double_keys_open }} $output.razao_social {{ double_keys_close }}`
+
+- Nome Fantasia: `{{ double_keys_open }} $output.estabelecimento.nome_fantasia {{ double_keys_close }}`
+
+- Endereço: `{{ double_keys_open }} $output.estabelecimento.tipo_logradouro {{ double_keys_close }} {{ double_keys_open }} $output.estabelecimento.logradouro {{ double_keys_close }} {{ double_keys_open }} $output.estabelecimento.numero {{ double_keys_close }}, {{ double_keys_open }} $output.estabelecimento.cidade.nome {{ double_keys_close }} - {{ double_keys_open }} $output.estabelecimento.estado.sigla {{ double_keys_close }}`
+
+Primeiro vamos fazer para **Nome_da_empresa**.
+Criamos um nó que modifica propriedades de um campo, então adicionamos a primeira ação para exibir e a segunda para atribuir o valor a ele:
+![Exibe e preenche Nome da empresa](https://storage.googleapis.com/quoti-docs-pictures/forms/formflows/flow%203%20-%20show%20and%20fill%20nome%20da%20empresa.png)
+Em seguida repetimos o processo para os campos de **Nome Fantasia** e **Endereço**.
+![Exibe e preenche Endereço](https://storage.googleapis.com/quoti-docs-pictures/forms/formflows/flow%203%20-%20show%20and%20fill%20address.png)
+Por fim, falta apenas ocultarmos o Popup de carregamento que havíamos aberto anteriormente:
+![Oculta Popup](https://storage.googleapis.com/quoti-docs-pictures/forms/formflows/flow%203%20-%20loading%20popup%20hide%202.png)
+
+E assim temos o resultado final:
+![Oculta Popup](https://storage.googleapis.com/quoti-docs-pictures/forms/formflows/flow%203%20-%20final%20result.png)
+
+``` mermaid
+graph LR
+  A[Start] --> B{CNPJ Válido?};
+  B -->|Verdadeiro| C[Exibe Popup];
+  C --> D[Chamada a API];
+  D --> E[Exibe e preenche Nome da empresa];
+  E --> F[Exibe e preenche Nome Fantasia]; 
+  F --> G[Exibe e preenche Nome Fantasia];
+  G --> H[Oculta Popup];
+  H --> B;
+  B -->|Falso| Z[Não executa ação];
+  Z --> B;
+```
