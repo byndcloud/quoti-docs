@@ -38,7 +38,7 @@ graph LR
   C --> D[Chamada a API];
   D --> E[Exibe e preenche Nome da empresa];
   E --> F[Exibe e preenche Nome Fantasia]; 
-  F --> G[Exibe e preenche Nome Fantasia];
+  F --> G[Exibe e preenche Endereço];
   G --> H[Oculta Popup];
   H --> B;
   B -->|Falso| Z[Não executa ação];
