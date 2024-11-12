@@ -40,7 +40,7 @@ nav:
     - APIs: ./quoti-databases/api.md
   - 📨 QSM:
     - Introdução: ./qsm/introduction.md
-    - Conceitos Básicos: ./qsm/basic-concepts.md
+    - Conceitos básicos: ./qsm/basic-concepts.md
     # - Tipos de Tickets: ./qsm/ticket-types.md
     # - Categorias: ./qsm/categories.md
     # - Filas: ./qsm/queues.md
@@ -48,6 +48,7 @@ nav:
       - Workspace: ./qsm/workspace.md
       - Visão geral do atendente: ./qsm/agentOverview.md
     - Catálogo: ./qsm/catalog.md
+    - Colocando em prática: ./qsm/practice.md
   - 👨‍💻 Desenvolvimento:
     - Componentes:
       - QtDatabase: ./dev/qt-database.md
