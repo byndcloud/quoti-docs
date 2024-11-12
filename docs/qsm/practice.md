@@ -328,7 +328,7 @@ Se desejar, você pode criar um workspace para listar todos os tickets de um tip
 
    ![Pesquisar por workspace](https://storage.googleapis.com/quoti-docs-pictures/QSM/practice/databaseWorkspaces.png)
 
-2. Você será redirecionado para a tela de listagem de workspaces, onde também é possível criar novos. Clique em **Novo** e, em seguida, selecione **individualmente** par iniciar a criação
+2. Você será redirecionado para a tela de listagem de workspaces, onde também é possível criar novos. Clique em **Novo** e, em seguida, selecione **individualmente** para iniciar a criação
 
    ![Criar workspace](https://storage.googleapis.com/quoti-docs-pictures/QSM/practice/criarWorkspace.png)
 
@@ -527,7 +527,7 @@ Por fim, para exibir a tela do workspace no menu lateral ou superior:
 5. Em seguida, crie um menu e configure-o para renderizar o workspace que foi criado.
   ![Editando o menu](https://storage.googleapis.com/quoti-docs-pictures/QSM/practice/EditandoMenu.png)
 
-6. Uma aba lateral de edição será aberta, onde você poderá definir o nome do menu, a página (o workspace) e a path do workspace criado, no fim da configuração aparte o botão salva
+6. Uma aba lateral de edição será aberta, onde você poderá definir o nome do menu, a página (o workspace) e a path do workspace criado, no fim da configuração aperte o botão salva
     ![Salvando menu](https://storage.googleapis.com/quoti-docs-pictures/QSM/practice/salvandoMenu.png)
 
 6. Ao final, o menu lateral estará configurado corretamente.
