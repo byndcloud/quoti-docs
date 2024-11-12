@@ -16,7 +16,7 @@ Obrigado por interessar-se em contribuir para a documentação do Quoti e ajudar
 
 Acreditamos na colaboração e valorizamos as contribuições da comunidade para nossa documentação. Seja corrigindo um erro de digitação, adicionando mais detalhes ou aprimorando as informações existentes, suas iniciativas em melhorar a nossa documentação são muito bem-vindas.
 
-Para contribuir, siga os passos:
+A não ser que você seja desenvolvedor Quoti, para contribuir, siga os passos:
 
 1. **Faça um fork do repositório:** Comece fazendo um fork do repositório `quoti-docs` para realizar suas contribuições.
 2. **Clone o fork para sua máquina local e faça as alterações:** Use o git para clonar o repositório para seu ambiente local e depois faça as mudanças que considerar necessárias.
