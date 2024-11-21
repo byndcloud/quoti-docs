@@ -191,7 +191,7 @@ Após configurar o `hooks`, o próximo passo é criar um **workflow**, siga o  �
 
   ```javascript
 
-  const ticket = 'weebhook criado'
+  const ticket = {}; // Replace with actual ticket object
   const createEvents = {
       "details": "<p>criar mensaagem</p>", //mensagem para o ticket criado
       "ticketId": ticket.ticketId, //id do ticket criado (vindo do webhook)
