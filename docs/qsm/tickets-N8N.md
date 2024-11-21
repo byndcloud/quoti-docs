@@ -78,7 +78,7 @@ Após criado, deixe seu nó ativo:
        "recipient": 601, // Responsável pelo chamado
        "createdBy": 601, // Criado por
        "categoryId": 100001, // Categoria do chamado
-       "ticketTypeId": 100000 // Tipo do chamado
+       "ticketTypeId": 100000, // Tipo do chamado
        "ticketTypeAdditionalInfo": {
           "report": "Empresa 123",
           "anexo": []
