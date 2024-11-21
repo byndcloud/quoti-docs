@@ -150,7 +150,7 @@ Após criado, deixe seu nó ativo:
           },
           "sendBody": true,
           "specifyBody": "json",
-        "jsonBody": "json criado no nó anterior"
+        "jsonBody": "json criado no nó anterior",
           "options": {}
         },
         "id": "ba0ec7a5-1056-4b73-b16b-dcff01c584ae",
