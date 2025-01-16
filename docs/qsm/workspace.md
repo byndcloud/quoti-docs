@@ -271,7 +271,8 @@ precisar. Conheça mais sobre uma **_qtDatabase_** clicando
 1. **order**: Define a ordem em que os itens da tabela serão exibidos.
 2. **fields**: Especifica as colunas que serão renderizadas na tabela.
 3. **params**: Parâmetros utilizados na requisição para buscar os tickets.
-4. **attributes**: Não sei o que é.
+4. **attributes**: Representam as propriedades retornadas na requisição ao
+   buscar os tickets.
 5. **filterConfig**: Configura o campo de busca e filtro da tabela.
 6. **createDialogTitle**: Define o título da janela de dialog que aparece ao
    criar um novo ticket.
