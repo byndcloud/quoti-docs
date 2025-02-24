@@ -33,4 +33,4 @@
 
 ## Arquitetura da infraestrutura de extensões
 
-![Quoti Architeture-Extensions Architecture.drawio.png](../assets/Quoti_Architeture-Extensions_Architecture.drawio.png)
+![Quoti Architeture-Extensions Architecture.drawio.png](Quoti_Architeture-Extensions_Architecture.drawio.png)
