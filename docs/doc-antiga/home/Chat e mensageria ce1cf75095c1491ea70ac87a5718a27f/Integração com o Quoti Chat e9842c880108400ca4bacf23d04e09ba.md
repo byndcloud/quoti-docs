@@ -13,7 +13,7 @@ Caso você tenha a necessidade de integrar um canal de comunicação (chat) exte
 
 ### Integração com Live Chat externo
 
-![Quoti Chat Integration Flow.drawio.png](Integrac%CC%A7a%CC%83o%20com%20o%20Quoti%20Chat%20e9842c880108400ca4bacf23d04e09ba/Quoti_Chat_Integration_Flow.drawio.png)
+![Quoti Chat Integration Flow.drawio.png](Quoti_Chat_Integration_Flow.drawio.png)
 
 Considerando um cenário em que você possui um *Live Chat* desenvolvido fora da Plataforma Quoti e precisa que as mensagens enviadas através do *Live Chat* por um cliente sejam enviadas para um atendente humano usuário do Quoti Chat, você terá que realizar as seguintes etapas:
 
@@ -79,11 +79,11 @@ Considerando um cenário em que você possui um *Live Chat* desenvolvido fora da
     1. Acesse o site `https://quoti.cloud/{organization}/user`
     2. Clique no botão "+" no canto inferior direito:
         
-        ![Captura de Tela 2022-08-19 às 08.59.50.png](Integrac%CC%A7a%CC%83o%20com%20o%20Quoti%20Chat%20e9842c880108400ca4bacf23d04e09ba/Captura_de_Tela_2022-08-19_as_08.59.50.png)
+        ![Captura de Tela 2022-08-19 às 08.59.50.png](Captura_de_Tela_2022-08-19_as_08.59.50.png)
         
     3. Clique na opção "CRIRAR USUÁRIO":
         
-        ![Captura de Tela 2022-08-19 às 09.00.26.png](Integrac%CC%A7a%CC%83o%20com%20o%20Quoti%20Chat%20e9842c880108400ca4bacf23d04e09ba/Captura_de_Tela_2022-08-19_as_09.00.26.png)
+        ![Captura de Tela 2022-08-19 às 09.00.26.png](Captura_de_Tela_2022-08-19_as_09.00.26.png)
         
     4. Preencha as informações:
         1. Nome: Informe o nome do seu Bot

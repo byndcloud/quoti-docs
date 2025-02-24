@@ -21,7 +21,7 @@
     
     1. Encontre, na lista, a extensão que você deseja e clique no ícone de editar:
         
-        ![Captura de Tela 2021-12-11 às 08.13.47.png](Versionamento%20de%20extenso%CC%83es%2094718b18bfb74830bc9f37326774dce3/Captura_de_Tela_2021-12-11_as_08.13.47.png)
+        ![Captura de Tela 2021-12-11 às 08.13.47.png](Captura_de_Tela_2021-12-11_as_08.13.47.png)
         
     1. Em "Versões anteriores", você irá encontrar todas as versões de uma extensão:
         
@@ -34,7 +34,7 @@
         
     2. Digite o novo nome da versão e clique no botão `ENTER` do seu teclado:
         
-        ![Captura de Tela 2021-12-11 às 08.45.40.png](Versionamento%20de%20extenso%CC%83es%2094718b18bfb74830bc9f37326774dce3/Captura_de_Tela_2021-12-11_as_08.45.40.png)
+        ![Captura de Tela 2021-12-11 às 08.45.40.png](Captura_de_Tela_2021-12-11_as_08.45.40.png)
         
     3. A versão da sua extensão foi renomeada. Você pode fechar o popup de edição da extensão.
     
@@ -74,15 +74,15 @@
     
     1. Em "Versões anteriores", localize a versão que você deseja e clique no ícone de "Baixar":
         
-        ![Captura de Tela 2021-12-11 às 08.16.27.png](Versionamento%20de%20extenso%CC%83es%2094718b18bfb74830bc9f37326774dce3/Captura_de_Tela_2021-12-11_as_08.16.27.png)
+        ![Captura de Tela 2021-12-11 às 08.16.27.png](Captura_de_Tela_2021-12-11_as_08.16.27.png)
         
     2. Feche o popup de edição da extensão
         
-        ![Captura de Tela 2021-12-11 às 08.19.53.png](Versionamento%20de%20extenso%CC%83es%2094718b18bfb74830bc9f37326774dce3/Captura_de_Tela_2021-12-11_as_08.19.53.png)
+        ![Captura de Tela 2021-12-11 às 08.19.53.png](Captura_de_Tela_2021-12-11_as_08.19.53.png)
         
     3. No canto inferior direito, clique no botão para criar uma nova extensão:
         
-        ![Captura de Tela 2021-12-11 às 08.21.09.png](Versionamento%20de%20extenso%CC%83es%2094718b18bfb74830bc9f37326774dce3/Captura_de_Tela_2021-12-11_as_08.21.09.png)
+        ![Captura de Tela 2021-12-11 às 08.21.09.png](Captura_de_Tela_2021-12-11_as_08.21.09.png)
         
     4. Defina o "Título" e o "Tipo da sua extensão":
         
@@ -90,16 +90,16 @@
         1. A opção **Sem build** possibilita o uso de um único arquivo para carregar toda sua extensão.
         2. A opção **Com build** permite que o usuário crie sua extensão como se fosse um projeto, ou seja, sua extensão pode ter componentes em arquivos separados, dependências extras que ficam em um *package.json*, etc. Nessa opção, um *build* da extensão é feito antes de enviar o código dela para o Quoti.
         
-        ![Captura de Tela 2021-12-11 às 08.24.35.png](Versionamento%20de%20extenso%CC%83es%2094718b18bfb74830bc9f37326774dce3/Captura_de_Tela_2021-12-11_as_08.24.35.png)
+        ![Captura de Tela 2021-12-11 às 08.24.35.png](Captura_de_Tela_2021-12-11_as_08.24.35.png)
         
     5. No campo "Área de upload" arraste ou selecione o arquivo baixado no [passo 3](Versionamento%20de%20extenso%CC%83es%2094718b18bfb74830bc9f37326774dce3.md):
         
-        ![Captura de Tela 2021-12-11 às 08.30.40.png](Versionamento%20de%20extenso%CC%83es%2094718b18bfb74830bc9f37326774dce3/Captura_de_Tela_2021-12-11_as_08.30.40.png)
+        ![Captura de Tela 2021-12-11 às 08.30.40.png](Captura_de_Tela_2021-12-11_as_08.30.40.png)
         
     6. Clique no botão "Criar extensão"
         
-        ![Captura de Tela 2021-12-11 às 08.32.53.png](Versionamento%20de%20extenso%CC%83es%2094718b18bfb74830bc9f37326774dce3/Captura_de_Tela_2021-12-11_as_08.32.53.png)
+        ![Captura de Tela 2021-12-11 às 08.32.53.png](Captura_de_Tela_2021-12-11_as_08.32.53.png)
         
     7. Teste a versão na sua nova extensão, clicando no ícone de "Abrir":
         
-        ![Captura de Tela 2021-12-11 às 08.34.42.png](Versionamento%20de%20extenso%CC%83es%2094718b18bfb74830bc9f37326774dce3/Captura_de_Tela_2021-12-11_as_08.34.42.png)
+        ![Captura de Tela 2021-12-11 às 08.34.42.png](Captura_de_Tela_2021-12-11_as_08.34.42.png)
