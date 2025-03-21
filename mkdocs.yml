@@ -38,6 +38,8 @@ nav:
     - Materialização de tabelas: ./quoti-databases/materialization.md
     - Webhooks: ./quoti-databases/webhooks.md
     - APIs: ./quoti-databases/api.md
+  - 🎛️ UI Builder:
+    - Introdução: ./ui-builder/introduction.md
   - 📨 QSM:
     - Introdução: ./qsm/introduction.md
     - Conceitos básicos: ./qsm/basic-concepts.md
@@ -127,6 +129,7 @@ theme:
 plugins: 
   - search
   - macros
+  - mkdocs-video
 markdown_extensions:
   # Python Markdown
   - abbr
