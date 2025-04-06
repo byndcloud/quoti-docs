@@ -108,6 +108,10 @@ extra_css:
   - ./style.css
 theme:
   name: material
+  palette:
+    - scheme: default
+      primary: custom       # main color (top bar, buttons, links)
+      accent: pink          # highlights, toggles, etc.
   custom_dir: overrides/
   language: pt-br
   logo: assets/img/logo-quoti.png

@@ -1,3 +1,10 @@
+/* Custom theme color for Quoti */
+:root {
+  --md-primary-fg-color:        #431483;
+  --md-primary-fg-color--light: #5f33a3;
+  --md-primary-fg-color--dark:  #2c0d57;
+}
+
 .md-footer, .md-footer-meta  {
   padding: 3em 0em 3em 0em;
   background-color: #e1e1e1;
