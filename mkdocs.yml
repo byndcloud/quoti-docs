@@ -1,91 +1,92 @@
-site_name: 'Quoti Docs'
+site_name: 'Quoti'
 site_url: https://github.com/orgs/byndcloud
-site_description: Site description
+site_description: Documentação oficial da plataforma Quoti | O Quoti é a plataforma low-code/no-code corporativa com performance superior, personalização total e agilidade de verdade.
+site_author: 'Beyond Company'
 copyright: '<img src="https://beyondcompany.com.br/img/logo.62069458.svg" /> '
 nav:
-  - ▶️ Início:
-      - Visão geral do Quoti: ./index.md
+  - Sobre o Quoti: ./index.md
       # - Propósito da documentação: ./into/purpose.md
       # - Primeiro Passo: ./into/step-1.md
-  - 👤 Usuário:
-      - Visão geral: ./user/index.md
-      - Login e configurações: ./user/login.md
-      - Redefinição de senha: ./user/password-reset.md
-      - Gestão de usuários: ./user/user-management.md
-      - Perfis de usuários e gestão de menus: ./user/user-profile.md
-      - Informações gerais da organização: ./user/info-org.md
-      - Personalização de temas: ./user/theme.md
-  - 🔐 Permissões e grupos:
-      - Gestão de grupos: ./essential/group-management.md
-      - Gestão de permissões: ./essential/permissions-management.md
-      - Gestão de métodos de login: ./essential/login-method-management.md
-  - 📝 Formulários:
-    - Introdução aos formulários:
-        - Criação e edição de formulários: ./essential/forms/intro.md
-        - Utilização do CRUD via interface: ./essential/forms/crud.md
-        # - Básico de FormsFlows: ./essential/forms/flow-init.md
-    # - Extensões Quoti:
-    #     - Visão geral e exemplos: ./under-development.md
-    #     - Adicionar e gerenciar extensões no menu: ./under-development.md
-    #     - Gerenciamento de versões das extensões: ./under-development.md
-    - FormFlows:
-      - Visão geral: ./forms/formflows/index.md
-      - Colocando em prática: ./forms/formflows/practice.md
-  - 🗃️ Quoti Databases:
-    - Visão geral: ./quoti-databases/index.md
-    - Operações básicas: ./quoti-databases/basic-ops.md
-    - Por que não usar NoSQL?: ./quoti-databases/why-not-nosql.md
-    - Materialização de tabelas: ./quoti-databases/materialization.md
-    - Webhooks: ./quoti-databases/webhooks.md
-    - APIs: ./quoti-databases/api.md
-  - 🎛️ UI Builder:
-    - Introdução: ./ui-builder/introduction.md
-  - 📨 QSM:
-    - Introdução: ./qsm/introduction.md
-    - Conceitos básicos: ./qsm/basic-concepts.md
-    # - Tipos de Tickets: ./qsm/ticket-types.md
-    # - Categorias: ./qsm/categories.md
-    # - Filas: ./qsm/queues.md
-    - Gerenciamento de tickets:
-      - Workspace: ./qsm/workspace.md
-      - Visão geral do atendente: ./qsm/agentOverview.md
-    - Catálogo: ./qsm/catalog.md
-    - Colocando em prática: ./qsm/practice.md
-    - Chamado via N8N: ./qsm/tickets-N8N
-  - 👨‍💻 Desenvolvimento:
-    - Componentes:
-      - QtDatabase: ./dev/qt-database.md
-      - Crud com QtAutocomplete: ./dev/components/crud-qt-autocomplete.md
-    # - FormsFlow avançado: ./under-development.md
-    # - Gestão de databases:
-    #   - Criação e edição: ./under-development.md
-    #   - Utilização do CRUD (interface e API): ./under-development.md
-    # - Desenvolvimento de extensões com Quoti CLI:
-    #   - Introdução ao Quoti CLI: ./under-development.md
-    #   - Hello World: ./under-development.md
-    #   - Criação de extensões:
-    #     - Visão Geral: ./development/cli/extensions/index.md
-    #     - CRUD: ./development/cli/extensions/crud.md
-    #     - Integrações: ./under-development.md
-    #     - Permissões: ./under-development.md
-    - N8N Workflows: ./development/workflow/index.md
-  # - Avançados:
-  #     - Single Sign-On (SSO) com Quoti: ./sso
-  #     - Configuração com:
-  #         - Okta: ./under-development.md
-  #         - Google: ./under-development.md
-  #         - Microsoft: ./under-development.md
-  #         - Outros: ./under-development.md
-  #     - Multi-tenancy: ./under-development.md
-  #     - Avançado em databases:
-  #         - Tipos de campos customizados: ./under-development.md
-  #         - Hooks: ./under-development.md
-  #     - Quoti CLI Avançado: ./under-development.md
-  #     - Publicação no Marketplace: ./under-development.md
-  - 🙌 Comunidade:
+  - Primeiros passos:
+    - 👤 Usuário:
+        - Visão geral: ./user/index.md
+        - Login e configurações: ./user/login.md
+        - Redefinição de senha: ./user/password-reset.md
+        - Gestão de usuários: ./user/user-management.md
+        - Perfis de usuários e gestão de menus: ./user/user-profile.md
+        - Informações gerais da organização: ./user/info-org.md
+        - Personalização de temas: ./user/theme.md
+    - 🔐 Permissões e grupos:
+        - Gestão de grupos: ./essential/group-management.md
+        - Gestão de permissões: ./essential/permissions-management.md
+        - Gestão de métodos de login: ./essential/login-method-management.md
+    - 📝 Formulários:
+      - Introdução aos formulários:
+          - Criação e edição de formulários: ./essential/forms/intro.md
+          - Utilização do CRUD via interface: ./essential/forms/crud.md
+          # - Básico de FormsFlows: ./essential/forms/flow-init.md
+      # - Extensões Quoti:
+      #     - Visão geral e exemplos: ./under-development.md
+      #     - Adicionar e gerenciar extensões no menu: ./under-development.md
+      #     - Gerenciamento de versões das extensões: ./under-development.md
+      - FormFlows:
+        - Visão geral: ./forms/formflows/index.md
+        - Colocando em prática: ./forms/formflows/practice.md
+    - 🗃️ Quoti Databases:
+      - Visão geral: ./quoti-databases/index.md
+      - Operações básicas: ./quoti-databases/basic-ops.md
+      - Por que não usar NoSQL?: ./quoti-databases/why-not-nosql.md
+      - Materialização de tabelas: ./quoti-databases/materialization.md
+      - Webhooks: ./quoti-databases/webhooks.md
+      - APIs: ./quoti-databases/api.md
+    - 🎛️ UI Builder:
+      - Introdução: ./ui-builder/introduction.md
+    - 📨 QSM:
+      - Introdução: ./qsm/introduction.md
+      - Conceitos básicos: ./qsm/basic-concepts.md
+      # - Tipos de Tickets: ./qsm/ticket-types.md
+      # - Categorias: ./qsm/categories.md
+      # - Filas: ./qsm/queues.md
+      - Gerenciamento de tickets:
+        - Workspace: ./qsm/workspace.md
+        - Visão geral do atendente: ./qsm/agentOverview.md
+      - Catálogo: ./qsm/catalog.md
+      - Colocando em prática: ./qsm/practice.md
+      - Chamado via N8N: ./qsm/tickets-N8N
+    - 👨‍💻 Desenvolvimento:
+      - Componentes:
+        - QtDatabase: ./dev/qt-database.md
+        - Crud com QtAutocomplete: ./dev/components/crud-qt-autocomplete.md
+      # - FormsFlow avançado: ./under-development.md
+      # - Gestão de databases:
+      #   - Criação e edição: ./under-development.md
+      #   - Utilização do CRUD (interface e API): ./under-development.md
+      # - Desenvolvimento de extensões com Quoti CLI:
+      #   - Introdução ao Quoti CLI: ./under-development.md
+      #   - Hello World: ./under-development.md
+      #   - Criação de extensões:
+      #     - Visão Geral: ./development/cli/extensions/index.md
+      #     - CRUD: ./development/cli/extensions/crud.md
+      #     - Integrações: ./under-development.md
+      #     - Permissões: ./under-development.md
+      - N8N Workflows: ./development/workflow/index.md
+    # - Avançados:
+    #     - Single Sign-On (SSO) com Quoti: ./sso
+    #     - Configuração com:
+    #         - Okta: ./under-development.md
+    #         - Google: ./under-development.md
+    #         - Microsoft: ./under-development.md
+    #         - Outros: ./under-development.md
+    #     - Multi-tenancy: ./under-development.md
+    #     - Avançado em databases:
+    #         - Tipos de campos customizados: ./under-development.md
+    #         - Hooks: ./under-development.md
+    #     - Quoti CLI Avançado: ./under-development.md
+    #     - Publicação no Marketplace: ./under-development.md
+  - Comunidade:
     - Como contribuir: 
       - Faça um fork: ./updates/how-to-contribute.md
-      - Abrir uma Issues: ./updates/new-issues.md
+      - Abrir issues: ./updates/new-issues.md
     # - Templates: 
     #   - Issues: ./templates/issues.md
     #   - Pull Request: ./templates/pullRequests.md
@@ -95,11 +96,11 @@ nav:
     # - Feedback e contribuições dos usuários: ./under-development.md
     # - Anexos e Recursos Adicionais:
     #   - Links úteis e recursos externos: ./under-development.md
-  - 💬 FAQ:
+  - FAQ:
       - Gerais: ./faq/index.md
       - QSM: ./faq/csm/index.md
   # - Glossário: ./glossary/index.md
-  - 🔙 Documentação Antiga: ./doc-antiga/home.md
+  - Documentação Antiga: ./doc-antiga/home.md
 extra:
   double_keys_open: '{{'
   double_keys_close: '}}'
@@ -107,9 +108,23 @@ extra_css:
   - ./style.css
 theme:
   name: material
+  custom_dir: overrides/
+  language: pt-br
+  logo: assets/img/logo-quoti.png
   features:
     - search.suggest
     - content.code.annotate  # Ativa o suporte a ícones e emojis
+    - navigation.footer
+    - navigation.indexes
+    # - navigation.instant
+    # - navigation.instant.prefetch
+    # - navigation.instant.progress
+    # - navigation.prune
+    - navigation.sections
+    - navigation.tabs
+    # - navigation.tabs.sticky
+    - navigation.top
+    - navigation.tracking
   analytics:
     gtag: G-3QNY6VLCC5
   icon:
@@ -166,6 +181,8 @@ markdown_extensions:
   - pymdownx.tilde
   - pymdownx.tasklist:
       custom_checkbox: true
+  # - pymdownx.cards
+  - pymdownx.snippets
   - pymdownx.superfences:
       custom_fences:
         - name: mermaid

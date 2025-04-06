@@ -1,37 +1,10 @@
----
-title: ""
-hide:
-  path: true
-  title: true
-  navigation: true     # Hides the left sidebar
-  toc: true            # Hides the Table of Contents on the right
-  top: true            # Hides the top navigation bar
-  footer: true         # Hides the footer
----
 
-<!-- A função hide: title acima não funciona '--' -->
-<style>
-    .md-typeset h1, .md-content__button { display: none; }
-</style>
+# ![Quoti](assets/img/logo-quoti.png)
 
-<div class="grid" style="grid-template-columns: auto 1fr; align-items: center; gap: 2rem;" markdown>
+<!-- Aqui está uma visão geral ampla e organizada do Quoti, dividida em seções específicas para descrever suas capacidades e funcionalidades: -->
 
-<div  markdown>
-
-![Quoti](assets/img/logo-quoti.png){ style="max-width: 180px;" }
-
-</div>
-
-<div markdown>
-
-### O Quoti é uma plataforma corporativa low-code/no-code (LCNC) que redefine a forma de construir software.
-
+O Quoti é uma plataforma corporativa low-code/no-code (LCNC) que redefine a forma de construir software.
 Projetada para entregar agilidade, segurança e alto nível de personalização, ela permite criar aplicações complexas em questão de minutos — sem abrir mão das melhores práticas de desenvolvimento. Com desempenho superior às plataformas concorrentes e um poder incomparável de personalização de interfaces, o Quoti se destaca como a escolha ideal para empresas que buscam velocidade, flexibilidade e controle total sobre suas soluções digitais.
-
-</div>
-
-</div>
-
 
 ## Características Principais
 
