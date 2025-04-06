@@ -113,7 +113,7 @@ theme:
       primary: custom       # main color (top bar, buttons, links)
       accent: pink          # highlights, toggles, etc.
   custom_dir: overrides/
-  language: pt-br
+  language: pt-BR
   logo: assets/img/logo-quoti.png
   features:
     - search.suggest
