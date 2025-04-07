@@ -2,6 +2,7 @@ site_name: 'Quoti'
 site_url: https://github.com/orgs/byndcloud
 site_description: Documentação oficial da plataforma Quoti | O Quoti é a plataforma low-code/no-code corporativa com performance superior, personalização total e agilidade de verdade.
 site_author: 'Beyond Company'
+repo_url: https://github.com/byndcloud/quoti-docs
 copyright: '<img src="https://beyondcompany.com.br/img/logo.62069458.svg" /> '
 nav:
   - Sobre o Quoti: ./index.md
