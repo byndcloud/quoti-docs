@@ -14,18 +14,20 @@ Essa página será atualizada conforme forem surgindo dúvidas sobre o entendime
 
 Não é o objetivo dessa página comentar sobre todas as tabelas do sistema, pois seria uma atividade bastante cansativa para o leitor, além de desnecessária para diversas tabelas que por si só apresentam significado óbvio.
 
-Por se tratar de um sistema low code, no qual os próprios desenvolvedores de cada organização podem criar seus próprios databases, fica inviável a documentação de todas a tabelas.
+Por se tratar de um sistema low code, no qual os próprios desenvolvedores de cada organização podem criar seus próprios databases, fica inviável a documentação de todas a tabelas. 
 
 </aside>
 
-# Considerações importantes
+
+
+## Considerações importantes
 
 1. Usamos o banco MySQL, mas costumamos liberar o acesso aos dados (apenas leitura) através do [BigQuery](https://cloud.google.com/bigquery/?hl=pt_br).
 2. Os databases criados na plataforma (pela tela /databases, por exemplo) são visualizações do MySQL, segue um exemplo:
     
-    ![image.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/145c2b29-3c41-401a-8c63-b2f326124781/8ed191e4-8f47-4799-9ebd-b3495757dbcd/image.png)
+    ![image.png](https://storage.googleapis.com/quoti-docs-pictures/DataMapping/imagem%201%20-%20Considerac%CC%A7o%CC%83es%20importantes.png)
     
-    ![image.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/145c2b29-3c41-401a-8c63-b2f326124781/ffcf5423-dc07-404e-b21a-b532ed2cfb13/image.png)
+    ![image.png](https://storage.googleapis.com/quoti-docs-pictures/DataMapping/imagem%202%20-%20Considerac%CC%A7o%CC%83es%20importantes.png)
     
 3. Tabelas que possuem o prefixo `tables_` são databases materializados.
 4. Databases não materializados não são escaláveis, evite usar em aplicações que possuem muito registros.
@@ -84,7 +86,7 @@ Por se tratar de um sistema low code, no qual os próprios desenvolvedores de ca
 9. Coluna sync presente em algumas tabelas indica que aquela linha foi criada/atualizada de maneira automática por alguma rotina de automação.
 10. Informação adicional do tipo, da categoria, do perfil ou de qualquer outra entidade é sempre um database, portanto sempre terá o prefixo `tables_data`, em caso de databases não materializados, ou `tables_`, em caso de databases materializados.
 
-# ER
+## ER
 - Arquivo com principais tabelas do ER usado no qsm   
     ```bash
     Table "users" {
@@ -494,28 +496,30 @@ Por se tratar de um sistema low code, no qual os próprios desenvolvedores de ca
     
     Ref: "tickets"."assigned_to_user" < "users"."id"
     ```
-    
+<br>    
 
-https://dbdiagram.io/d/JAE-apenas-tabela-usadas-no-CSM-6734b830e9daa85aca53ca4f
+<iframe src="https://dbdiagram.io/d/Tabelas-usadas-no-QSM-6810d69d1ca52373f5d405f0" style="width: 800px; height: 600px; border: none;"></iframe>
 
-https://dbdiagram.io/d/JAE-apenas-tabela-usadas-no-CSM-6734b830e9daa85aca53ca4f
+## Principais tabelas
 
-# Principais tabelas
-
-A seguir será explicado as principais tabelas para o contexto QSM, se sentiu falta da documentação de alguma tabela, sinta-se convidado a nos enviar uma mensagem para atualizarmos essa documentação.
+A seguir será explicado as principais tabelas para o contexto QSM.
 
 ### users
 
 **Principal função:** Salvar informações básicas dos usuários da plataforma. 
 
-**Usuários são todos os clientes do live-chat e todos os funcionários da JAé que utilizam o fintalk-desk**. Vale ressaltar que um usuário cliente pode ter “n” atendimentos live-chat, logo se existem 50 mil atendimentos live-chat em um mês, não significa que foram criados 50 mil usuários com perfil cliente, pois um único cliente pode ter entrado em contato com o time de atendimento mais de uma vez naquele mês.
+**Usuários são todos os clientes do live-chat e os funcionários que utilizam o fintalk-desk**. Vale ressaltar que um usuário cliente pode ter “n” atendimentos live-chat, logo se existem 50 mil atendimentos live-chat em um mês, não significa que foram criados 50 mil usuários com perfil cliente, pois um único cliente pode ter entrado em contato com o time de atendimento mais de uma vez naquele mês.
 
-![image.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/145c2b29-3c41-401a-8c63-b2f326124781/936bb225-edfa-4441-bd67-470432e95953/image.png)
+![image.png](https://storage.googleapis.com/quoti-docs-pictures/DataMapping/imagem%203%20-%20Users.png)
 
 - Principais colunas:
+
     1. **user**: informação usada para fazer login na plataforma.
+    
     2. **name, email, telefone**: colunas auto explicativas.
+    
     3. **cpf**: dê preferência a salvar apenas números.
+   
     4. **formResponseId**: indica a resposta do formulário presente no perfil do usuário.
     
     As demais colunas são autoexplicativas.
@@ -529,24 +533,25 @@ A maneira mais fácil de atualizar a cache de um usuário, se você realmente pr
 
 **Principal função:** salvar informações dos perfis de usuários.
 
-![image.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/145c2b29-3c41-401a-8c63-b2f326124781/479e0a5d-26a2-43d2-b6a3-34bb9bc544ef/image.png)
+![image.png](https://storage.googleapis.com/quoti-docs-pictures/DataMapping/imagem%204%20-%20Users_profiles.png)
 
 - Principais colunas:
     
-     1. **slug**: nome identificador do perfil.
+    1.**slug**: nome identificador do perfil.
     
-    1. **form_id:** aponta para um formulário adicional presente em cada usuário. Essa coluna permite salvarmos informações adicionais para cada usuário baseado em seu perfil de usuário. Exemplo: Todos os clientes deverão ter a opção de salvar número do cartão.
-    2. **config_login_method_id:** nosso sistema permite escolher tipos de login conforme o perfil que exercem na organização. Exemplo: todos os atendentes irão acessar a plataforma com cpf e senha, enquanto que os clientes acessarão com a conta da Google.
+    2.**form_id:** aponta para um formulário adicional presente em cada usuário. Essa coluna permite salvarmos informações adicionais para cada usuário baseado em seu perfil de usuário. Exemplo: Todos os clientes deverão ter a opção de salvar número do cartão.
+    
+    3.**config_login_method_id:** nosso sistema permite escolher tipos de login conforme o perfil que exercem na organização. Exemplo: todos os atendentes irão acessar a plataforma com cpf e senha, enquanto que os clientes acessarão com a conta da Google.
 
 ### groups
 
 **Principal função:** Contém todos os grupos que existem na plataforma. 
 
-![image.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/145c2b29-3c41-401a-8c63-b2f326124781/2fac9567-1fa4-49a0-a8f8-1ce98807cfa6/image.png)
+![image.png](https://storage.googleapis.com/quoti-docs-pictures/DataMapping/imagem%205%20-%20Groups.png)
 
 - Principais colunas:
     1. **type:** é uma chave estrangeira para `groups_types`. Dentro da tabela groups_types temos a possibilidade de configurar formulários específicos.
-    2. **form_response_id:** indica a resposta do formulário presente em group_types. Exempo: no QSM cada fila é um grupo do tipo `fila`. Nesse tipo temos a presença de um formulário contendo a pergunta calendarId. Dessa forma, conseguimos especificar um calendário específico para cada fila.
+    2. **form_response_id:** indica a resposta do formulário presente em group_types. Exemplo: no QSM cada fila é um grupo do tipo `fila`. Nesse tipo temos a presença de um formulário contendo a pergunta calendarId. Dessa forma, conseguimos especificar um calendário específico para cada fila.
 
 > Para indicar quais usuários estão em quais grupos, consulte a tabela `users_groups`
 > 
@@ -564,7 +569,7 @@ Ao adicionar um novo usuário para um grupo, é necessário atualizar o perfil d
 
 Sempre que queremos proteger uma determinada funcionalidade, utilizamos o conceito de permissões. Por exemplo: apenas usuários com a permissão `ticket.list` é capaz de listar qualquer ticket.
 
-![image.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/145c2b29-3c41-401a-8c63-b2f326124781/f225fa94-6dd1-4858-b2a1-022d037f709c/image.png)
+![image.png](https://storage.googleapis.com/quoti-docs-pictures/DataMapping/imagem%206%20-%20Permissions.png)
 
 - Principais colunas:
     1. name: indica o nome da permissão. Use no formato similar das colunas slug.
@@ -595,19 +600,28 @@ CUIDADO: quando um database é materializado, não geramos mais itens na tabela 
 
 **Principal função:** contém informações de todos os chamados do QSM. ****
 
-![image.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/145c2b29-3c41-401a-8c63-b2f326124781/84bcc97d-d885-432b-97bd-8fba61ba2f32/image.png)
+![image.png](https://storage.googleapis.com/quoti-docs-pictures/DataMapping/imagem%207%20-%20Tickets.png)
 
 - Principais colunas:
     1. **ticket_type_form_response_id:** id da resposta do formulário do tipo do chamado.
+    
     2. **form_response_id:** id da resposta do formulário da categoria do chamado.
+    
     3. **assigned_to_user:** id o atendente do chamado**.**
-    4. assigned_to: id da fila do chamado.
-    5. recipient: id do destinatário, em alguns contextos chamados de “cliente” ou “beneficiário”, do chamado.
-    6. status: indica o status do chamado.
-    7. ticket_type_id: indica o id do tipo do chamado.
-    8. category_id: indica o id da categoria do chamado.
-    9. description: resumo do chamado, geralmente um texto com menos de 250 caracteres.
-    10. body: texto explicativo do chamado, usado para detalhar mais informações à respeito daquele chamado. Aceitando inclusive passar um HTML.
+    
+    4. **assigned_to**: id da fila do chamado.
+    
+    5. **recipient**: id do destinatário, em alguns contextos chamados de “cliente” ou “beneficiário”, do chamado.
+   
+    6. **status**: indica o status do chamado.
+   
+    7. **ticket_type_id**: indica o id do tipo do chamado.
+   
+    8. **category_id**: indica o id da categoria do chamado.
+   
+    9. **description**: resumo do chamado, geralmente um texto com menos de 250 caracteres.
+    
+    10. **body**: texto explicativo do chamado, usado para detalhar mais informações à respeito daquele chamado. Aceitando inclusive passar um HTML.
     
     <aside>
     ⚠️
@@ -621,7 +635,7 @@ CUIDADO: quando um database é materializado, não geramos mais itens na tabela 
 
 **Principal função:** contém todos os atendimentos live chats da plataforma.
 
-![image.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/145c2b29-3c41-401a-8c63-b2f326124781/03af74db-2a38-4377-9015-b054e1282736/image.png)
+![image.png](https://storage.googleapis.com/quoti-docs-pictures/DataMapping/imagem%208%20-%20Chat_rooms.png)
 
 Não temos salvos em nosso banco relacional as mensagens dos usuários, caso deseje consultar essas informações é necessário solicitar acesso ao nosso outro banco.
 
@@ -645,15 +659,13 @@ Não temos salvos em nosso banco relacional as mensagens dos usuários, caso des
 
 Campos no formulário presente no tipo de chamado “Chats” são utilizados nas imagens abaixo:
 
-![image.png](attachment:23a4da4a-0611-4b76-acaa-e46d05219692:image.png)
+![image.png](https://storage.googleapis.com/quoti-docs-pictures/DataMapping/imagem%209%20-%20Informac%CC%A7o%CC%83es%20adicionais.png)
 
-![image.png](attachment:00ded07a-646d-4bcc-a2b5-9a39ce0d1596:image.png)
+![image.png](https://storage.googleapis.com/quoti-docs-pictures/DataMapping/imagem%2010%20-%20Informac%CC%A7o%CC%83es%20adicionais.png)
 
-Esses dados estão salvos na tabela `tables_ticket_type_table_100272` . A justificativa desse nome pode ser entendida na sessão [TicketTypeAdditionalInfos e categoryAdditionalInfos](https://www.notion.so/Data-mapping-CSM-JAE-13d609ba3e9580acad43e2b0982fcf30?pvs=21)
+Esses dados estão salvos na tabela `tables_ticket_type_table_100272` . A justificativa desse nome pode ser entendida na sessão [TicketTypeAdditionalInfos e categoryAdditionalInfos]
 
-![image.png](attachment:071b7bc8-340d-493c-9804-6e9a21c64d3c:image.png)
-
-O gerenciamento dessa tabela pode ser realizada em https://quoti.cloud/jae/databases
+![image.png](https://storage.googleapis.com/quoti-docs-pictures/DataMapping/imagem%2011%20-%20Informac%CC%A7o%CC%83es%20adicionais.png)
 
 - Principais colunas
     
@@ -678,7 +690,7 @@ O gerenciamento dessa tabela pode ser realizada em https://quoti.cloud/jae/datab
 
 Em atendimentos live-chat, utilizamos 3 SLAs conforme mostrados na imagem abaixo.
 
-![image.png](attachment:c666f3ba-daf3-459c-a87a-68099ca99a7a:image.png)
+![image.png](https://storage.googleapis.com/quoti-docs-pictures/DataMapping/imagem%2012%20-SLAS.png)
 
 No banco, essas informações são salvas nas tabelas ticket_slas, ticket_goals, slas, slas_goals e goals. O id do SLA para atendimentos é 1. Portanto, caso queira ver, no banco, detalhes de um SLA de ticketId 407438, faça:
 
@@ -687,7 +699,7 @@ SELECT x.* FROM org_slug.ticket_slas x
 WHERE ticket_id = 407438
 ```
 
-![image.png](attachment:82ae7831-6c96-4ebd-a8ac-0997f7abe491:image.png)
+![image.png](https://storage.googleapis.com/quoti-docs-pictures/DataMapping/imagem%2013%20-SLAS.png)
 
 E caso queira ver as metas de SLA desse ticket, faça:
 
@@ -696,13 +708,13 @@ SELECT x.* FROM org_slug.ticket_goals x
 WHERE ticket_id = 407438
 ```
 
-![image.png](attachment:5c31c56d-a2db-47a8-936d-09df3abd15bc:image.png)
+![image.png](https://storage.googleapis.com/quoti-docs-pictures/DataMapping/imagem%2014%20-SLAS.png)
 
 ### ticket_user_actions
 
 **Principal função:** Contém ****os eventos dos chamados.
 
-![image.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/145c2b29-3c41-401a-8c63-b2f326124781/820fc1a3-ff71-4dc1-9107-94e928cf28da/image.png)
+![image.png](https://storage.googleapis.com/quoti-docs-pictures/DataMapping/imagem%2015%20-%20ticket_user_actions.png)
 
 - Principais colunas
     
@@ -732,9 +744,9 @@ WHERE ticket_id = 407438
 
 **Principal função:** contém dados do tipo/categoria do chamado.
 
-![image.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/145c2b29-3c41-401a-8c63-b2f326124781/dec9f135-c022-4423-95a4-3622f988ae96/image.png)
+![image.png](https://storage.googleapis.com/quoti-docs-pictures/DataMapping/imagem%2016%20-%20ticket_types.png)
 
-![image.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/145c2b29-3c41-401a-8c63-b2f326124781/f0478516-da1a-46b1-8942-83becdb1a92e/image.png)
+![image.png](https://storage.googleapis.com/quoti-docs-pictures/DataMapping/imagem%2017%20-%20categories.png)
 
 - Principais colunas
     
@@ -744,7 +756,7 @@ WHERE ticket_id = 407438
     
     **icon, color**: são ícones que serão mostrados na mainTab do workspace.
     
-    ![image.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/145c2b29-3c41-401a-8c63-b2f326124781/517ed6a8-d329-4fbe-a19f-600b97dbe8a9/image.png)
+    ![image.png](https://storage.googleapis.com/quoti-docs-pictures/DataMapping/imagem%2018%20-%20Principais%20colunas.png)
     
     **form_id**: FK para forms. Útil para customizar formulários adicionais para tipo/categoria do chamado.
     
@@ -766,7 +778,7 @@ WHERE ticket_id = 407438
 
 Como já dito anteriormente, toda informação adicional é uma view do MySQL com prefixo `table_data` ou uma tabela materializada com prefixo `tables_`. 
 
-![image.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/145c2b29-3c41-401a-8c63-b2f326124781/103baafe-119c-468c-a6d4-6580243427e3/image.png)
+![image.png](https://storage.googleapis.com/quoti-docs-pictures/DataMapping/imagem%2019%20-%20ticketTypeAdditionalInfos%20e%20categoryAdditionalInfos.png)
 
 No exemplo acima, a view `tables_data_category_table_100320` pertence à categoria cujo form_Id é `100320`.
 
@@ -776,7 +788,7 @@ Conseguimos identificar essa categoria com a seguinte query:
 SELECT * from categories c where c.form_id = 100320
 ```
 
-![image.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/145c2b29-3c41-401a-8c63-b2f326124781/9ef6e799-8213-408b-b551-786021d535b0/image.png)
+![image.png](https://storage.googleapis.com/quoti-docs-pictures/DataMapping/imagem%2020%20-%20ticketTypeAdditionalInfos%20e%20categoryAdditionalInfos.png)
 
 - Principais colunas
     
@@ -792,30 +804,30 @@ SELECT * from categories c where c.form_id = 100320
 
 A tabela `calendars` contém apenas o nome do calendário.
 
-![image.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/145c2b29-3c41-401a-8c63-b2f326124781/c93cf8f1-3326-49c5-bb76-99c40442408b/image.png)
+![image.png](https://storage.googleapis.com/quoti-docs-pictures/DataMapping/imagem%2021%20-%20calendars.png)
 
 A tabela `calendars_default_hours` possui informações sobre horários úteis.
 
-![image.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/145c2b29-3c41-401a-8c63-b2f326124781/eb861afa-fcb4-46de-b0a6-b5c32ecd44cd/image.png)
+![image.png](https://storage.googleapis.com/quoti-docs-pictures/DataMapping/imagem%2022%20-%20calendars_default_hours.png)
 
 A tabela `calendars_special_hours` possui informações sobre feriados.
 
-![image.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/145c2b29-3c41-401a-8c63-b2f326124781/abb4defb-7287-4683-b7d2-a6a3efda9535/image.png)
+![image.png](https://storage.googleapis.com/quoti-docs-pictures/DataMapping/imagem%2023%20-%20calendars_special_hours.png)
 
 > Observação 1: Nunca grave o end sendo menor que o start
 Observação 2: Para calendários 24 horas, utilize o formato abaixo
 > 
 > 
-> ![image.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/145c2b29-3c41-401a-8c63-b2f326124781/1848cdf1-a04b-4ba1-8d38-02059f0d56e0/image.png)
+> ![image.png](https://storage.googleapis.com/quoti-docs-pictures/DataMapping/imagem%2024.png)
 > 
 
 ### slas e goals
 
 **Principal função:** Contém informações sobre SLAs.
 
-![image.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/145c2b29-3c41-401a-8c63-b2f326124781/2a6a743e-a23b-4628-9447-549f72f9b2d5/image.png)
+![image.png](https://storage.googleapis.com/quoti-docs-pictures/DataMapping/imagem%2025%20-%20slas%20e%20goals.png)
 
-![image.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/145c2b29-3c41-401a-8c63-b2f326124781/c8bfaf06-6fa0-4cf5-980c-f9da1f79f8ea/image.png)
+![image.png](https://storage.googleapis.com/quoti-docs-pictures/DataMapping/imagem%2026%20-%20slas%20e%20goals.png)
 
 Em nossa estrutura, um SLA pode possuir mais de uma meta. Meta é um objetivo, geralmente medida em tempo, para garantir uma qualidade de serviço.
 
