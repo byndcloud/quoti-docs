@@ -72,7 +72,7 @@ Por se tratar de um sistema low code, no qual os próprios desenvolvedores de ca
         ```
         
 6. Coluna name presente em diversas tabelas é em sua maioria no formato slug.
-7. Todas as nossas tabelas possuem created_at, updated_at e deleted_at e estão no formato datatime com fuso zero, portanto lembre de converter sua data para o fuso zero. 
+7. Todas as nossas tabelas possuem created_at, updated_at e deleted_at e estão no formato datetime com fuso zero, portanto lembre de converter sua data para o fuso zero. 
     
     Por padrão, essas datas são preenchidas automaticamente quando as operações no banco é feita através das nossas APIs.
     
