@@ -647,7 +647,7 @@ Não temos salvos em nosso banco relacional as mensagens dos usuários, caso des
     
     **ticket_id:** é a FK da tabela de tickets. Todos nossos atendimentos válidos possuem essa FK diferente de vazio.
     
-    **firs_reply_at**, **last_reply_at** e **last_reply_author:** são colunas importantes e autoexplicativas.
+    **first_reply_at**, **last_reply_at** e **last_reply_author:** são colunas importantes e autoexplicativas.
     
 
 > Observação: colunas que não usamos no QSM. requester_id, empty, product_id, members_count, icon, type, chat_status_id, name, assigned_to.
