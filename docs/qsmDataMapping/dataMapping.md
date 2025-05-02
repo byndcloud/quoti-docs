@@ -600,6 +600,7 @@ CUIDADO: quando um database é materializado, não geramos mais itens na tabela 
 ![image.png](https://storage.googleapis.com/quoti-docs-pictures/DataMapping/imagem%207%20-%20Tickets.png)
 
 - Principais colunas:
+
     1. **ticket_type_form_response_id:** id da resposta do formulário do tipo do chamado.
     
     2. **form_response_id:** id da resposta do formulário da categoria do chamado.
@@ -618,7 +619,7 @@ CUIDADO: quando um database é materializado, não geramos mais itens na tabela 
    
     9. **description:** resumo do chamado, geralmente um texto com menos de 250 caracteres.
     
-    10. **body:**/// texto explicativo do chamado, usado para detalhar mais informações à respeito daquele chamado. Aceitando inclusive passar um HTML.
+    10. **body:** texto explicativo do chamado, usado para detalhar mais informações à respeito daquele chamado. Aceitando inclusive passar um HTML.
     
     <aside>
     ⚠️
@@ -651,38 +652,6 @@ Não temos salvos em nosso banco relacional as mensagens dos usuários, caso des
 
 > Observação: colunas que não usamos no QSM. requester_id, empty, product_id, members_count, icon, type, chat_status_id, name, assigned_to.
 > 
-
-## Informações adicionais do atendimento
-
-Campos no formulário presente no tipo de chamado “Chats” são utilizados nas imagens abaixo:
-
-![image.png](https://storage.googleapis.com/quoti-docs-pictures/DataMapping/imagem%209%20-%20Informac%CC%A7o%CC%83es%20adicionais.png)
-
-![image.png](https://storage.googleapis.com/quoti-docs-pictures/DataMapping/imagem%2010%20-%20Informac%CC%A7o%CC%83es%20adicionais.png)
-
-Esses dados estão salvos na tabela `tables_ticket_type_table_100272` . A justificativa desse nome pode ser entendida na sessão [TicketTypeAdditionalInfos e categoryAdditionalInfos]
-
-![image.png](https://storage.googleapis.com/quoti-docs-pictures/DataMapping/imagem%2011%20-%20Informac%CC%A7o%CC%83es%20adicionais.png)
-
-- Principais colunas
-    
-    **n1:** Coluna n1
-    
-    **teste_tabulacao:** Coluna n2. Está com esse nome, pois a própria organização criou dessa forma. Não ajustamos ainda, pois é necessário verificar possíveis fluxos onde se utiliza essa coluna para minimizar impactos com a alteração.
-    
-    **userId_para_chamados_email:** usada apenas no contexto de e-mail. Serve para coletar informações dos usuários que entram em contato por e-mail com o suporte.
-    
-    **nome_para_chamados_email:** usada apenas no contexto de e-mail. Salva nome do usuário que enviou e-mail para o suporte.
-    
-    **cpf_para_chamados_email: usada apenas no contexto de e-mail.** Salva CPF do usuário que enviou e-mail para o suporte.
-    
-- Observações:
-    
-    Criamos as colunas **userId_para_chamados_email, nome_para_chamados_email e cpf_para_chamados_email nesse mesmo formulário de chat, por dois motivos:**
-    
-    1. A Alexia nos pediu que todo atendimento live-chat e e-mail tivessem os mesmo campos de tabulação do atendimento live-chat. Logo utilizamos o mesmo formulário.
-
-    2. Eficiência em queries mysql, desa forma conseguimos obter informações de e-mail e atendimento live-char realizando left joint em apenas uma única tabela.
 
 ## SLAS
 
