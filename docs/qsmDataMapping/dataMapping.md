@@ -2,12 +2,6 @@
 
 O objetivo dessa página é elencar as principais tabelas usadas em nosso sistema QSM, que podem gerar dúvidas para um desenvolvedor em primeiro contato com nosso banco.
 
-<aside>
-💡
-
-Essa página será atualizada conforme forem surgindo dúvidas sobre o entendimento das demais tabelas do sistema. 
-
-</aside>
 
 <aside>
 ⚠️
@@ -514,13 +508,13 @@ A seguir será explicado as principais tabelas para o contexto QSM.
 
 - Principais colunas:
 
-    1. **user**: informação usada para fazer login na plataforma.
+    1. **user:** informação usada para fazer login na plataforma.
     
-    2. **name, email, telefone**: colunas auto explicativas.
+    2. **name, email, telefone:** colunas auto explicativas.
     
-    3. **cpf**: dê preferência a salvar apenas números.
+    3. **cpf:** dê preferência a salvar apenas números.
    
-    4. **formResponseId**: indica a resposta do formulário presente no perfil do usuário.
+    4. **formResponseId:** indica a resposta do formulário presente no perfil do usuário.
     
     As demais colunas são autoexplicativas.
     
@@ -537,7 +531,7 @@ A maneira mais fácil de atualizar a cache de um usuário, se você realmente pr
 
 - Principais colunas:
     
-    1.**slug**: nome identificador do perfil.
+    1.**slug:** nome identificador do perfil.
     
     2.**form_id:** aponta para um formulário adicional presente em cada usuário. Essa coluna permite salvarmos informações adicionais para cada usuário baseado em seu perfil de usuário. Exemplo: Todos os clientes deverão ter a opção de salvar número do cartão.
     
@@ -550,7 +544,9 @@ A maneira mais fácil de atualizar a cache de um usuário, se você realmente pr
 ![image.png](https://storage.googleapis.com/quoti-docs-pictures/DataMapping/imagem%205%20-%20Groups.png)
 
 - Principais colunas:
+
     1. **type:** é uma chave estrangeira para `groups_types`. Dentro da tabela groups_types temos a possibilidade de configurar formulários específicos.
+
     2. **form_response_id:** indica a resposta do formulário presente em group_types. Exemplo: no QSM cada fila é um grupo do tipo `fila`. Nesse tipo temos a presença de um formulário contendo a pergunta calendarId. Dessa forma, conseguimos especificar um calendário específico para cada fila.
 
 > Para indicar quais usuários estão em quais grupos, consulte a tabela `users_groups`
@@ -572,7 +568,8 @@ Sempre que queremos proteger uma determinada funcionalidade, utilizamos o concei
 ![image.png](https://storage.googleapis.com/quoti-docs-pictures/DataMapping/imagem%206%20-%20Permissions.png)
 
 - Principais colunas:
-    1. name: indica o nome da permissão. Use no formato similar das colunas slug.
+
+    1. **name:** indica o nome da permissão. Use no formato similar das colunas slug.
 
 ### databases
 
@@ -598,7 +595,7 @@ CUIDADO: quando um database é materializado, não geramos mais itens na tabela 
 
 ### tickets
 
-**Principal função:** contém informações de todos os chamados do QSM. ****
+**Principal função:** contém informações de todos os chamados do QSM.
 
 ![image.png](https://storage.googleapis.com/quoti-docs-pictures/DataMapping/imagem%207%20-%20Tickets.png)
 
@@ -609,19 +606,19 @@ CUIDADO: quando um database é materializado, não geramos mais itens na tabela 
     
     3. **assigned_to_user:** id o atendente do chamado**.**
     
-    4. **assigned_to**: id da fila do chamado.
+    4. **assigned_to:** id da fila do chamado.
     
-    5. **recipient**: id do destinatário, em alguns contextos chamados de “cliente” ou “beneficiário”, do chamado.
+    5. **recipient:** id do destinatário, em alguns contextos chamados de “cliente” ou “beneficiário”, do chamado.
    
-    6. **status**: indica o status do chamado.
+    6. **status:** indica o status do chamado.
    
-    7. **ticket_type_id**: indica o id do tipo do chamado.
+    7. **ticket_type_id:** indica o id do tipo do chamado.
    
-    8. **category_id**: indica o id da categoria do chamado.
+    8. **category_id:** indica o id da categoria do chamado.
    
-    9. **description**: resumo do chamado, geralmente um texto com menos de 250 caracteres.
+    9. **description:** resumo do chamado, geralmente um texto com menos de 250 caracteres.
     
-    10. **body**: texto explicativo do chamado, usado para detalhar mais informações à respeito daquele chamado. Aceitando inclusive passar um HTML.
+    10. **body:**/// texto explicativo do chamado, usado para detalhar mais informações à respeito daquele chamado. Aceitando inclusive passar um HTML.
     
     <aside>
     ⚠️
@@ -641,15 +638,15 @@ Não temos salvos em nosso banco relacional as mensagens dos usuários, caso des
 
 - Principais colunas
     
-    id: é o mesmo id usado em nosso outro banco.
+    **id:** é o mesmo id usado em nosso outro banco.
     
-    **webhook_url**: é o webhook que iremos acionar qnd uma nova mensagem for enviada/recebida.
+    **webhook_url:** é o webhook que iremos acionar qnd uma nova mensagem for enviada/recebida.
     
-    **json_data**: coluna json para salvar informações gerais sobre a conversa. Exemplo: salvar o id do cliente presente em outro sistema.
+    **json_data:** coluna json para salvar informações gerais sobre a conversa. Exemplo: salvar o id do cliente presente em outro sistema.
     
-    **ticket_id**: é a FK da tabela de tickets. Todos nossos atendimentos válidos possuem essa FK diferente de vazio.
+    **ticket_id:** é a FK da tabela de tickets. Todos nossos atendimentos válidos possuem essa FK diferente de vazio.
     
-    **firs_reply_at**, **last_reply_at** e **last_reply_author** são colunas importantes e autoexplicativas.
+    **firs_reply_at**, **last_reply_at** e **last_reply_author:** são colunas importantes e autoexplicativas.
     
 
 > Observação: colunas que não usamos no QSM. requester_id, empty, product_id, members_count, icon, type, chat_status_id, name, assigned_to.
@@ -669,9 +666,9 @@ Esses dados estão salvos na tabela `tables_ticket_type_table_100272` . A justif
 
 - Principais colunas
     
-    **n1**: Coluna n1
+    **n1:** Coluna n1
     
-    **teste_tabulacao**: Coluna n2. Está com esse nome, pois a própria organização criou dessa forma. Não ajustamos ainda, pois é necessário verificar possíveis fluxos onde se utiliza essa coluna para minimizar impactos com a alteração.
+    **teste_tabulacao:** Coluna n2. Está com esse nome, pois a própria organização criou dessa forma. Não ajustamos ainda, pois é necessário verificar possíveis fluxos onde se utiliza essa coluna para minimizar impactos com a alteração.
     
     **userId_para_chamados_email:** usada apenas no contexto de e-mail. Serve para coletar informações dos usuários que entram em contato por e-mail com o suporte.
     
@@ -684,6 +681,7 @@ Esses dados estão salvos na tabela `tables_ticket_type_table_100272` . A justif
     Criamos as colunas **userId_para_chamados_email, nome_para_chamados_email e cpf_para_chamados_email nesse mesmo formulário de chat, por dois motivos:**
     
     1. A Alexia nos pediu que todo atendimento live-chat e e-mail tivessem os mesmo campos de tabulação do atendimento live-chat. Logo utilizamos o mesmo formulário.
+
     2. Eficiência em queries mysql, desa forma conseguimos obter informações de e-mail e atendimento live-char realizando left joint em apenas uma única tabela.
 
 ## SLAS
@@ -720,7 +718,7 @@ WHERE ticket_id = 407438
     
     **details:** armazena o texto de uma mensagem. Também aceita string no formato HTML.
     
-    **data**: uma coluna json para armazenar qualquer informação considerada útil para aquela ticketUserAction. Por padrão, costumamos salvar a alteração do ticket antes da mudança, além de registar o tipo e a categoria do chamado.
+    **data:** uma coluna json para armazenar qualquer informação considerada útil para aquela ticketUserAction. Por padrão, costumamos salvar a alteração do ticket antes da mudança, além de registar o tipo e a categoria do chamado.
     
     ```json
     {
@@ -735,9 +733,9 @@ WHERE ticket_id = 407438
     
     **is_automatic_message:** indica se a mensagem é automática.
     
-    **ticket_id**: indica qual ticket pertence aquela alteração.
+    **ticket_id:** indica qual ticket pertence aquela alteração.
     
-    **type, description, ticket_type_id, assigned_to_user, status, priority, media_id, category_id, assigned_to, recipient**: são informações que mudaram no ticket. Se o usuário mudou apenas o status para resolvido, então apenas a coluna status estará preenchida, enquanto as demais colunas estarão vazias.
+    **type, description, ticket_type_id, assigned_to_user, status, priority, media_id, category_id, assigned_to, recipient:** são informações que mudaram no ticket. Se o usuário mudou apenas o status para resolvido, então apenas a coluna status estará preenchida, enquanto as demais colunas estarão vazias.
     
 
 ### ticket_types e categories
@@ -750,23 +748,23 @@ WHERE ticket_id = 407438
 
 - Principais colunas
     
-    **name**: indica o nome da categoria/tipo.
+    **name:** indica o nome da categoria/tipo.
     
-    **type**: é uma coluna slug do name. Serve como identificador memorável do tipo. Em automações de preferência pelo type, pois o name é algo mais provável de mudar no decorrer do projeto.
+    **type:** é uma coluna slug do name. Serve como identificador memorável do tipo. Em automações de preferência pelo type, pois o name é algo mais provável de mudar no decorrer do projeto.
     
-    **icon, color**: são ícones que serão mostrados na mainTab do workspace.
+    **icon, color:** são ícones que serão mostrados na mainTab do workspace.
     
     ![image.png](https://storage.googleapis.com/quoti-docs-pictures/DataMapping/imagem%2018%20-%20Principais%20colunas.png)
     
-    **form_id**: FK para forms. Útil para customizar formulários adicionais para tipo/categoria do chamado.
+    **form_id:** FK para forms. Útil para customizar formulários adicionais para tipo/categoria do chamado.
     
-    **default_sla_id**: indica SLA padrão (presente apenas na categoria).
+    **default_sla_id:** indica SLA padrão (presente apenas na categoria).
     
-    **default_group_id**: indica a fila daquela categoria. (presente apenas na categoria).
+    **default_group_id:** indica a fila daquela categoria. (presente apenas na categoria).
     
-    **active**: indica se é possível criar chamados para aquela categoria.
+    **active:** indica se é possível criar chamados para aquela categoria.
     
-    **configs**: apresenta customizações para a tela do workspace, agentOverview e qsm-api. Saiba mais em ‣.
+    **configs:** apresenta customizações para a tela do workspace, agentOverview e qsm-api. Saiba mais em ‣.
     
 
 > Observação: a tabela de tipo e categoria são similares em conceito e em colunas. Em caso de sobreposição de configuração, damos sempre preferência à categoria.
@@ -835,25 +833,25 @@ O cálculo das metas do SLA só faz sentido quando usamos um calendário, geralm
 
 Por padrão, temos 3 metas para os atendimentos live-chats:
 
-1. **chatTimeToResolve**: tempo para resolver aquele atendimento.
-2. **chatTimeBetweenResponses**: tempo entre respostas.
-3. **chatTimeToFirstReplyAt**: tempo para primeira resposta.
+1. **chatTimeToResolve:** tempo para resolver aquele atendimento.
+2. **chatTimeBetweenResponses:** tempo entre respostas.
+3. **chatTimeToFirstReplyAt:** tempo para primeira resposta.
 
 Já para os chamados não atendimentos, costumamos ter apenas um SLA chamado `resolutionTime` para mensurar o tempo total para um chamado ser resolvido.
 
 - Principais colunas da tabela SLAs
     
-    **name**: indica o nome do SLA.
+    **name:** indica o nome do SLA.
     
-    **default_group_id**: indica a fila que aquele SLA se aplica, na prática, essa coluna não é usada, pois obtemos a fila pela própria categoria do chamado, mas fica a critério do desenvolvedor utilizar essa coluna em alguma automação customizada. 
+    **default_group_id:** indica a fila que aquele SLA se aplica, na prática, essa coluna não é usada, pois obtemos a fila pela própria categoria do chamado, mas fica a critério do desenvolvedor utilizar essa coluna em alguma automação customizada. 
     
     A fila é importante para obtermos o calendário que o SLA utilizará.
     
 - Principais colunas da tabela goals
     
-    **slug**: identificador da meta. Usada em automações do cálculo do SLA
+    **slug:** identificador da meta. Usada em automações do cálculo do SLA
     
-    **value**: tempo em minutos
+    **value:** tempo em minutos
     
 
 > A tabela usada em nosso sistema é slas (no plural) e não sla.
