@@ -8,3 +8,5 @@ Dentro do Quoti, os usuários podem desenvolver Extensões, que são páginas to
 O UI Builder é uma ferramenta essencial dentro do Quoti. Ele permite a construção de interfaces e fluxos completos através de uma abordagem visual, utilizando toda a flexibilidade do Vue.js, mas com menos necessidade de código. Porém com todo o suporte a interações avançadas, chamadas de API, manipulação dinâmica de dados e muito mais.
 
 ![type:video](https://www.youtube.com/embed/dyFLkJLyBA0?si=sjhzFHuyBuJYKXYs)
+
+## Componentes Html 
