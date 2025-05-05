@@ -1,17 +1,16 @@
 # Data mapping QSM
 
-O objetivo dessa página é elencar as principais tabelas usadas em nosso sistema QSM, que podem gerar dúvidas para um desenvolvedor em primeiro contato com nosso banco.
+Esta página tem como objetivo apresentar as principais tabelas utilizadas no sistema QSM, oferecendo um ponto de partida para desenvolvedores que estão tendo seu primeiro contato com nosso banco de dados.
 
 
 <aside>
 ⚠️
 
-Não é o objetivo dessa página comentar sobre todas as tabelas do sistema, pois seria uma atividade bastante cansativa para o leitor, além de desnecessária para diversas tabelas que por si só apresentam significado óbvio.
+Não é propósito desta página documentar todas as tabelas do sistema. Essa abordagem, além de exaustiva para o leitor, seria desnecessária, já que muitas tabelas possuem nomes autoexplicativos.
 
-Por se tratar de um sistema low code, no qual os próprios desenvolvedores de cada organização podem criar seus próprios databases, fica inviável a documentação de todas a tabelas. 
+Além disso, por se tratar de um sistema low code, no qual os próprios desenvolvedores de cada organização podem criar suas próprias estruturas de dados, torna-se inviável manter uma documentação completa de todas as tabelas existentes.
 
 </aside>
-
 
 
 ## Considerações importantes
