@@ -3,6 +3,10 @@
 Este documento fornece uma visão geral da interface do Workspace, destacando as
 principais funcionalidades e configurações disponíveis.
 
+## Introdução a Workspace
+
+![type:video](https://www.youtube.com/embed/w1ISh_l6fUg)
+
 ## Explorando a tela do Workspace
 
 A interface utilizada para visualizar os status dos tickets é mostrada na imagem

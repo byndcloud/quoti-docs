@@ -54,8 +54,7 @@ nav:
       - Catálogo: ./qsm/catalog.md
       - Colocando em prática: ./qsm/practice.md
       - Chamado via N8N: ./qsm/tickets-N8N
-    - Data Mapping:
-      - Introdução: ./qsmDataMapping/dataMapping.md
+      - Data Mapping: ./qsmDataMapping/dataMapping.md
     - 👨‍💻 Desenvolvimento:
       - Componentes:
         - QtDatabase: ./dev/qt-database.md

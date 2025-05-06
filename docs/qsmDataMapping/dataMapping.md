@@ -23,22 +23,23 @@ Além disso, por se tratar de um sistema low code, no qual os próprios desenvol
     ![image.png](https://storage.googleapis.com/quoti-docs-pictures/DataMapping/imagem%202%20-%20Considerac%CC%A7o%CC%83es%20importantes.png)
     
 3. Tabelas que possuem o prefixo `tables_` são databases materializados.
-4. Databases não materializados não são escaláveis, evite usar em aplicações que possuem muito registros.
+4. Databases não materializados não são escaláveis, evite usar em aplicações que possuem muitos registros.
     
     <aside>
     ⚠️
     
-    No futuro, todos os database serão materializados
+    No futuro, todos os databases serão materializados
     
     </aside>
     
-5. As colunas slug presente em diversas tabelas não devem ser inserido string com caracteres especiais.
+5. As colunas slug presentes em diversas tabelas não devem receber strings com caracteres especiais
     
     A coluna slug é uma identificação única e legível usada naquela tabela.
     
     - Código para transformar qualquer texto em um slug.
         
-        ```jsx
+```jsx
+
         // Usamos a função abaixo quando queremos criar um slug
         function slugify(
           str,
@@ -48,34 +49,33 @@ Além disso, por se tratar de um sistema low code, no qual os próprios desenvol
           if (!str) {
             return str
           }
+          
           str = str.replace(/^\s+|\s+$/g, '') // trim
-        
           if (transformToLowerCase) {
             str = str.toLowerCase()
           }
-        
+
           // remove accents, swap ñ for n, etc
           const from = 'ãàáäâèéëêìíïîòóöôùúüûñç·/_,:;'
           const to = 'aaaaaeeeeiiiioooouuuunc------'
           for (let i = 0, l = from.length; i < l; i++) {
             str = str.replace(new RegExp(from.charAt(i), 'g'), to.charAt(i))
           }
-        
+
           str = str
             .replace(/[^a-zA-Z0-9 -]/g, '') // remove invalid chars
             .replace(/\s+/g, separator) // collapse whitespace and replace by -
             .replace(/-+/g, separator) // collapse dashes
-        
           return str
         }
-        ```
+```
         
-6. Coluna name presente em diversas tabelas é em sua maioria no formato slug.
-7. Todas as nossas tabelas possuem created_at, updated_at e deleted_at e estão no formato datetime com fuso zero, portanto lembre de converter sua data para o fuso zero. 
+6. A coluna name, presente em diversas tabelas, é em sua maioria, no formato slug.
+7. Todas as nossas tabelas possuem created_at, updated_at e deleted_at e estão no formato datetime com fuso zero, portanto lembre-se de converter a sua data para o fuso zero. 
     
-    Por padrão, essas datas são preenchidas automaticamente quando as operações no banco é feita através das nossas APIs.
+    Por padrão, essas datas são preenchidas automaticamente quando as operações no banco são feitas através das nossas APIs.
     
-8. Usamos o padrão snake_case para nossas tabelas e camelCase para os códigos presentes em nossas API ou rotinas internas (N8N e customizações especiais no front-end).
+8. Usamos o padrão snake_case para nossas tabelas e camelCase para os códigos presentes em nossas APIs ou rotinas internas (N8N e customizações especiais no front-end).
 9. Coluna sync presente em algumas tabelas indica que aquela linha foi criada/atualizada de maneira automática por alguma rotina de automação.
 10. Informação adicional do tipo, da categoria, do perfil ou de qualquer outra entidade é sempre um database, portanto sempre terá o prefixo `tables_data`, em caso de databases não materializados, ou `tables_`, em caso de databases materializados.
 
@@ -501,8 +501,6 @@ A seguir será explicado as principais tabelas para o contexto QSM.
 
 **Principal função:** Salvar informações básicas dos usuários da plataforma. 
 
-**Usuários são todos os clientes do live-chat e os funcionários que utilizam o fintalk-desk**. Vale ressaltar que um usuário cliente pode ter “n” atendimentos live-chat, logo se existem 50 mil atendimentos live-chat em um mês, não significa que foram criados 50 mil usuários com perfil cliente, pois um único cliente pode ter entrado em contato com o time de atendimento mais de uma vez naquele mês.
-
 ![image.png](https://storage.googleapis.com/quoti-docs-pictures/DataMapping/imagem%203%20-%20Users.png)
 
 - Principais colunas:
@@ -576,7 +574,7 @@ Sempre que queremos proteger uma determinada funcionalidade, utilizamos o concei
 
 Database é um dos núcleos da nossa plataforma low-code, permitindo que organizações crie databases específicos para suas necessidades. 
 
-Todos os databases não materializados possuem 2 visualizações do MySQL e começam com o prefixo `tables_data_`. Uma dessas visualizações terminam com o sufixo `no_types` e serve apenas para uso interno. Sempre de preferência as views que terminam sem esse sufixo.
+Todos os databases não materializados possuem 2 visualizações do MySQL e começam com o prefixo `tables_data_`. Uma dessas visualizações termina com o sufixo `no_types` e serve apenas para uso interno. Sempre de preferência as views que terminam sem esse sufixo.
 
 - Principais colunas:
     
@@ -604,7 +602,7 @@ CUIDADO: quando um database é materializado, não geramos mais itens na tabela 
     
     2. **form_response_id:** id da resposta do formulário da categoria do chamado.
     
-    3. **assigned_to_user:** id o atendente do chamado**.**
+    3. **assigned_to_user:** id do atendente do chamado**.**
     
     4. **assigned_to:** id da fila do chamado.
     
@@ -623,7 +621,7 @@ CUIDADO: quando um database é materializado, não geramos mais itens na tabela 
     <aside>
     ⚠️
     
-    Não usamos mais as colunas e-mails e name presente em tickets. 
+    Não usamos mais as colunas ‘e-mails’ e ‘name’, presente em tickets. 
     
     </aside>
     
@@ -640,7 +638,7 @@ Não temos salvos em nosso banco relacional as mensagens dos usuários, caso des
     
     **id:** é o mesmo id usado em nosso outro banco.
     
-    **webhook_url:** é o webhook que iremos acionar qnd uma nova mensagem for enviada/recebida.
+    **webhook_url:** é o webhook que iremos acionar quando uma nova mensagem for enviada/recebida.
     
     **json_data:** coluna json para salvar informações gerais sobre a conversa. Exemplo: salvar o id do cliente presente em outro sistema.
     
@@ -678,7 +676,7 @@ WHERE ticket_id = 407438
 
 ### ticket_user_actions
 
-**Principal função:** Contém ****os eventos dos chamados.
+**Principal função:** Contém os eventos dos chamados.
 
 ![image.png](https://storage.googleapis.com/quoti-docs-pictures/DataMapping/imagem%2015%20-%20ticket_user_actions.png)
 
@@ -690,7 +688,7 @@ WHERE ticket_id = 407438
     
     ```json
     {
-      "old": { "assignedToUserName": "Luiz Antonio de Albuquerque Junior" }, // salvamos apenas as propriedade que mudamos
+      "old": { "assignedToUserName": "Luiz Antonio de Albuquerque Junior" }, // salvamos apenas as propriedades que mudamos
       "ticket": {
         "categoryName": "Produto precisando de revisão",
         "ticketTypeName": "Incidente/Problema"
@@ -761,7 +759,7 @@ SELECT * from categories c where c.form_id = 100320
     Como um database é a criação de tabelas baseadas em contextos específicos, as colunas principais variam conforme a necessidade de cada problema.
     
 
-> O mesmo raciocínio se aplicar para qualquer informação adicional, porém as vezes colocamos o id do item em vez do form_id.
+> O mesmo raciocínio se aplicar para qualquer informação adicional, porém às vezes colocamos o id do item em vez do form_id.
 > 
 
 ### calendars
