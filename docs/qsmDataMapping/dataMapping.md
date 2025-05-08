@@ -803,7 +803,7 @@ Por padrão, temos 3 metas para os atendimentos live-chats:
 2. **chatTimeBetweenResponses:** tempo entre respostas.
 3. **chatTimeToFirstReplyAt:** tempo para a primeira resposta.
 
-Já para os chamados qaue não são atendimentos, costumamos ter apenas um SLA chamado `resolutionTime` para medir o tempo total para um chamado ser resolvido.
+Já para os chamados que não são atendimentos, costumamos ter apenas um SLA chamado `resolutionTime` para medir o tempo total para um chamado ser resolvido.
 
 - Principais colunas da tabela SLAs
     
