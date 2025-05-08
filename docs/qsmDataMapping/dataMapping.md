@@ -746,7 +746,7 @@ Como já dito anteriormente, toda informação adicional é uma view do MySQL co
 
 No exemplo acima, a view `tables_data_category_table_100320` pertence à categoria cujo form_Id é `100320`.
 
-Conseguimos identificar essa categoria com a seguinte query:
+Podemos identificar essa categoria com a seguinte query:
 
 ```jsx
 SELECT * from categories c where c.form_id = 100320
@@ -756,10 +756,10 @@ SELECT * from categories c where c.form_id = 100320
 
 - Principais colunas
     
-    Como um database é a criação de tabelas baseadas em contextos específicos, as colunas principais variam conforme a necessidade de cada problema.
+    Como um database consiste na criação de tabelas baseadas em contextos específicos, as colunas principais variam conforme a necessidade de cada problema.
     
 
-> O mesmo raciocínio se aplicar para qualquer informação adicional, porém às vezes colocamos o id do item em vez do form_id.
+> O mesmo raciocínio se aplica a qualquer informação adicional; porém às vezes colocamos o id do item em vez do form_id.
 > 
 
 ### calendars
@@ -770,11 +770,11 @@ A tabela `calendars` contém apenas o nome do calendário.
 
 ![image.png](https://storage.googleapis.com/quoti-docs-pictures/DataMapping/imagem%2021%20-%20calendars.png)
 
-A tabela `calendars_default_hours` possui informações sobre horários úteis.
+A tabela `calendars_default_hours` contém informações sobre horários úteis.
 
 ![image.png](https://storage.googleapis.com/quoti-docs-pictures/DataMapping/imagem%2022%20-%20calendars_default_hours.png)
 
-A tabela `calendars_special_hours` possui informações sobre feriados.
+A tabela `calendars_special_hours` contém informações sobre feriados.
 
 ![image.png](https://storage.googleapis.com/quoti-docs-pictures/DataMapping/imagem%2023%20-%20calendars_special_hours.png)
 
@@ -793,7 +793,7 @@ Observação 2: Para calendários 24 horas, utilize o formato abaixo
 
 ![image.png](https://storage.googleapis.com/quoti-docs-pictures/DataMapping/imagem%2026%20-%20slas%20e%20goals.png)
 
-Em nossa estrutura, um SLA pode possuir mais de uma meta. Meta é um objetivo, geralmente medida em tempo, para garantir uma qualidade de serviço.
+Em nossa estrutura, um SLA pode possuir mais de uma meta. Meta é um objetivo, geralmente medido em tempo, para garantir a qualidade do serviço.
 
 O cálculo das metas do SLA só faz sentido quando usamos um calendário, geralmente obtemos essa informação através da fila presente na categoria do chamado.
 
@@ -801,15 +801,15 @@ Por padrão, temos 3 metas para os atendimentos live-chats:
 
 1. **chatTimeToResolve:** tempo para resolver aquele atendimento.
 2. **chatTimeBetweenResponses:** tempo entre respostas.
-3. **chatTimeToFirstReplyAt:** tempo para primeira resposta.
+3. **chatTimeToFirstReplyAt:** tempo para a primeira resposta.
 
-Já para os chamados não atendimentos, costumamos ter apenas um SLA chamado `resolutionTime` para mensurar o tempo total para um chamado ser resolvido.
+Já para os chamados qaue não são atendimentos, costumamos ter apenas um SLA chamado `resolutionTime` para medir o tempo total para um chamado ser resolvido.
 
 - Principais colunas da tabela SLAs
     
     **name:** indica o nome do SLA.
     
-    **default_group_id:** indica a fila que aquele SLA se aplica, na prática, essa coluna não é usada, pois obtemos a fila pela própria categoria do chamado, mas fica a critério do desenvolvedor utilizar essa coluna em alguma automação customizada. 
+    **default_group_id:** indica a fila que aquele SLA se aplica, na prática, essa coluna não é usada, pois obtemos a fila pela própria categoria do chamado, mas fica a critério do desenvolvedor usar essa coluna em alguma automação customizada. 
     
     A fila é importante para obtermos o calendário que o SLA utilizará.
     
