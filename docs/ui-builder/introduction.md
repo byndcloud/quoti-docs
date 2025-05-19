@@ -74,8 +74,6 @@ O UI Builder é uma ferramenta essencial dentro do Quoti. Ele permite a constru�
 ·        **v-text-field:** Campo de texto estilizado, usado para entradas como nome, email ou senha
 [(Clique aqui e Saiba Mais)](https://v2.vuetifyjs.com/en/components/text-fields/)
 
-
-
 ## Quoti Components
 
 Em geral, todos os componentes listados abaixo fazem parte da biblioteca do Quoti. Eles foram desenvolvidos para facilitar o seu trabalho e acelerar o processo de desenvolvimento, oferecendo soluções prontas para tarefas comuns da interface.
