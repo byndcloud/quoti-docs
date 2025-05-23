@@ -99,3 +99,23 @@ Para criar um catálogo de serviços na plataforma Quoti, você precisa entender
 
 *   **Ticket flows:** Utilize este recurso para automatizar ações no momento da abertura de um chamado, como a criação de chamados filhos para diferentes equipes, a partir de um chamado principal.
 ![Ticket Flows](https://storage.googleapis.com/quoti-docs-pictures/QSM/catalog/catalog9.png)
+
+**6. Configuração no item de menu:**
+    
+* **Vá para a tela de menus.**
+    
+    ![image.png](image%208.png)
+    
+    ou se preferir, [https://quoti.cloud/your-org/menus](https://quoti.cloud/your-org/menus)
+    
+* **Escolha o item de menu para o perfil desejado e especifique um grupo se necessário.**
+    
+    ![image.png](image%209.png)
+    
+    ![image.png](image%2010.png)
+    
+    Lembre que a gestão de grupos podem ser feitas na tela de grupos. 
+    
+    ![image.png](image%2011.png)
+
+    [https://quoti.cloud/your-org/groups](https://quoti.cloud/your-org/groups)

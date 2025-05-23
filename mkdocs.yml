@@ -40,6 +40,7 @@ nav:
       - Materialização de tabelas: ./quoti-databases/materialization.md
       - Webhooks: ./quoti-databases/webhooks.md
       - APIs: ./quoti-databases/api.md
+      - Configurações JVue: ./quoti-databases/jvue-config.md
     - 🎛️ UI Builder:
       - Introdução: ./ui-builder/introduction.md
     - 📨 QSM:
@@ -51,10 +52,15 @@ nav:
       - Gerenciamento de tickets:
         - Workspace: ./qsm/workspace.md
         - Visão geral do atendente: ./qsm/agentOverview.md
+        - Alocação dos atendentes: ./qsm/agentAllocation.md
       - Catálogo: ./qsm/catalog.md
       - Colocando em prática: ./qsm/practice.md
       - Chamado via N8N: ./qsm/tickets-N8N
+      - Permissões: ./qsm/permissions.md
       - Data Mapping: ./qsmDataMapping/dataMapping.md
+    - Documentação para usuários: 
+      - pagina: ./docUsuarios/index.md
+      - criar catálogo: ./docUsuarios/configLayout.md
     - 👨‍💻 Desenvolvimento:
       - Componentes:
         - QtDatabase: ./dev/qt-database.md
@@ -103,6 +109,7 @@ nav:
       - QSM: ./faq/csm/index.md
   # - Glossário: ./glossary/index.md
   - Documentação Antiga: ./doc-antiga/home.md
+
 extra:
   double_keys_open: '{{'
   double_keys_close: '}}'
