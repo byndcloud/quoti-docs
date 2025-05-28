@@ -9,9 +9,9 @@ O UI Builder é uma ferramenta essencial dentro do Quoti. Ele permite a constru�
 
 ![type:video](https://www.youtube.com/embed/dyFLkJLyBA0?si=sjhzFHuyBuJYKXYs)
 
-## Componentes Html 
+## Componentes HTML 
 
-·       **Html Text Input:** Campo básico para o usuário digitar informações. Pode ser usado em formulários, cadastros, pesquisas e muito mais.
+·       **HTML Text Input:** Campo básico para o usuário digitar informações. Pode ser usado em formulários, cadastros, pesquisas e muito mais.
  
 ·        **Loop:** Permite repetir componentes ou elementos com base em uma lista. Ideal para criar conteúdos dinâmicos.
  
@@ -108,3 +108,11 @@ Obs: este componente é baseado no qt-table-list, portanto, quase todas as funci
 - [Documentação Vuetify](https://v2.vuetifyjs.com/en/getting-started/installation/)
 - [Quoti StoryBook:](https://beta.docs.quoti.dev)
 
+{% raw %}
+```json
+{
+  "userId": "{{ $me.id }}",
+  "version": "{{ $importBatch.version }}"
+}
+```
+{% endraw %}
