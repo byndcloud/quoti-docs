@@ -253,15 +253,15 @@ Esta página tem como objetivo documentar a customização da tela `/workspace` 
 
 ### Tipos de chamados
 
-![Untitled]()
+![tipos de chamados](https://firebasestorage.googleapis.com/v0/b/beyond-quoti.appspot.com/o/beyond%2F2025%2F05%2F7ac319c3ca6420505a2ecfaa29f87464.png?alt=media&token=2bfad1f5-5e4b-40cf-a07d-62f64198a295)
 
 ### Categoria
 
-![Untitled]()
+![categoria](https://firebasestorage.googleapis.com/v0/b/beyond-quoti.appspot.com/o/beyond%2F2025%2F05%2Fbd84d593c7854e30660032f534d58cc3.png?alt=media&token=abd352bb-320a-49c1-983c-aef166860b4e)
 
 ### Base de dados workspace
 
-![Untitled]()
+![base de dados](https://firebasestorage.googleapis.com/v0/b/beyond-quoti.appspot.com/o/beyond%2F2025%2F05%2F740796ff203aa0ebef131bd686567d63.png?alt=media&token=9e660e9e-054d-44aa-b6b1-48e29b848f0f)
 
 ## Ordem da customização
 
@@ -328,7 +328,7 @@ Exemplo:
 
 **Listagem de todos os chamados**
 
-![Untitled]()
+![listagem dos chamados](https://firebasestorage.googleapis.com/v0/b/beyond-quoti.appspot.com/o/beyond%2F2025%2F05%2F740796ff203aa0ebef131bd686567d63.png?alt=media&token=9e660e9e-054d-44aa-b6b1-48e29b848f0f)
 
 Essa tela é configurada apenas pela base de dados `workspace`. 
 

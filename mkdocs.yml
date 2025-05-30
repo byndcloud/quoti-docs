@@ -40,7 +40,6 @@ nav:
       - Materialização de tabelas: ./quoti-databases/materialization.md
       - Webhooks: ./quoti-databases/webhooks.md
       - APIs: ./quoti-databases/api.md
-      - Configurações JVue: ./quoti-databases/jvue-config.md
     - 🎛️ UI Builder:
       - Introdução: ./ui-builder/introduction.md
     - 📨 QSM:
@@ -56,15 +55,15 @@ nav:
       - Catálogo: ./qsm/catalog.md
       - Colocando em prática: ./qsm/practice.md
       - Chamado via N8N: ./qsm/tickets-N8N
+      - Configurações JVue: ./quoti-databases/jvue-config.md
       - Permissões: ./qsm/permissions.md
       - Data Mapping: ./qsmDataMapping/dataMapping.md
-    - Documentação para usuários: 
-      - pagina: ./docUsuarios/index.md
-      - criar catálogo: ./docUsuarios/configLayout.md
+      - Configurações avançadas de layout: ./qsm/configLayout.md
     - 👨‍💻 Desenvolvimento:
       - Componentes:
         - QtDatabase: ./dev/qt-database.md
         - Crud com QtAutocomplete: ./dev/components/crud-qt-autocomplete.md
+        - Filtro por coluna: ./dev/filter-column.md
       # - FormsFlow avançado: ./under-development.md
       # - Gestão de databases:
       #   - Criação e edição: ./under-development.md
