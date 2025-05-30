@@ -55,7 +55,7 @@ nav:
       - Catálogo: ./qsm/catalog.md
       - Colocando em prática: ./qsm/practice.md
       - Chamado via N8N: ./qsm/tickets-N8N
-      - Configurações JVue: ./quoti-databases/jvue-config.md
+      - Configurações JVue: ./qsm/jvue-config.md
       - Permissões: ./qsm/permissions.md
       - Data Mapping: ./qsmDataMapping/dataMapping.md
       - Configurações avançadas de layout: ./qsm/configLayout.md
