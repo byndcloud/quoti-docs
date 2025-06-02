@@ -99,3 +99,23 @@ Para criar um catálogo de serviços na plataforma Quoti, você precisa entender
 
 *   **Ticket flows:** Utilize este recurso para automatizar ações no momento da abertura de um chamado, como a criação de chamados filhos para diferentes equipes, a partir de um chamado principal.
 ![Ticket Flows](https://storage.googleapis.com/quoti-docs-pictures/QSM/catalog/catalog9.png)
+
+**6. Configuração no item de menu:**
+    
+* **Vá para a tela de menus.**
+    
+    ![image.png](https://firebasestorage.googleapis.com/v0/b/beyond-quoti.appspot.com/o/beyond%2F2025%2F05%2F6d9e19b05942842e40274842ef1fb573.png?alt=media&token=dda27ed1-f956-42df-8fa5-1e249f740ac5)
+    
+    ou se preferir, [https://quoti.cloud/your-org/menus](https://quoti.cloud/your-org/menus)
+    
+* **Escolha o item de menu para o perfil desejado e especifique um grupo se necessário.**
+    
+    ![image.png](https://firebasestorage.googleapis.com/v0/b/beyond-quoti.appspot.com/o/beyond%2F2025%2F05%2Fb42455d4718da7920ce68b2c54904041.png?alt=media&token=466e670f-cd4e-4e04-b79d-d746f682b572)
+    
+    ![image.png](https://firebasestorage.googleapis.com/v0/b/beyond-quoti.appspot.com/o/beyond%2F2025%2F05%2Ffb32ab3510a5162f7db94fbec681e2ac.png?alt=media&token=ff8aa7d0-3b86-4750-959c-a569594d838b)
+    
+    Lembre que a gestão de grupos podem ser feitas na tela de grupos. 
+    
+    ![image.png](https://firebasestorage.googleapis.com/v0/b/beyond-quoti.appspot.com/o/beyond%2F2025%2F05%2F7dfaae282bd0a9ea24e8abf33c42a459.png?alt=media&token=3f56d71d-9176-4d4c-b5b9-217afb705c78)
+
+    [https://quoti.cloud/your-org/groups](https://quoti.cloud/your-org/groups)
