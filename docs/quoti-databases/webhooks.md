@@ -56,7 +56,115 @@ Você pode cadastrar um novo webhook através do botão “+ Novo”
         - `returnBeforeData` - Campo booleano (com valor true ou false) que determina se a plataforma deve incluir a informação de ‘beforeData’ no corpo da chamada do webhook para eventos de atualização. ‘beforeData’ representa os dados na tabela antes da finalização da edição do registro em andamento.
         - `returnAfterData` - Campo booleano (com valor true ou false) que determina se a plataforma deve incluir a informação de ‘afterData’ no corpo da chamada do webhook para eventos de atualização. ‘afterData’ representa os dados na tabela após a finalização da edição do registro que acabou de ser feita - neste caso, apenas nos eventos de ‘afterUpdate’ este campo estará com os dados definidos.
 
-# Caso de teste
+### Operadores disponíveis
+
+| Tipo         | Operador            | Descrição                                                                 |
+|--------------|---------------------|---------------------------------------------------------------------------|
+| **Booleano** | `all`, `any`, `not` | Controlam a lógica de múltiplas condições                                 |
+| **String/Número** | `equal`, `notEqual`     | Igualdade ou diferença exata (`===` / `!==`)                             |
+| **Numérico** | `lessThan`, `lessThanInclusive`, `greaterThan`, `greaterThanInclusive` | Comparações numéricas diretas                                             |
+| **Array**    | `in`, `notIn`       | Verifica se o valor do fact está ou não em um array                      |
+|              | `contains`, `doesNotContain` | Verifica se um array do fact contém ou não o valor especificado          |
+
+> Operadores que suportam `value` como lista: `in`, `notIn`, `contains`, `doesNotContain`
+
+> ℹ️ Para detalhes completos sobre sintaxe, operadores e exemplos de uso, consulte a [documentação da biblioteca](https://www.npmjs.com/package/json-rules-engine).
+
+## Exemplos de Webhooks
+
+### Exemplo 1 – Webhook somente para categorias específicas
+
+Dispara apenas se o `categoryId` enviado estiver em uma lista predefinida (ex: manutenção de ATM e validadores):
+
+**Configurações:**
+
+```json
+{
+  "asyncHook": true,
+  "returnAfterData": false,
+  "returnBeforeData": false
+}
+```
+
+**Condições:**
+
+```json
+{
+  "all": [
+    {
+      "fact": "requestData",
+      "path": "$.body.categoryId",
+      "value": [
+        100004, 100015, 100016, 100019, 100031,
+        100032, 100033, 100034, 100035, 100036,
+        100037, 100038, 100039, 100040, 100041
+      ],
+      "operator": "in",
+      "description": "Apenas ticket manutenção de ATM e validadores"
+    }
+  ]
+}
+```
+
+---
+
+### Exemplo 2 – Webhook ignorando chats e CCO
+
+Executa o webhook apenas quando o (`ticketTypeId`) **não** corresponder a determinados valores específicos:
+
+> 💡 Como mostrado na imagem abaixo, o conteúdo retornado na chave after deve ser referenciado como dataAfterEvent na condição. Logo, o fact correto a ser utilizado será "dataAfterEvent"
+
+![Exemplo dataAfterEvent](https://firebasestorage.googleapis.com/v0/b/beyond-quoti.appspot.com/o/beyond%2F2025%2F06%2F64b5a783ab971960a240d5155c94a645.png?alt=media&token=c2f158f1-3b95-4947-b6f4-005b242ade9b)
+
+**Configurações:**
+
+```json
+{
+  "attributes": ["ticketTypeId"],
+  "returnAfterData": true,
+  "returnBeforeData": false
+}
+```
+
+**Condições:**
+
+```json
+{
+  "all": [
+    {
+      "fact": "dataAfterEvent",
+      "path": "$.ticketTypeId",
+      "value": [3, 11],
+      "operator": "notIn",
+      "description": "Chamados diferentes de chats e CCO"
+    }
+  ]
+}
+```
+
+---
+
+### Exemplo 3 – Webhook só dispara se `status` não for nulo
+
+Verifica se a propriedade `status` existe e contém pelo menos 1 item:
+
+**Condições:**
+
+```json
+{
+  "all": [
+    {
+      "fact": "requestData",
+      "path": "$.body.status.length",
+      "value": 1,
+      "operator": "greaterThan",
+      "description": "Status diferente de nulo"
+    }
+  ]
+}
+```
+
+## Caso de teste
 
 Vamos criar um webhook de afterCreate em uma tabela e ver como ele é chamado!
 
