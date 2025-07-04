@@ -58,13 +58,12 @@ Você pode cadastrar um novo webhook através do botão “+ Novo”
 
 ### Operadores disponíveis
 
-| Tipo         | Operador            | Descrição                                                                 |
-|--------------|---------------------|---------------------------------------------------------------------------|
-| **Booleano** | `all`, `any`, `not` | Controlam a lógica de múltiplas condições                                 |
-| **String/Número** | `equal`, `notEqual`     | Igualdade ou diferença exata (`===` / `!==`)                             |
-| **Numérico** | `lessThan`, `lessThanInclusive`, `greaterThan`, `greaterThanInclusive` | Comparações numéricas diretas                                             |
-| **Array**    | `in`, `notIn`       | Verifica se o valor do fact está ou não em um array                      |
-|              | `contains`, `doesNotContain` | Verifica se um array do fact contém ou não o valor especificado          |
+| Tipo              | Operador                                                               | Descrição                                                     |
+|-------------------|------------------------------------------------------------------------|---------------------------------------------------------------|
+| **Booleano**      | `all`, `any`, `not`                                                    | Controlam a lógica de múltiplas                               |
+| **String/Número** | `equal`, `notEqual`                                                    | Igualdade ou diferença exata (`===` / `!==`)                  |
+| **Numérico**      | `lessThan`, `lessThanInclusive`, `greaterThan`, `greaterThanInclusive` | Comparações numéricas diretas                                 |
+| **Array**         | `in`, `notIn`, `contains`, `doesNotContain`                            | Verifica a presença ou ausência de um valor dentro de um array|
 
 > Operadores que suportam `value` como lista: `in`, `notIn`, `contains`, `doesNotContain`
 
