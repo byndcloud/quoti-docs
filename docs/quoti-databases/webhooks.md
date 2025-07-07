@@ -60,10 +60,10 @@ Você pode cadastrar um novo webhook através do botão “+ Novo”
 
 | Tipo              | Operador                                                               | Descrição                                                     |
 |-------------------|------------------------------------------------------------------------|---------------------------------------------------------------|
-| **Booleano**      | `all`, `any`, `not`                                                    | Controlam a lógica de múltiplas                               |
+| **Booleano**      | `all`, `any`, `not`                                                    | Controlam a lógica de múltiplas condições                     |
 | **String/Número** | `equal`, `notEqual`                                                    | Igualdade ou diferença exata (`===` / `!==`)                  |
 | **Numérico**      | `lessThan`, `lessThanInclusive`, `greaterThan`, `greaterThanInclusive` | Comparações numéricas diretas                                 |
-| **Array**         | `in`, `notIn`, `contains`, `doesNotContain`                            | Verifica a presença ou ausência de um valor dentro de um array|
+| **Array**         | `in`, `notIn`, `contains`, `doesNotContain`                            | Verifica se um valor está em um array (`in`/`notIn`) ou se um array contém um valor (`contains`/`doesNotContain`)|
 
 > Operadores que suportam `value` como lista: `in`, `notIn`, `contains`, `doesNotContain`
 
@@ -156,7 +156,7 @@ Verifica se a propriedade `status` existe e contém pelo menos 1 item:
       "fact": "requestData",
       "path": "$.body.status.length",
       "value": 1,
-      "operator": "greaterThan",
+      "operator": "greaterThanInclusive",
       "description": "Status diferente de nulo"
     }
   ]
