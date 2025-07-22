@@ -69,6 +69,69 @@ Você pode cadastrar um novo webhook através do botão “+ Novo”
 
 > ℹ️ Para detalhes completos sobre sintaxe, operadores e exemplos de uso, consulte a [documentação da biblioteca](https://www.npmjs.com/package/json-rules-engine).
 
+### Operadores Adicionais
+
+**Básicos**
+
+| Operador | Descrição |
+| :--- | :--- |
+| `isEmpty` | Verifica se o valor é null ou undefined |
+| `isNotEmpty` | Verifica se o valor não é null e não é undefined |
+
+**String**
+
+| Operador | Descrição |
+| :--- | :--- |
+| `contains` | Verifica se uma string contém outra string |
+| `startsWith` | Verifica se uma string começa com outra string |
+| `endsWith` | Verifica se uma string termina com outra string |
+| `matches` | Verifica se uma string corresponde a um padrão regex |
+
+**Array**
+
+| Operador | Descrição |
+| :--- | :--- |
+| `containsAny` | Verifica se um array contém qualquer um dos valores especificados |
+| `containsAll` | Verifica se um array contém todos os valores especificados |
+| `hasLength` | Verifica se um array tem exatamente o comprimento especificado |
+| `isEmptyArray` | Verifica se um array está vazio |
+| `isNotEmptyArray`| Verifica se um array não está vazio |
+
+**Número**
+
+| Operador | Descrição |
+| :--- | :--- |
+| `isInRange` | Verifica se um número está dentro de um intervalo (inclusive) |
+| `isNumber` | Verifica se um valor é um número |
+| `isPositive` | Verifica se um número é positivo (maior que 0) |
+| `isNegative` | Verifica se um número é negativo (menor que 0) |
+
+**Data**
+
+| Operador | Descrição |
+| :--- | :--- |
+| `isAfter` | Verifica se uma data é posterior a outra data |
+| `isBefore` | Verifica se uma data é anterior a outra data |
+| `isSameDay` | Verifica se uma data é o mesmo dia que outra data |
+| `isDateInRange`| Verifica se uma data está dentro de um intervalo |
+
+**Tipo**
+
+| Operador | Descrição |
+| :--- | :--- |
+| `isString` | Verifica se um valor é uma string |
+| `isBoolean` | Verifica se um valor é um booleano |
+| `isArray` | Verifica se um valor é um array |
+| `isObject` | Verifica se um valor é um objeto (não null, não array) |
+
+**Objeto**
+
+| Operador | Descrição |
+| :--- | :--- |
+| `hasProperty` | Verifica se um objeto tem uma propriedade específica |
+| `hasProperties`| Verifica se um objeto tem todas as propriedades especificadas |
+
+
 ## Exemplos de Webhooks
 
 ### Exemplo 1 – Webhook somente para categorias específicas
