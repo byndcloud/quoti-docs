@@ -99,13 +99,11 @@ A lógica de distribuição considera algumas configurações específicas:
 - **Regras de distribuição por fila**: definem como os chamados devem ser atribuídos, de acordo com o tipo de atendimento ou prioridade.
 - **Capacidade simultânea de atendimento**: cada grupo de atendentes tem um limite de atendimentos ativos simultâneos.
     
-   
+![image.png](https://firebasestorage.googleapis.com/v0/b/beyond-quoti.appspot.com/o/beyond%2F2025%2F07%2F59c64a9c80a4c539f9ccc0a1c4b8c24c.jpg?alt=media&token=85a7ba4e-55e8-44ee-ad0d-f1010a02ae56)
     
-    > O campo simultaneous_calls define a quantidade máxima de chamados ativos que um atendente pode ter ao mesmo tempo dentro de uma determinada fila (grupo).
-    > 
-    > 
-    > Isso evita sobrecarga e mantém o equilíbrio do atendimento.
-    > 
+> O campo simultaneous_calls define a quantidade máxima de chamados ativos que um atendente pode ter ao mesmo tempo dentro de uma determinada fila (grupo).
+> Isso evita sobrecarga e mantém o equilíbrio do atendimento.
+    
 - **Consulta de atendimentos ativos**: o sistema monitora em tempo real quantos chamados estão atribuídos a cada atendente.
 
 Além disso, a lógica considera os seguintes dados para tomar decisões:
