@@ -52,6 +52,7 @@ nav:
         - Workspace: ./qsm/workspace.md
         - Visão geral do atendente: ./qsm/agentOverview.md
         - Alocação dos atendentes: ./qsm/agentAllocation.md
+        - Distribuição automática dos chamados: ./qsm/ticketDistribution.md
       - Catálogo: ./qsm/catalog.md
       - Colocando em prática: ./qsm/practice.md
       - Chamado via N8N: ./qsm/tickets-N8N
