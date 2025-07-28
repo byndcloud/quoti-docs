@@ -1,0 +1,3579 @@
+
+<!doctype html>
+<html lang="pt" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Documentação oficial da plataforma Quoti | O Quoti é a plataforma low-code/no-code corporativa com performance superior, personalização total e agilidade de verdade.">
+      
+      
+        <meta name="author" content="Beyond Company">
+      
+      
+        <link rel="canonical" href="https://github.com/orgs/byndcloud/qsmDataMapping/dataMapping/">
+      
+      
+        <link rel="prev" href="../../qsm/permissions/">
+      
+      
+        <link rel="next" href="../../qsm/configLayout/">
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.16">
+    
+    
+      
+        <title>Data Mapping - Quoti</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.7e37652d.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+  
+  
+    
+    
+  
+    
+    
+  
+    
+    
+  
+    
+    
+  
+    
+    
+  
+    
+    
+  
+    
+    
+  
+    
+    
+  
+    
+    
+  
+    
+    
+  
+    
+    
+  
+    
+    
+  
+  
+  <style>:root{--md-admonition-icon--note:url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2016%2016%22%3E%3Cpath%20d%3D%22M1%207.775V2.75C1%201.784%201.784%201%202.75%201h5.025c.464%200%20.91.184%201.238.513l6.25%206.25a1.75%201.75%200%200%201%200%202.474l-5.026%205.026a1.75%201.75%200%200%201-2.474%200l-6.25-6.25A1.75%201.75%200%200%201%201%207.775m1.5%200c0%20.066.026.13.073.177l6.25%206.25a.25.25%200%200%200%20.354%200l5.025-5.025a.25.25%200%200%200%200-.354l-6.25-6.25a.25.25%200%200%200-.177-.073H2.75a.25.25%200%200%200-.25.25ZM6%205a1%201%200%201%201%200%202%201%201%200%200%201%200-2%22/%3E%3C/svg%3E');--md-admonition-icon--abstract:url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2016%2016%22%3E%3Cpath%20d%3D%22M2.5%201.75v11.5c0%20.138.112.25.25.25h3.17a.75.75%200%200%201%200%201.5H2.75A1.75%201.75%200%200%201%201%2013.25V1.75C1%20.784%201.784%200%202.75%200h8.5C12.216%200%2013%20.784%2013%201.75v7.736a.75.75%200%200%201-1.5%200V1.75a.25.25%200%200%200-.25-.25h-8.5a.25.25%200%200%200-.25.25m13.274%209.537zl-4.557%204.45a.75.75%200%200%201-1.055-.008l-1.943-1.95a.75.75%200%200%201%201.062-1.058l1.419%201.425%204.026-3.932a.75.75%200%201%201%201.048%201.074M4.75%204h4.5a.75.75%200%200%201%200%201.5h-4.5a.75.75%200%200%201%200-1.5M4%207.75A.75.75%200%200%201%204.75%207h2a.75.75%200%200%201%200%201.5h-2A.75.75%200%200%201%204%207.75%22/%3E%3C/svg%3E');--md-admonition-icon--info:url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2016%2016%22%3E%3Cpath%20d%3D%22M0%208a8%208%200%201%201%2016%200A8%208%200%200%201%200%208m8-6.5a6.5%206.5%200%201%200%200%2013%206.5%206.5%200%200%200%200-13M6.5%207.75A.75.75%200%200%201%207.25%207h1a.75.75%200%200%201%20.75.75v2.75h.25a.75.75%200%200%201%200%201.5h-2a.75.75%200%200%201%200-1.5h.25v-2h-.25a.75.75%200%200%201-.75-.75M8%206a1%201%200%201%201%200-2%201%201%200%200%201%200%202%22/%3E%3C/svg%3E');--md-admonition-icon--tip:url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2016%2016%22%3E%3Cpath%20d%3D%22M3.499.75a.75.75%200%200%201%201.5%200v.996C5.9%202.903%206.793%203.65%207.662%204.376l.24.202c-.036-.694.055-1.422.426-2.163C9.1.873%2010.794-.045%2012.622.26%2014.408.558%2016%201.94%2016%204.25c0%201.278-.954%202.575-2.44%202.734l.146.508.065.22c.203.701.412%201.455.476%202.226.142%201.707-.4%203.03-1.487%203.898C11.714%2014.671%2010.27%2015%208.75%2015h-6a.75.75%200%200%201%200-1.5h1.376a4.5%204.5%200%200%201-.563-1.191%203.84%203.84%200%200%201-.05-2.063%204.65%204.65%200%200%201-2.025-.293.75.75%200%200%201%20.525-1.406c1.357.507%202.376-.006%202.698-.318l.009-.01a.747.747%200%200%201%201.06%200%20.75.75%200%200%201-.012%201.074c-.912.92-.992%201.835-.768%202.586.221.74.745%201.337%201.196%201.621H8.75c1.343%200%202.398-.296%203.074-.836.635-.507%201.036-1.31.928-2.602-.05-.603-.216-1.224-.422-1.93l-.064-.221c-.12-.407-.246-.84-.353-1.29a2.4%202.4%200%200%201-.507-.441%203.1%203.1%200%200%201-.633-1.248.75.75%200%200%201%201.455-.364c.046.185.144.436.31.627.146.168.353.305.712.305.738%200%201.25-.615%201.25-1.25%200-1.47-.95-2.315-2.123-2.51-1.172-.196-2.227.387-2.706%201.345-.46.92-.27%201.774.019%203.062l.042.19.01.05c.348.443.666.949.94%201.553a.75.75%200%201%201-1.365.62c-.553-1.217-1.32-1.94-2.3-2.768L6.7%205.527c-.814-.68-1.75-1.462-2.692-2.619a3.7%203.7%200%200%200-1.023.88c-.406.495-.663%201.036-.722%201.508.116.122.306.21.591.239.388.038.797-.06%201.032-.19a.75.75%200%200%201%20.728%201.31c-.515.287-1.23.439-1.906.373-.682-.067-1.473-.38-1.879-1.193L.75%205.677V5.5c0-.984.48-1.94%201.077-2.664.46-.559%201.05-1.055%201.673-1.353z%22/%3E%3C/svg%3E');--md-admonition-icon--success:url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2016%2016%22%3E%3Cpath%20d%3D%22M13.78%204.22a.75.75%200%200%201%200%201.06l-7.25%207.25a.75.75%200%200%201-1.06%200L2.22%209.28a.75.75%200%200%201%20.018-1.042.75.75%200%200%201%201.042-.018L6%2010.94l6.72-6.72a.75.75%200%200%201%201.06%200%22/%3E%3C/svg%3E');--md-admonition-icon--question:url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2016%2016%22%3E%3Cpath%20d%3D%22M0%208a8%208%200%201%201%2016%200A8%208%200%200%201%200%208m8-6.5a6.5%206.5%200%201%200%200%2013%206.5%206.5%200%200%200%200-13M6.92%206.085h.001a.749.749%200%201%201-1.342-.67c.169-.339.436-.701.849-.977C6.845%204.16%207.369%204%208%204a2.76%202.76%200%200%201%201.637.525c.503.377.863.965.863%201.725%200%20.448-.115.83-.329%201.15-.205.307-.47.513-.692.662-.109.072-.22.138-.313.195l-.006.004a6%206%200%200%200-.26.16%201%201%200%200%200-.276.245.75.75%200%200%201-1.248-.832c.184-.264.42-.489.692-.661q.154-.1.313-.195l.007-.004c.1-.061.182-.11.258-.161a1%201%200%200%200%20.277-.245C8.96%206.514%209%206.427%209%206.25a.61.61%200%200%200-.262-.525A1.27%201.27%200%200%200%208%205.5c-.369%200-.595.09-.74.187a1%201%200%200%200-.34.398M9%2011a1%201%200%201%201-2%200%201%201%200%200%201%202%200%22/%3E%3C/svg%3E');--md-admonition-icon--warning:url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2016%2016%22%3E%3Cpath%20d%3D%22M6.457%201.047c.659-1.234%202.427-1.234%203.086%200l6.082%2011.378A1.75%201.75%200%200%201%2014.082%2015H1.918a1.75%201.75%200%200%201-1.543-2.575Zm1.763.707a.25.25%200%200%200-.44%200L1.698%2013.132a.25.25%200%200%200%20.22.368h12.164a.25.25%200%200%200%20.22-.368Zm.53%203.996v2.5a.75.75%200%200%201-1.5%200v-2.5a.75.75%200%200%201%201.5%200M9%2011a1%201%200%201%201-2%200%201%201%200%200%201%202%200%22/%3E%3C/svg%3E');--md-admonition-icon--failure:url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2016%2016%22%3E%3Cpath%20d%3D%22M2.344%202.343za8%208%200%200%201%2011.314%2011.314A8.002%208.002%200%200%201%20.234%2010.089a8%208%200%200%201%202.11-7.746m1.06%2010.253a6.5%206.5%200%201%200%209.108-9.275%206.5%206.5%200%200%200-9.108%209.275M6.03%204.97%208%206.94l1.97-1.97a.749.749%200%200%201%201.275.326.75.75%200%200%201-.215.734L9.06%208l1.97%201.97a.749.749%200%200%201-.326%201.275.75.75%200%200%201-.734-.215L8%209.06l-1.97%201.97a.749.749%200%200%201-1.275-.326.75.75%200%200%201%20.215-.734L6.94%208%204.97%206.03a.75.75%200%200%201%20.018-1.042.75.75%200%200%201%201.042-.018%22/%3E%3C/svg%3E');--md-admonition-icon--danger:url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2016%2016%22%3E%3Cpath%20d%3D%22M9.504.43a1.516%201.516%200%200%201%202.437%201.713L10.415%205.5h2.123c1.57%200%202.346%201.909%201.22%203.004l-7.34%207.142a1.25%201.25%200%200%201-.871.354h-.302a1.25%201.25%200%200%201-1.157-1.723L5.633%2010.5H3.462c-1.57%200-2.346-1.909-1.22-3.004zm1.047%201.074L3.286%208.571A.25.25%200%200%200%203.462%209H6.75a.75.75%200%200%201%20.694%201.034l-1.713%204.188%206.982-6.793A.25.25%200%200%200%2012.538%207H9.25a.75.75%200%200%201-.683-1.06l2.008-4.418.003-.006-.004-.009-.006-.006-.008-.001q-.005%200-.009.004%22/%3E%3C/svg%3E');--md-admonition-icon--bug:url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2016%2016%22%3E%3Cpath%20d%3D%22M4.72.22a.75.75%200%200%201%201.06%200l1%20.999a3.5%203.5%200%200%201%202.441%200l.999-1a.748.748%200%200%201%201.265.332.75.75%200%200%201-.205.729l-.775.776c.616.63.995%201.493.995%202.444v.327q0%20.15-.025.292c.408.14.764.392%201.029.722l1.968-.787a.75.75%200%200%201%20.556%201.392L13%207.258V9h2.25a.75.75%200%200%201%200%201.5H13v.5q-.002.615-.141%201.186l2.17.868a.75.75%200%200%201-.557%201.392l-2.184-.873A5%205%200%200%201%208%2016a5%205%200%200%201-4.288-2.427l-2.183.873a.75.75%200%200%201-.558-1.392l2.17-.868A5%205%200%200%201%203%2011v-.5H.75a.75.75%200%200%201%200-1.5H3V7.258L.971%206.446a.75.75%200%200%201%20.558-1.392l1.967.787c.265-.33.62-.583%201.03-.722a1.7%201.7%200%200%201-.026-.292V4.5c0-.951.38-1.814.995-2.444L4.72%201.28a.75.75%200%200%201%200-1.06m.53%206.28a.75.75%200%200%200-.75.75V11a3.5%203.5%200%201%200%207%200V7.25a.75.75%200%200%200-.75-.75ZM6.173%205h3.654A.17.17%200%200%200%2010%204.827V4.5a2%202%200%201%200-4%200v.327c0%20.096.077.173.173.173%22/%3E%3C/svg%3E');--md-admonition-icon--example:url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2016%2016%22%3E%3Cpath%20d%3D%22M5%205.782V2.5h-.25a.75.75%200%200%201%200-1.5h6.5a.75.75%200%200%201%200%201.5H11v3.282l3.666%205.76C15.619%2013.04%2014.543%2015%2012.767%2015H3.233c-1.776%200-2.852-1.96-1.899-3.458Zm-2.4%206.565a.75.75%200%200%200%20.633%201.153h9.534a.75.75%200%200%200%20.633-1.153L12.225%2010.5h-8.45ZM9.5%202.5h-3V6c0%20.143-.04.283-.117.403L4.73%209h6.54L9.617%206.403A.75.75%200%200%201%209.5%206Z%22/%3E%3C/svg%3E');--md-admonition-icon--quote:url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2016%2016%22%3E%3Cpath%20d%3D%22M1.75%202.5h10.5a.75.75%200%200%201%200%201.5H1.75a.75.75%200%200%201%200-1.5m4%205h8.5a.75.75%200%200%201%200%201.5h-8.5a.75.75%200%200%201%200-1.5m0%205h8.5a.75.75%200%200%201%200%201.5h-8.5a.75.75%200%200%201%200-1.5M2.5%207.75v6a.75.75%200%200%201-1.5%200v-6a.75.75%200%200%201%201.5%200%22/%3E%3C/svg%3E');}</style>
+
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../style.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="pink">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#data-mapping-qsm" class="md-skip">
+          Pular para conteúdo
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Cabeçalho">
+    <a href="../.." title="Quoti" class="md-header__button md-logo" aria-label="Quoti" data-md-component="logo">
+      
+  <img src="../../assets/img/logo-quoti.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Quoti
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Data Mapping
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="pink"  aria-hidden="true"  type="radio" name="__palette" id="__palette_0">
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Buscar" placeholder="Buscar" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Pesquisar">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Limpar" aria-label="Limpar" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Inicializando busca
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/byndcloud/quoti-docs" title="Ir para repositório" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path fill="currentColor" d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Abas" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Sobre o Quoti
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../../user/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Primeiros passos
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../updates/how-to-contribute/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Comunidade
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../faq/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  FAQ
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../doc-antiga/home/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Documentação Antiga
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navegação" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Quoti" class="md-nav__button md-logo" aria-label="Quoti" data-md-component="logo">
+      
+  <img src="../../assets/img/logo-quoti.png" alt="logo">
+
+    </a>
+    Quoti
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/byndcloud/quoti-docs" title="Ir para repositório" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path fill="currentColor" d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Sobre o Quoti
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    Primeiros passos
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Primeiros passos
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../user/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    👤 Usuário
+    
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2_1" id="__nav_2_1_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_1">
+            <span class="md-nav__icon md-icon"></span>
+            👤 Usuário
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../user/login/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Login e configurações
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../user/password-reset/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Redefinição de senha
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../user/user-management/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Gestão de usuários
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../user/user-profile/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Perfis de usuários e gestão de menus
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../user/info-org/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Informações gerais da organização
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../user/theme/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Personalização de temas
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    🔐 Permissões e grupos
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            🔐 Permissões e grupos
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../essential/group-management/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Gestão de grupos
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../essential/permissions-management/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Gestão de permissões
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../essential/login-method-management/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Gestão de métodos de login
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_3" id="__nav_2_3_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    📝 Formulários
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_3">
+            <span class="md-nav__icon md-icon"></span>
+            📝 Formulários
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_3_1" id="__nav_2_3_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Introdução aos formulários
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_3_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_3_1">
+            <span class="md-nav__icon md-icon"></span>
+            Introdução aos formulários
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../essential/forms/intro/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Criação e edição de formulários
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../essential/forms/crud/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Utilização do CRUD via interface
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3_2" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../forms/formflows/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    FormFlows
+    
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2_3_2" id="__nav_2_3_2_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_3_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_3_2">
+            <span class="md-nav__icon md-icon"></span>
+            FormFlows
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../forms/formflows/practice/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Colocando em prática
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_4" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../quoti-databases/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    🗃️ Quoti Databases
+    
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2_4" id="__nav_2_4_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_4">
+            <span class="md-nav__icon md-icon"></span>
+            🗃️ Quoti Databases
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../quoti-databases/basic-ops/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Operações básicas
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../quoti-databases/why-not-nosql/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Por que não usar NoSQL?
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../quoti-databases/materialization/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Materialização de tabelas
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../quoti-databases/webhooks/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Webhooks
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../quoti-databases/api/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    APIs
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_5" id="__nav_2_5_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    🎛️ UI Builder
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_5">
+            <span class="md-nav__icon md-icon"></span>
+            🎛️ UI Builder
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ui-builder/introduction/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Introdução
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_6" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2_6" id="__nav_2_6_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    📨 QSM
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_6_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2_6">
+            <span class="md-nav__icon md-icon"></span>
+            📨 QSM
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../qsm/introduction/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Introdução
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../qsm/basic-concepts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Conceitos básicos
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_6_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_6_3" id="__nav_2_6_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Gerenciamento de tickets
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_6_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_6_3">
+            <span class="md-nav__icon md-icon"></span>
+            Gerenciamento de tickets
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../qsm/workspace/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Workspace
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../qsm/agentOverview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Visão geral do atendente
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../qsm/agentAllocation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Alocação dos atendentes
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../qsm/ticketDistribution/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Distribuição automática dos chamados
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../qsm/catalog/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Catálogo
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../qsm/practice/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Colocando em prática
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../qsm/tickets-N8N" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Chamado via N8N
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../qsm/jvue-config/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Configurações JVue
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../qsm/permissions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Permissões
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Data Mapping
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    Data Mapping
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Índice">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Índice
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#consideracoes-importantes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Considerações importantes
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#er" class="md-nav__link">
+    <span class="md-ellipsis">
+      ER
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#principais-tabelas" class="md-nav__link">
+    <span class="md-ellipsis">
+      Principais tabelas
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Principais tabelas">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#users" class="md-nav__link">
+    <span class="md-ellipsis">
+      users
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#users_profiles" class="md-nav__link">
+    <span class="md-ellipsis">
+      users_profiles
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#groups" class="md-nav__link">
+    <span class="md-ellipsis">
+      groups
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#permissions" class="md-nav__link">
+    <span class="md-ellipsis">
+      permissions
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#databases" class="md-nav__link">
+    <span class="md-ellipsis">
+      databases
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tickets" class="md-nav__link">
+    <span class="md-ellipsis">
+      tickets
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#chat_rooms" class="md-nav__link">
+    <span class="md-ellipsis">
+      chat_rooms
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#slas" class="md-nav__link">
+    <span class="md-ellipsis">
+      SLAS
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="SLAS">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ticket_user_actions" class="md-nav__link">
+    <span class="md-ellipsis">
+      ticket_user_actions
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ticket_types-e-categories" class="md-nav__link">
+    <span class="md-ellipsis">
+      ticket_types e categories
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tickettypeadditionalinfos-e-categoryadditionalinfos" class="md-nav__link">
+    <span class="md-ellipsis">
+      ticketTypeAdditionalInfos e categoryAdditionalInfos
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#calendars" class="md-nav__link">
+    <span class="md-ellipsis">
+      calendars
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#slas-e-goals" class="md-nav__link">
+    <span class="md-ellipsis">
+      slas e goals
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../qsm/configLayout/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Configurações avançadas de layout
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+          
+        
+      
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_7" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../development/workflow/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    👨‍💻 Desenvolvimento
+    
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2_7" id="__nav_2_7_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_7">
+            <span class="md-nav__icon md-icon"></span>
+            👨‍💻 Desenvolvimento
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_7_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_7_1" id="__nav_2_7_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Componentes
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_7_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_7_1">
+            <span class="md-nav__icon md-icon"></span>
+            Componentes
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../dev/qt-database/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    QtDatabase
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../dev/components/crud-qt-autocomplete/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Crud com QtAutocomplete
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../dev/filter-column/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Filtro por coluna
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Comunidade
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Comunidade
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_1" id="__nav_3_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Como contribuir
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_1">
+            <span class="md-nav__icon md-icon"></span>
+            Como contribuir
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../updates/how-to-contribute/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Faça um fork
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../updates/new-issues/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Abrir issues
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../faq/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    FAQ
+    
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_4" id="__nav_4_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            FAQ
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../faq/csm/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    QSM
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../doc-antiga/home/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Documentação Antiga
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Índice">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Índice
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#consideracoes-importantes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Considerações importantes
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#er" class="md-nav__link">
+    <span class="md-ellipsis">
+      ER
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#principais-tabelas" class="md-nav__link">
+    <span class="md-ellipsis">
+      Principais tabelas
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Principais tabelas">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#users" class="md-nav__link">
+    <span class="md-ellipsis">
+      users
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#users_profiles" class="md-nav__link">
+    <span class="md-ellipsis">
+      users_profiles
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#groups" class="md-nav__link">
+    <span class="md-ellipsis">
+      groups
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#permissions" class="md-nav__link">
+    <span class="md-ellipsis">
+      permissions
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#databases" class="md-nav__link">
+    <span class="md-ellipsis">
+      databases
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tickets" class="md-nav__link">
+    <span class="md-ellipsis">
+      tickets
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#chat_rooms" class="md-nav__link">
+    <span class="md-ellipsis">
+      chat_rooms
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#slas" class="md-nav__link">
+    <span class="md-ellipsis">
+      SLAS
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="SLAS">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ticket_user_actions" class="md-nav__link">
+    <span class="md-ellipsis">
+      ticket_user_actions
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ticket_types-e-categories" class="md-nav__link">
+    <span class="md-ellipsis">
+      ticket_types e categories
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tickettypeadditionalinfos-e-categoryadditionalinfos" class="md-nav__link">
+    <span class="md-ellipsis">
+      ticketTypeAdditionalInfos e categoryAdditionalInfos
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#calendars" class="md-nav__link">
+    <span class="md-ellipsis">
+      calendars
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#slas-e-goals" class="md-nav__link">
+    <span class="md-ellipsis">
+      slas e goals
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<div><h1 id="data-mapping-qsm">Data mapping QSM<a class="headerlink" href="#data-mapping-qsm" title="Permanent link">¶</a></h1>
+<p>Esta página tem como objetivo apresentar as principais tabelas utilizadas no sistema QSM, oferecendo um ponto de partida para desenvolvedores que estão tendo seu primeiro contato com nosso banco de dados.</p>
+<aside>
+⚠️
+
+Não é propósito desta página documentar todas as tabelas do sistema. Essa abordagem, além de exaustiva para o leitor, seria desnecessária, já que muitas tabelas possuem nomes autoexplicativos.
+
+Além disso, por se tratar de um sistema low code, no qual os próprios desenvolvedores de cada organização podem criar suas próprias estruturas de dados, torna-se inviável manter uma documentação completa de todas as tabelas existentes.
+
+</aside>
+
+<h2 id="consideracoes-importantes">Considerações importantes<a class="headerlink" href="#consideracoes-importantes" title="Permanent link">¶</a></h2>
+<ol>
+<li>Usamos o banco MySQL, mas costumamos liberar o acesso aos dados (apenas leitura) através do <a href="https://cloud.google.com/bigquery/?hl=pt_br">BigQuery</a>.</li>
+<li>
+<p>Os databases criados na plataforma (pela tela /databases, por exemplo) são visualizações do MySQL, segue um exemplo:</p>
+<p><img alt="image.png" src="https://storage.googleapis.com/quoti-docs-pictures/DataMapping/imagem%201%20-%20Considerac%CC%A7o%CC%83es%20importantes.png"></p>
+<p><img alt="image.png" src="https://storage.googleapis.com/quoti-docs-pictures/DataMapping/imagem%202%20-%20Considerac%CC%A7o%CC%83es%20importantes.png"></p>
+</li>
+<li>
+<p>Tabelas que possuem o prefixo <code>tables_</code> são databases materializados.</p>
+</li>
+<li>
+<p>Databases não materializados não são escaláveis, evite usar em aplicações que possuem muitos registros.</p>
+<p><aside>
+  ⚠️</aside></p>
+<p>No futuro, todos os databases serão materializados</p>
+
+</li>
+<li>
+<p>As colunas slug presentes em diversas tabelas não devem receber strings com caracteres especiais</p>
+<p>A coluna slug é uma identificação única e legível usada naquela tabela.</p>
+<p>- Código para transformar qualquer texto em um slug.</p>
+</li>
+</ol>
+<div class="highlight"><pre><span></span><code><span class="w">        </span><span class="c1">// Usamos a função abaixo quando queremos criar um slug</span>
+<span class="w">        </span><span class="kd">function</span><span class="w"> </span><span class="nx">slugify</span><span class="p">(</span>
+<span class="w">          </span><span class="nx">str</span><span class="p">,</span>
+<span class="w">          </span><span class="nx">separator</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">'-'</span><span class="p">,</span>
+<span class="w">          </span><span class="p">{</span><span class="w"> </span><span class="nx">transformToLowerCase</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">true</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{}</span>
+<span class="w">        </span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">          </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="nx">str</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="k">return</span><span class="w"> </span><span class="nx">str</span>
+<span class="w">          </span><span class="p">}</span>
+
+<span class="w">          </span><span class="nx">str</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">str</span><span class="p">.</span><span class="nx">replace</span><span class="p">(</span><span class="sr">/^\s+|\s+$/g</span><span class="p">,</span><span class="w"> </span><span class="s1">''</span><span class="p">)</span><span class="w"> </span><span class="c1">// trim</span>
+<span class="w">          </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">transformToLowerCase</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="nx">str</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">str</span><span class="p">.</span><span class="nx">toLowerCase</span><span class="p">()</span>
+<span class="w">          </span><span class="p">}</span>
+
+<span class="w">          </span><span class="c1">// remove accents, swap ñ for n, etc</span>
+<span class="w">          </span><span class="kd">const</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">'ãàáäâèéëêìíïîòóöôùúüûñç·/_,:;'</span>
+<span class="w">          </span><span class="kd">const</span><span class="w"> </span><span class="nx">to</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">'aaaaaeeeeiiiioooouuuunc------'</span>
+<span class="w">          </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kd">let</span><span class="w"> </span><span class="nx">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0</span><span class="p">,</span><span class="w"> </span><span class="nx">l</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kr">from</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span><span class="w"> </span><span class="nx">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="nx">l</span><span class="p">;</span><span class="w"> </span><span class="nx">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="nx">str</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">str</span><span class="p">.</span><span class="nx">replace</span><span class="p">(</span><span class="ow">new</span><span class="w"> </span><span class="nb">RegExp</span><span class="p">(</span><span class="kr">from</span><span class="p">.</span><span class="nx">charAt</span><span class="p">(</span><span class="nx">i</span><span class="p">),</span><span class="w"> </span><span class="s1">'g'</span><span class="p">),</span><span class="w"> </span><span class="nx">to</span><span class="p">.</span><span class="nx">charAt</span><span class="p">(</span><span class="nx">i</span><span class="p">))</span>
+<span class="w">          </span><span class="p">}</span>
+
+<span class="w">          </span><span class="nx">str</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">str</span>
+<span class="w">            </span><span class="p">.</span><span class="nx">replace</span><span class="p">(</span><span class="sr">/[^a-zA-Z0-9 -]/g</span><span class="p">,</span><span class="w"> </span><span class="s1">''</span><span class="p">)</span><span class="w"> </span><span class="c1">// remove invalid chars</span>
+<span class="w">            </span><span class="p">.</span><span class="nx">replace</span><span class="p">(</span><span class="sr">/\s+/g</span><span class="p">,</span><span class="w"> </span><span class="nx">separator</span><span class="p">)</span><span class="w"> </span><span class="c1">// collapse whitespace and replace by -</span>
+<span class="w">            </span><span class="p">.</span><span class="nx">replace</span><span class="p">(</span><span class="sr">/-+/g</span><span class="p">,</span><span class="w"> </span><span class="nx">separator</span><span class="p">)</span><span class="w"> </span><span class="c1">// collapse dashes</span>
+<span class="w">          </span><span class="k">return</span><span class="w"> </span><span class="nx">str</span>
+<span class="w">        </span><span class="p">}</span>
+</code></pre></div>
+<ol>
+<li>A coluna name, presente em diversas tabelas, é em sua maioria, no formato slug.</li>
+<li>
+<p>Todas as nossas tabelas possuem created_at, updated_at e deleted_at e estão no formato datetime com fuso zero, portanto lembre-se de converter a sua data para o fuso zero. </p>
+<p>Por padrão, essas datas são preenchidas automaticamente quando as operações no banco são feitas através das nossas APIs.</p>
+</li>
+<li>
+<p>Usamos o padrão snake_case para nossas tabelas e camelCase para os códigos presentes em nossas APIs ou rotinas internas (N8N e customizações especiais no front-end).</p>
+</li>
+<li>Coluna sync presente em algumas tabelas indica que aquela linha foi criada/atualizada de maneira automática por alguma rotina de automação.</li>
+<li>Informação adicional do tipo, da categoria, do perfil ou de qualquer outra entidade é sempre um database, portanto sempre terá o prefixo <code>tables_data</code>, em caso de databases não materializados, ou <code>tables_</code>, em caso de databases materializados.</li>
+</ol>
+<h2 id="er">ER<a class="headerlink" href="#er" title="Permanent link">¶</a></h2>
+<ul>
+<li>Arquivo com principais tabelas do ER usado no qsm <br>
+    <div class="highlight"><pre><span></span><code>Table<span class="w"> </span><span class="s2">"users"</span><span class="w"> </span><span class="o">{</span>
+<span class="w">  </span><span class="s2">"id"</span><span class="w"> </span>int<span class="w"> </span><span class="o">[</span>pk,<span class="w"> </span>not<span class="w"> </span>null,<span class="w"> </span>increment<span class="o">]</span>
+<span class="w">  </span><span class="s2">"uuid"</span><span class="w"> </span>varchar<span class="o">(</span><span class="m">255</span><span class="o">)</span><span class="w"> </span><span class="o">[</span>default:<span class="w"> </span>NULL<span class="o">]</span>
+<span class="w">  </span><span class="s2">"name"</span><span class="w"> </span>varchar<span class="o">(</span><span class="m">255</span><span class="o">)</span><span class="w"> </span><span class="o">[</span>not<span class="w"> </span>null<span class="o">]</span>
+<span class="w">  </span><span class="s2">"gender"</span><span class="w"> </span>varchar<span class="o">(</span><span class="m">255</span><span class="o">)</span><span class="w"> </span><span class="o">[</span>default:<span class="w"> </span>NULL<span class="o">]</span>
+<span class="w">  </span><span class="s2">"user"</span><span class="w"> </span>varchar<span class="o">(</span><span class="m">255</span><span class="o">)</span><span class="w"> </span><span class="o">[</span>not<span class="w"> </span>null<span class="o">]</span>
+<span class="w">  </span><span class="s2">"pass"</span><span class="w"> </span>varchar<span class="o">(</span><span class="m">255</span><span class="o">)</span><span class="w"> </span><span class="o">[</span>default:<span class="w"> </span>NULL<span class="o">]</span>
+<span class="w">  </span><span class="s2">"password_strength"</span><span class="w"> </span>varchar<span class="o">(</span><span class="m">255</span><span class="o">)</span><span class="w"> </span><span class="o">[</span>default:<span class="w"> </span>NULL<span class="o">]</span>
+<span class="w">  </span><span class="s2">"cpf"</span><span class="w"> </span>varchar<span class="o">(</span><span class="m">255</span><span class="o">)</span><span class="w"> </span><span class="o">[</span>default:<span class="w"> </span>NULL<span class="o">]</span>
+<span class="w">  </span><span class="s2">"email"</span><span class="w"> </span>varchar<span class="o">(</span><span class="m">255</span><span class="o">)</span><span class="w"> </span><span class="o">[</span>default:<span class="w"> </span>NULL<span class="o">]</span>
+<span class="w">  </span><span class="s2">"telefones"</span><span class="w"> </span>varchar<span class="o">(</span><span class="m">255</span><span class="o">)</span><span class="w"> </span><span class="o">[</span>default:<span class="w"> </span>NULL<span class="o">]</span>
+<span class="w">  </span><span class="s2">"matricula"</span><span class="w"> </span>varchar<span class="o">(</span><span class="m">255</span><span class="o">)</span><span class="w"> </span><span class="o">[</span>default:<span class="w"> </span>NULL<span class="o">]</span>
+<span class="w">  </span><span class="s2">"ppessoa_codigo"</span><span class="w"> </span>int<span class="w"> </span><span class="o">[</span>default:<span class="w"> </span>NULL<span class="o">]</span>
+<span class="w">  </span><span class="s2">"token"</span><span class="w"> </span>varchar<span class="o">(</span><span class="m">964</span><span class="o">)</span><span class="w"> </span><span class="o">[</span>default:<span class="w"> </span>NULL<span class="o">]</span>
+<span class="w">  </span><span class="s2">"token_password_reset"</span><span class="w"> </span>varchar<span class="o">(</span><span class="m">255</span><span class="o">)</span><span class="w"> </span><span class="o">[</span>default:<span class="w"> </span>NULL<span class="o">]</span>
+<span class="w">  </span><span class="s2">"token_password_reset_expiration_time"</span><span class="w"> </span>datetime<span class="w"> </span><span class="o">[</span>default:<span class="w"> </span>NULL<span class="o">]</span>
+<span class="w">  </span><span class="s2">"token_password_reset_times"</span><span class="w"> </span>int<span class="w"> </span><span class="o">[</span>default:<span class="w"> </span>NULL<span class="o">]</span>
+<span class="w">  </span><span class="s2">"registered"</span><span class="w"> </span>tinyint<span class="o">(</span><span class="m">1</span><span class="o">)</span><span class="w"> </span><span class="o">[</span>not<span class="w"> </span>null,<span class="w"> </span>default:<span class="w"> </span><span class="s1">'0'</span><span class="o">]</span>
+<span class="w">  </span><span class="s2">"last_login_time"</span><span class="w"> </span>datetime<span class="w"> </span><span class="o">[</span>default:<span class="w"> </span>NULL<span class="o">]</span>
+<span class="w">  </span><span class="s2">"user_created"</span><span class="w"> </span>users_user_created_enum<span class="w"> </span><span class="o">[</span>not<span class="w"> </span>null,<span class="w"> </span>default:<span class="w"> </span><span class="s1">'false'</span><span class="o">]</span>
+<span class="w">  </span><span class="s2">"created_time"</span><span class="w"> </span>timestamp<span class="w"> </span><span class="o">[</span>default:<span class="w"> </span><span class="sb">`</span>CURRENT_TIMESTAMP<span class="sb">`</span><span class="o">]</span>
+<span class="w">  </span><span class="s2">"updated_time"</span><span class="w"> </span>timestamp<span class="w"> </span><span class="o">[</span>default:<span class="w"> </span>NULL<span class="o">]</span>
+<span class="w">  </span><span class="s2">"user_profile_id"</span><span class="w"> </span>int<span class="w"> </span><span class="o">[</span>default:<span class="w"> </span>NULL<span class="o">]</span>
+<span class="w">  </span><span class="s2">"sync"</span><span class="w"> </span>tinyint<span class="o">(</span><span class="m">1</span><span class="o">)</span><span class="w"> </span><span class="o">[</span>default:<span class="w"> </span><span class="s1">'0'</span><span class="o">]</span>
+<span class="w">  </span><span class="s2">"form_response_id"</span><span class="w"> </span>int<span class="w"> </span><span class="o">[</span>default:<span class="w"> </span>NULL<span class="o">]</span>
+<span class="w">  </span><span class="s2">"bio"</span><span class="w"> </span>varchar<span class="o">(</span><span class="m">500</span><span class="o">)</span><span class="w"> </span><span class="o">[</span>default:<span class="w"> </span>NULL<span class="o">]</span>
+<span class="w">  </span><span class="s2">"birthday"</span><span class="w"> </span>varchar<span class="o">(</span><span class="m">10</span><span class="o">)</span><span class="w"> </span><span class="o">[</span>default:<span class="w"> </span>NULL<span class="o">]</span>
+<span class="w">  </span><span class="s2">"instagram_url"</span><span class="w"> </span>varchar<span class="o">(</span><span class="m">255</span><span class="o">)</span><span class="w"> </span><span class="o">[</span>default:<span class="w"> </span>NULL<span class="o">]</span>
+<span class="w">  </span><span class="s2">"facebook_url"</span><span class="w"> </span>varchar<span class="o">(</span><span class="m">255</span><span class="o">)</span><span class="w"> </span><span class="o">[</span>default:<span class="w"> </span>NULL<span class="o">]</span>
+<span class="w">  </span><span class="s2">"twitter_url"</span><span class="w"> </span>varchar<span class="o">(</span><span class="m">255</span><span class="o">)</span><span class="w"> </span><span class="o">[</span>default:<span class="w"> </span>NULL<span class="o">]</span>
+<span class="w">  </span><span class="s2">"linkedin_url"</span><span class="w"> </span>varchar<span class="o">(</span><span class="m">255</span><span class="o">)</span><span class="w"> </span><span class="o">[</span>default:<span class="w"> </span>NULL<span class="o">]</span>
+<span class="w">  </span><span class="s2">"expires_at"</span><span class="w"> </span>datetime<span class="w"> </span><span class="o">[</span>default:<span class="w"> </span>NULL<span class="o">]</span>
+<span class="w">  </span><span class="s2">"created_at"</span><span class="w"> </span>datetime<span class="w"> </span><span class="o">[</span>not<span class="w"> </span>null<span class="o">]</span>
+<span class="w">  </span><span class="s2">"updated_at"</span><span class="w"> </span>datetime<span class="w"> </span><span class="o">[</span>not<span class="w"> </span>null<span class="o">]</span>
+<span class="w">  </span><span class="s2">"deleted_at"</span><span class="w"> </span>datetime<span class="w"> </span><span class="o">[</span>default:<span class="w"> </span>NULL<span class="o">]</span>
+<span class="w">  </span><span class="s2">"media_id"</span><span class="w"> </span>int<span class="w"> </span><span class="o">[</span>default:<span class="w"> </span>NULL<span class="o">]</span>
+
+<span class="w">  </span>Indexes<span class="w"> </span><span class="o">{</span>
+<span class="w">    </span>user_profile_id<span class="w"> </span><span class="o">[</span>name:<span class="w"> </span><span class="s2">"user_profile_id"</span><span class="o">]</span>
+<span class="w">    </span>media_id<span class="w"> </span><span class="o">[</span>name:<span class="w"> </span><span class="s2">"media_id"</span><span class="o">]</span>
+<span class="w">    </span>cpf<span class="w"> </span><span class="o">[</span>name:<span class="w"> </span><span class="s2">"users_cpf"</span><span class="o">]</span>
+<span class="w">  </span><span class="o">}</span>
+<span class="o">}</span>
+
+Table<span class="w"> </span><span class="s2">"users_profiles"</span><span class="w"> </span><span class="o">{</span>
+<span class="w">  </span><span class="s2">"id"</span><span class="w"> </span>int<span class="w"> </span><span class="o">[</span>pk,<span class="w"> </span>not<span class="w"> </span>null,<span class="w"> </span>increment<span class="o">]</span>
+<span class="w">  </span><span class="s2">"name"</span><span class="w"> </span>varchar<span class="o">(</span><span class="m">255</span><span class="o">)</span><span class="w"> </span><span class="o">[</span>default:<span class="w"> </span>NULL<span class="o">]</span>
+<span class="w">  </span><span class="s2">"name_plural"</span><span class="w"> </span>varchar<span class="o">(</span><span class="m">255</span><span class="o">)</span><span class="w"> </span><span class="o">[</span>default:<span class="w"> </span>NULL<span class="o">]</span>
+<span class="w">  </span><span class="s2">"slug"</span><span class="w"> </span>varchar<span class="o">(</span><span class="m">255</span><span class="o">)</span><span class="w"> </span><span class="o">[</span>not<span class="w"> </span>null<span class="o">]</span>
+<span class="w">  </span><span class="s2">"color"</span><span class="w"> </span>varchar<span class="o">(</span><span class="m">255</span><span class="o">)</span><span class="w"> </span><span class="o">[</span>default:<span class="w"> </span>NULL<span class="o">]</span>
+<span class="w">  </span><span class="s2">"home_page_default"</span><span class="w"> </span>varchar<span class="o">(</span><span class="m">255</span><span class="o">)</span><span class="w"> </span><span class="o">[</span>default:<span class="w"> </span>NULL<span class="o">]</span>
+<span class="w">  </span><span class="s2">"can_self_create_account"</span><span class="w"> </span>tinyint<span class="o">(</span><span class="m">1</span><span class="o">)</span><span class="w"> </span><span class="o">[</span>default:<span class="w"> </span>NULL<span class="o">]</span>
+<span class="w">  </span><span class="s2">"form_id"</span><span class="w"> </span>int<span class="w"> </span><span class="o">[</span>default:<span class="w"> </span>NULL<span class="o">]</span>
+<span class="w">  </span><span class="s2">"require_password_strength"</span><span class="w"> </span>int<span class="w"> </span><span class="o">[</span>not<span class="w"> </span>null,<span class="w"> </span>default:<span class="w"> </span><span class="s1">'2'</span><span class="o">]</span>
+<span class="w">  </span><span class="s2">"webhook_url"</span><span class="w"> </span>varchar<span class="o">(</span><span class="m">255</span><span class="o">)</span><span class="w"> </span><span class="o">[</span>default:<span class="w"> </span>NULL<span class="o">]</span>
+<span class="w">  </span><span class="s2">"webhook_type"</span><span class="w"> </span>users_profiles_webhook_type_enum<span class="w"> </span><span class="o">[</span>default:<span class="w"> </span>NULL<span class="o">]</span>
+<span class="w">  </span><span class="s2">"created_at"</span><span class="w"> </span>datetime<span class="w"> </span><span class="o">[</span>not<span class="w"> </span>null<span class="o">]</span>
+<span class="w">  </span><span class="s2">"updated_at"</span><span class="w"> </span>datetime<span class="w"> </span><span class="o">[</span>not<span class="w"> </span>null<span class="o">]</span>
+<span class="w">  </span><span class="s2">"deleted_at"</span><span class="w"> </span>datetime<span class="w"> </span><span class="o">[</span>default:<span class="w"> </span>NULL<span class="o">]</span>
+<span class="w">  </span><span class="s2">"config_login_method_id"</span><span class="w"> </span>int<span class="w"> </span><span class="o">[</span>default:<span class="w"> </span>NULL<span class="o">]</span>
+<span class="w">  </span><span class="s2">"mfa_type"</span><span class="w"> </span>users_profiles_mfa_type_enum<span class="w"> </span><span class="o">[</span>default:<span class="w"> </span>NULL<span class="o">]</span>
+<span class="w">  </span><span class="s2">"query_params"</span><span class="w"> </span>varchar<span class="o">(</span><span class="m">255</span><span class="o">)</span><span class="w"> </span><span class="o">[</span>default:<span class="w"> </span>NULL<span class="o">]</span>
+
+<span class="w">  </span>Indexes<span class="w"> </span><span class="o">{</span>
+<span class="w">    </span>slug<span class="w"> </span><span class="o">[</span>unique,<span class="w"> </span>name:<span class="w"> </span><span class="s2">"slug"</span><span class="o">]</span>
+<span class="w">    </span>config_login_method_id<span class="w"> </span><span class="o">[</span>name:<span class="w"> </span><span class="s2">"config_login_method_id"</span><span class="o">]</span>
+<span class="w">  </span><span class="o">}</span>
+<span class="o">}</span>
+
+Table<span class="w"> </span><span class="s2">"groups"</span><span class="w"> </span><span class="o">{</span>
+<span class="w">  </span><span class="s2">"id"</span><span class="w"> </span>int<span class="w"> </span><span class="o">[</span>pk,<span class="w"> </span>not<span class="w"> </span>null,<span class="w"> </span>increment<span class="o">]</span>
+<span class="w">  </span><span class="s2">"parent_id"</span><span class="w"> </span>int<span class="w"> </span><span class="o">[</span>default:<span class="w"> </span>NULL<span class="o">]</span>
+<span class="w">  </span><span class="s2">"product_id"</span><span class="w"> </span>int<span class="w"> </span><span class="o">[</span>default:<span class="w"> </span>NULL<span class="o">]</span>
+<span class="w">  </span><span class="s2">"cod"</span><span class="w"> </span>varchar<span class="o">(</span><span class="m">255</span><span class="o">)</span><span class="w"> </span><span class="o">[</span>not<span class="w"> </span>null<span class="o">]</span>
+<span class="w">  </span><span class="s2">"parent_cod"</span><span class="w"> </span>varchar<span class="o">(</span><span class="m">255</span><span class="o">)</span><span class="w"> </span><span class="o">[</span>default:<span class="w"> </span>NULL<span class="o">]</span>
+<span class="w">  </span><span class="s2">"name"</span><span class="w"> </span>varchar<span class="o">(</span><span class="m">255</span><span class="o">)</span><span class="w"> </span><span class="o">[</span>not<span class="w"> </span>null<span class="o">]</span>
+<span class="w">  </span><span class="s2">"display_name"</span><span class="w"> </span>varchar<span class="o">(</span><span class="m">255</span><span class="o">)</span><span class="w"> </span><span class="o">[</span>default:<span class="w"> </span>NULL<span class="o">]</span>
+<span class="w">  </span><span class="s2">"status"</span><span class="w"> </span>varchar<span class="o">(</span><span class="m">255</span><span class="o">)</span><span class="w"> </span><span class="o">[</span>default:<span class="w"> </span><span class="s1">'active'</span><span class="o">]</span>
+<span class="w">  </span><span class="s2">"type"</span><span class="w"> </span>varchar<span class="o">(</span><span class="m">255</span><span class="o">)</span><span class="w"> </span><span class="o">[</span>not<span class="w"> </span>null<span class="o">]</span>
+<span class="w">  </span><span class="s2">"telefone"</span><span class="w"> </span>varchar<span class="o">(</span><span class="m">255</span><span class="o">)</span><span class="w"> </span><span class="o">[</span>default:<span class="w"> </span>NULL<span class="o">]</span>
+<span class="w">  </span><span class="s2">"year"</span><span class="w"> </span>varchar<span class="o">(</span><span class="m">255</span><span class="o">)</span><span class="w"> </span><span class="o">[</span>default:<span class="w"> </span>NULL<span class="o">]</span>
+<span class="w">  </span><span class="s2">"grades_template_id"</span><span class="w"> </span>int<span class="w"> </span><span class="o">[</span>default:<span class="w"> </span>NULL<span class="o">]</span>
+<span class="w">  </span><span class="s2">"sync"</span><span class="w"> </span>tinyint<span class="o">(</span><span class="m">1</span><span class="o">)</span><span class="w"> </span><span class="o">[</span>default:<span class="w"> </span><span class="s1">'0'</span><span class="o">]</span>
+<span class="w">  </span><span class="s2">"form_response_id"</span><span class="w"> </span>int<span class="w"> </span><span class="o">[</span>default:<span class="w"> </span>NULL<span class="o">]</span>
+<span class="w">  </span><span class="s2">"acquisition_flow"</span><span class="w"> </span>json<span class="w"> </span><span class="o">[</span>default:<span class="w"> </span>NULL<span class="o">]</span>
+<span class="w">  </span><span class="s2">"ingress_start_date"</span><span class="w"> </span>datetime<span class="w"> </span><span class="o">[</span>default:<span class="w"> </span>NULL<span class="o">]</span>
+<span class="w">  </span><span class="s2">"ingress_end_date"</span><span class="w"> </span>datetime<span class="w"> </span><span class="o">[</span>default:<span class="w"> </span>NULL<span class="o">]</span>
+<span class="w">  </span><span class="s2">"limit_members"</span><span class="w"> </span>int<span class="w"> </span><span class="o">[</span>default:<span class="w"> </span>NULL<span class="o">]</span>
+<span class="w">  </span><span class="s2">"can_be_seen_by"</span><span class="w"> </span>json<span class="w"> </span><span class="o">[</span>default:<span class="w"> </span>NULL<span class="o">]</span>
+<span class="w">  </span><span class="s2">"can_be_accessed_by"</span><span class="w"> </span>json<span class="w"> </span><span class="o">[</span>default:<span class="w"> </span>NULL<span class="o">]</span>
+<span class="w">  </span><span class="s2">"preregistration"</span><span class="w"> </span>tinyint<span class="o">(</span><span class="m">1</span><span class="o">)</span><span class="w"> </span><span class="o">[</span>default:<span class="w"> </span><span class="s1">'0'</span><span class="o">]</span>
+<span class="w">  </span><span class="s2">"waiting_list"</span><span class="w"> </span>tinyint<span class="o">(</span><span class="m">1</span><span class="o">)</span><span class="w"> </span><span class="o">[</span>default:<span class="w"> </span><span class="s1">'0'</span><span class="o">]</span>
+<span class="w">  </span><span class="s2">"created_at"</span><span class="w"> </span>datetime<span class="w"> </span><span class="o">[</span>not<span class="w"> </span>null<span class="o">]</span>
+<span class="w">  </span><span class="s2">"updated_at"</span><span class="w"> </span>datetime<span class="w"> </span><span class="o">[</span>not<span class="w"> </span>null<span class="o">]</span>
+<span class="w">  </span><span class="s2">"deleted_at"</span><span class="w"> </span>datetime<span class="w"> </span><span class="o">[</span>default:<span class="w"> </span>NULL<span class="o">]</span>
+<span class="w">  </span><span class="s2">"created_by"</span><span class="w"> </span>int<span class="w"> </span><span class="o">[</span>default:<span class="w"> </span>NULL<span class="o">]</span>
+
+<span class="w">  </span>Indexes<span class="w"> </span><span class="o">{</span>
+<span class="w">    </span><span class="o">(</span>cod,<span class="w"> </span><span class="nb">type</span><span class="o">)</span><span class="w"> </span><span class="o">[</span>unique,<span class="w"> </span>name:<span class="w"> </span><span class="s2">"groups_cod_type"</span><span class="o">]</span>
+<span class="w">    </span>parent_id<span class="w"> </span><span class="o">[</span>name:<span class="w"> </span><span class="s2">"parent_id"</span><span class="o">]</span>
+<span class="w">    </span>product_id<span class="w"> </span><span class="o">[</span>name:<span class="w"> </span><span class="s2">"product_id"</span><span class="o">]</span>
+<span class="w">    </span><span class="nb">type</span><span class="w"> </span><span class="o">[</span>name:<span class="w"> </span><span class="s2">"type"</span><span class="o">]</span>
+<span class="w">    </span>grades_template_id<span class="w"> </span><span class="o">[</span>name:<span class="w"> </span><span class="s2">"grades_template_id"</span><span class="o">]</span>
+<span class="w">    </span>form_response_id<span class="w"> </span><span class="o">[</span>name:<span class="w"> </span><span class="s2">"form_response_id"</span><span class="o">]</span>
+<span class="w">    </span>created_by<span class="w"> </span><span class="o">[</span>name:<span class="w"> </span><span class="s2">"groups_created_by_foreign_idx"</span><span class="o">]</span>
+<span class="w">  </span><span class="o">}</span>
+<span class="o">}</span>
+
+Table<span class="w"> </span><span class="s2">"permissions"</span><span class="w"> </span><span class="o">{</span>
+<span class="w">  </span><span class="s2">"id"</span><span class="w"> </span>int<span class="w"> </span><span class="o">[</span>pk,<span class="w"> </span>not<span class="w"> </span>null,<span class="w"> </span>increment<span class="o">]</span>
+<span class="w">  </span><span class="s2">"name"</span><span class="w"> </span>varchar<span class="o">(</span><span class="m">255</span><span class="o">)</span><span class="w"> </span><span class="o">[</span>default:<span class="w"> </span>NULL<span class="o">]</span>
+<span class="w">  </span><span class="s2">"description"</span><span class="w"> </span>varchar<span class="o">(</span><span class="m">255</span><span class="o">)</span><span class="w"> </span><span class="o">[</span>default:<span class="w"> </span>NULL<span class="o">]</span>
+<span class="w">  </span><span class="s2">"type"</span><span class="w"> </span>varchar<span class="o">(</span><span class="m">255</span><span class="o">)</span><span class="w"> </span><span class="o">[</span>default:<span class="w"> </span>NULL<span class="o">]</span>
+<span class="w">  </span><span class="s2">"created_at"</span><span class="w"> </span>datetime<span class="w"> </span><span class="o">[</span>not<span class="w"> </span>null<span class="o">]</span>
+<span class="w">  </span><span class="s2">"updated_at"</span><span class="w"> </span>datetime<span class="w"> </span><span class="o">[</span>not<span class="w"> </span>null<span class="o">]</span>
+<span class="w">  </span><span class="s2">"deleted_at"</span><span class="w"> </span>datetime<span class="w"> </span><span class="o">[</span>default:<span class="w"> </span>NULL<span class="o">]</span>
+<span class="o">}</span>
+
+Table<span class="w"> </span><span class="s2">"tickets"</span><span class="w"> </span><span class="o">{</span>
+<span class="w">  </span><span class="s2">"id"</span><span class="w"> </span>int<span class="w"> </span><span class="o">[</span>pk,<span class="w"> </span>not<span class="w"> </span>null,<span class="w"> </span>increment<span class="o">]</span>
+<span class="w">  </span><span class="s2">"name"</span><span class="w"> </span>varchar<span class="o">(</span><span class="m">255</span><span class="o">)</span><span class="w"> </span><span class="o">[</span>default:<span class="w"> </span>NULL<span class="o">]</span>
+<span class="w">  </span><span class="s2">"email"</span><span class="w"> </span>varchar<span class="o">(</span><span class="m">255</span><span class="o">)</span><span class="w"> </span><span class="o">[</span>default:<span class="w"> </span>NULL<span class="o">]</span>
+<span class="w">  </span><span class="s2">"recipient"</span><span class="w"> </span>int<span class="w"> </span><span class="o">[</span>default:<span class="w"> </span>NULL<span class="o">]</span>
+<span class="w">  </span><span class="s2">"description"</span><span class="w"> </span>varchar<span class="o">(</span><span class="m">255</span><span class="o">)</span><span class="w"> </span><span class="o">[</span>default:<span class="w"> </span>NULL<span class="o">]</span>
+<span class="w">  </span><span class="s2">"ticket_type_id"</span><span class="w"> </span>int<span class="w"> </span><span class="o">[</span>default:<span class="w"> </span>NULL<span class="o">]</span>
+<span class="w">  </span><span class="s2">"assigned_to"</span><span class="w"> </span>int<span class="w"> </span><span class="o">[</span>default:<span class="w"> </span>NULL<span class="o">]</span>
+<span class="w">  </span><span class="s2">"status"</span><span class="w"> </span>varchar<span class="o">(</span><span class="m">255</span><span class="o">)</span><span class="w"> </span><span class="o">[</span>default:<span class="w"> </span>NULL<span class="o">]</span>
+<span class="w">  </span><span class="s2">"form_response_id"</span><span class="w"> </span>int<span class="w"> </span><span class="o">[</span>default:<span class="w"> </span>NULL<span class="o">]</span>
+<span class="w">  </span><span class="s2">"created_by"</span><span class="w"> </span>int<span class="w"> </span><span class="o">[</span>default:<span class="w"> </span>NULL<span class="o">]</span>
+<span class="w">  </span><span class="s2">"created_at"</span><span class="w"> </span>datetime<span class="w"> </span><span class="o">[</span>not<span class="w"> </span>null<span class="o">]</span>
+<span class="w">  </span><span class="s2">"updated_at"</span><span class="w"> </span>datetime<span class="w"> </span><span class="o">[</span>not<span class="w"> </span>null<span class="o">]</span>
+<span class="w">  </span><span class="s2">"deleted_at"</span><span class="w"> </span>datetime<span class="w"> </span><span class="o">[</span>default:<span class="w"> </span>NULL<span class="o">]</span>
+<span class="w">  </span><span class="s2">"priority"</span><span class="w"> </span>tickets_priority_enum<span class="w"> </span><span class="o">[</span>default:<span class="w"> </span>NULL<span class="o">]</span>
+<span class="w">  </span><span class="s2">"assigned_to_user"</span><span class="w"> </span>int<span class="w"> </span><span class="o">[</span>default:<span class="w"> </span>NULL<span class="o">]</span>
+<span class="w">  </span><span class="s2">"parent_ticket_id"</span><span class="w"> </span>int<span class="w"> </span><span class="o">[</span>default:<span class="w"> </span>NULL<span class="o">]</span>
+<span class="w">  </span><span class="s2">"category_id"</span><span class="w"> </span>int<span class="w"> </span><span class="o">[</span>default:<span class="w"> </span>NULL<span class="o">]</span>
+<span class="w">  </span><span class="s2">"body"</span><span class="w"> </span>longtext<span class="w"> </span><span class="o">[</span>not<span class="w"> </span>null<span class="o">]</span>
+<span class="w">  </span><span class="s2">"ticket_type_form_response_id"</span><span class="w"> </span>int<span class="w"> </span><span class="o">[</span>default:<span class="w"> </span>NULL<span class="o">]</span>
+<span class="w">  </span><span class="s2">"shared_group_id"</span><span class="w"> </span>int<span class="w"> </span><span class="o">[</span>default:<span class="w"> </span>NULL<span class="o">]</span>
+<span class="w">  </span><span class="s2">"is_appointment"</span><span class="w"> </span>tinyint<span class="o">(</span><span class="m">1</span><span class="o">)</span><span class="w"> </span><span class="o">[</span>not<span class="w"> </span>null,<span class="w"> </span>default:<span class="w"> </span><span class="s1">'0'</span><span class="o">]</span>
+<span class="w">  </span><span class="s2">"schedule_date"</span><span class="w"> </span>datetime<span class="w"> </span><span class="o">[</span>default:<span class="w"> </span>NULL<span class="o">]</span>
+<span class="w">  </span><span class="s2">"duration"</span><span class="w"> </span><span class="nb">time</span><span class="w"> </span><span class="o">[</span>default:<span class="w"> </span>NULL<span class="o">]</span>
+<span class="w">  </span><span class="s2">"scheduled_at"</span><span class="w"> </span>datetime<span class="w"> </span><span class="o">[</span>default:<span class="w"> </span>NULL<span class="o">]</span>
+<span class="w">  </span><span class="s2">"service_catalog_item_id"</span><span class="w"> </span>int<span class="w"> </span><span class="o">[</span>default:<span class="w"> </span>NULL<span class="o">]</span>
+<span class="w">  </span><span class="s2">"calendar_id"</span><span class="w"> </span>int<span class="w"> </span><span class="o">[</span>default:<span class="w"> </span>NULL<span class="o">]</span>
+<span class="w">  </span><span class="s2">"approval_group_id"</span><span class="w"> </span>int<span class="w"> </span><span class="o">[</span>default:<span class="w"> </span>NULL<span class="o">]</span>
+
+<span class="w">  </span>Indexes<span class="w"> </span><span class="o">{</span>
+<span class="w">    </span>recipient<span class="w"> </span><span class="o">[</span>name:<span class="w"> </span><span class="s2">"recipient"</span><span class="o">]</span>
+<span class="w">    </span>ticket_type_id<span class="w"> </span><span class="o">[</span>name:<span class="w"> </span><span class="s2">"ticket_type_id"</span><span class="o">]</span>
+<span class="w">    </span>assigned_to<span class="w"> </span><span class="o">[</span>name:<span class="w"> </span><span class="s2">"assigned_to"</span><span class="o">]</span>
+<span class="w">    </span>form_response_id<span class="w"> </span><span class="o">[</span>name:<span class="w"> </span><span class="s2">"form_response_id"</span><span class="o">]</span>
+<span class="w">    </span>created_by<span class="w"> </span><span class="o">[</span>name:<span class="w"> </span><span class="s2">"created_by"</span><span class="o">]</span>
+<span class="w">    </span>assigned_to_user<span class="w"> </span><span class="o">[</span>name:<span class="w"> </span><span class="s2">"tickets_assigned_to_user_foreign_idx"</span><span class="o">]</span>
+<span class="w">    </span>parent_ticket_id<span class="w"> </span><span class="o">[</span>name:<span class="w"> </span><span class="s2">"tickets_parent_ticket_id_foreign_idx"</span><span class="o">]</span>
+<span class="w">    </span>category_id<span class="w"> </span><span class="o">[</span>name:<span class="w"> </span><span class="s2">"tickets_category_id_foreign_idx"</span><span class="o">]</span>
+<span class="w">    </span>ticket_type_form_response_id<span class="w"> </span><span class="o">[</span>name:<span class="w"> </span><span class="s2">"tickets_ticket_type_form_response_id_foreign_idx"</span><span class="o">]</span>
+<span class="w">    </span>shared_group_id<span class="w"> </span><span class="o">[</span>name:<span class="w"> </span><span class="s2">"tickets_shared_group_id_foreign_idx"</span><span class="o">]</span>
+<span class="w">    </span>approval_group_id<span class="w"> </span><span class="o">[</span>name:<span class="w"> </span><span class="s2">"tickets_approval_group_id_foreign_idx"</span><span class="o">]</span>
+<span class="w">  </span><span class="o">}</span>
+<span class="o">}</span>
+
+Table<span class="w"> </span><span class="s2">"chat_rooms"</span><span class="w"> </span><span class="o">{</span>
+<span class="w">  </span><span class="s2">"id"</span><span class="w"> </span>varchar<span class="o">(</span><span class="m">255</span><span class="o">)</span><span class="w"> </span><span class="o">[</span>pk,<span class="w"> </span>not<span class="w"> </span>null<span class="o">]</span>
+<span class="w">  </span><span class="s2">"chat_status_id"</span><span class="w"> </span>int<span class="w"> </span><span class="o">[</span>default:<span class="w"> </span>NULL<span class="o">]</span>
+<span class="w">  </span><span class="s2">"type"</span><span class="w"> </span>chat_rooms_type_enum<span class="w"> </span><span class="o">[</span>default:<span class="w"> </span>NULL<span class="o">]</span>
+<span class="w">  </span><span class="s2">"requester_id"</span><span class="w"> </span>int<span class="w"> </span><span class="o">[</span>default:<span class="w"> </span>NULL<span class="o">]</span>
+<span class="w">  </span><span class="s2">"created_by"</span><span class="w"> </span>int<span class="w"> </span><span class="o">[</span>default:<span class="w"> </span>NULL<span class="o">]</span>
+<span class="w">  </span><span class="s2">"empty"</span><span class="w"> </span>tinyint<span class="o">(</span><span class="m">1</span><span class="o">)</span><span class="w"> </span><span class="o">[</span>default:<span class="w"> </span><span class="s1">'1'</span><span class="o">]</span>
+<span class="w">  </span><span class="s2">"product_id"</span><span class="w"> </span>int<span class="w"> </span><span class="o">[</span>default:<span class="w"> </span>NULL<span class="o">]</span>
+<span class="w">  </span><span class="s2">"members_count"</span><span class="w"> </span>int<span class="w"> </span><span class="o">[</span>default:<span class="w"> </span>NULL<span class="o">]</span>
+<span class="w">  </span><span class="s2">"icon"</span><span class="w"> </span>varchar<span class="o">(</span><span class="m">255</span><span class="o">)</span><span class="w"> </span><span class="o">[</span>default:<span class="w"> </span>NULL<span class="o">]</span>
+<span class="w">  </span><span class="s2">"name"</span><span class="w"> </span>varchar<span class="o">(</span><span class="m">255</span><span class="o">)</span><span class="w"> </span><span class="o">[</span>default:<span class="w"> </span>NULL<span class="o">]</span>
+<span class="w">  </span><span class="s2">"webhook_url"</span><span class="w"> </span>varchar<span class="o">(</span><span class="m">255</span><span class="o">)</span><span class="w"> </span><span class="o">[</span>default:<span class="w"> </span>NULL<span class="o">]</span>
+<span class="w">  </span><span class="s2">"json_data"</span><span class="w"> </span>json<span class="w"> </span><span class="o">[</span>default:<span class="w"> </span>NULL<span class="o">]</span>
+<span class="w">  </span><span class="s2">"created_at"</span><span class="w"> </span>datetime<span class="w"> </span><span class="o">[</span>not<span class="w"> </span>null<span class="o">]</span>
+<span class="w">  </span><span class="s2">"updated_at"</span><span class="w"> </span>datetime<span class="w"> </span><span class="o">[</span>not<span class="w"> </span>null<span class="o">]</span>
+<span class="w">  </span><span class="s2">"deleted_at"</span><span class="w"> </span>datetime<span class="w"> </span><span class="o">[</span>default:<span class="w"> </span>NULL<span class="o">]</span>
+<span class="w">  </span><span class="s2">"assigned_to"</span><span class="w"> </span>int<span class="w"> </span><span class="o">[</span>default:<span class="w"> </span>NULL<span class="o">]</span>
+<span class="w">  </span><span class="s2">"ticket_id"</span><span class="w"> </span>int<span class="w"> </span><span class="o">[</span>default:<span class="w"> </span>NULL<span class="o">]</span>
+<span class="w">  </span><span class="s2">"first_reply_at"</span><span class="w"> </span>datetime<span class="w"> </span><span class="o">[</span>default:<span class="w"> </span>NULL<span class="o">]</span>
+<span class="w">  </span><span class="s2">"last_reply_at"</span><span class="w"> </span>datetime<span class="w"> </span><span class="o">[</span>default:<span class="w"> </span>NULL<span class="o">]</span>
+<span class="w">  </span><span class="s2">"last_reply_author"</span><span class="w"> </span>int<span class="w"> </span><span class="o">[</span>default:<span class="w"> </span>NULL<span class="o">]</span>
+<span class="w">  </span><span class="s2">"last_reply_message"</span><span class="w"> </span>longtext
+
+<span class="w">  </span>Indexes<span class="w"> </span><span class="o">{</span>
+<span class="w">    </span>chat_status_id<span class="w"> </span><span class="o">[</span>name:<span class="w"> </span><span class="s2">"chat_status_id"</span><span class="o">]</span>
+<span class="w">    </span>requester_id<span class="w"> </span><span class="o">[</span>name:<span class="w"> </span><span class="s2">"requester_id"</span><span class="o">]</span>
+<span class="w">    </span>created_by<span class="w"> </span><span class="o">[</span>name:<span class="w"> </span><span class="s2">"created_by"</span><span class="o">]</span>
+<span class="w">    </span>assigned_to<span class="w"> </span><span class="o">[</span>name:<span class="w"> </span><span class="s2">"chat_rooms_assigned_to_foreign_idx"</span><span class="o">]</span>
+<span class="w">    </span>ticket_id<span class="w"> </span><span class="o">[</span>name:<span class="w"> </span><span class="s2">"chat_rooms_ticket_id_foreign_idx"</span><span class="o">]</span>
+<span class="w">    </span>last_reply_author<span class="w"> </span><span class="o">[</span>name:<span class="w"> </span><span class="s2">"chat_rooms_last_reply_author_foreign_idx"</span><span class="o">]</span>
+<span class="w">  </span><span class="o">}</span>
+<span class="o">}</span>
+
+Table<span class="w"> </span><span class="s2">"ticket_user_actions"</span><span class="w"> </span><span class="o">{</span>
+<span class="w">  </span><span class="s2">"id"</span><span class="w"> </span>int<span class="w"> </span><span class="o">[</span>pk,<span class="w"> </span>not<span class="w"> </span>null,<span class="w"> </span>increment<span class="o">]</span>
+<span class="w">  </span><span class="s2">"details"</span><span class="w"> </span>longtext
+<span class="w">  </span><span class="s2">"data"</span><span class="w"> </span>json<span class="w"> </span><span class="o">[</span>default:<span class="w"> </span>NULL<span class="o">]</span>
+<span class="w">  </span><span class="s2">"ticket_id"</span><span class="w"> </span>int<span class="w"> </span><span class="o">[</span>default:<span class="w"> </span>NULL<span class="o">]</span>
+<span class="w">  </span><span class="s2">"created_by"</span><span class="w"> </span>int<span class="w"> </span><span class="o">[</span>default:<span class="w"> </span>NULL<span class="o">]</span>
+<span class="w">  </span><span class="s2">"is_automatic_message"</span><span class="w"> </span>tinyint<span class="o">(</span><span class="m">1</span><span class="o">)</span><span class="w"> </span><span class="o">[</span>default:<span class="w"> </span>NULL<span class="o">]</span>
+<span class="w">  </span><span class="s2">"type"</span><span class="w"> </span>ticket_user_actions_type_enum<span class="w"> </span><span class="o">[</span>default:<span class="w"> </span>NULL<span class="o">]</span>
+<span class="w">  </span><span class="s2">"description"</span><span class="w"> </span>varchar<span class="o">(</span><span class="m">255</span><span class="o">)</span><span class="w"> </span><span class="o">[</span>default:<span class="w"> </span>NULL<span class="o">]</span>
+<span class="w">  </span><span class="s2">"ticket_type_id"</span><span class="w"> </span>int<span class="w"> </span><span class="o">[</span>default:<span class="w"> </span>NULL<span class="o">]</span>
+<span class="w">  </span><span class="s2">"assigned_to_user"</span><span class="w"> </span>int<span class="w"> </span><span class="o">[</span>default:<span class="w"> </span>NULL<span class="o">]</span>
+<span class="w">  </span><span class="s2">"status"</span><span class="w"> </span>varchar<span class="o">(</span><span class="m">255</span><span class="o">)</span><span class="w"> </span><span class="o">[</span>default:<span class="w"> </span>NULL<span class="o">]</span>
+<span class="w">  </span><span class="s2">"priority"</span><span class="w"> </span>ticket_user_actions_priority_enum<span class="w"> </span><span class="o">[</span>default:<span class="w"> </span>NULL<span class="o">]</span>
+<span class="w">  </span><span class="s2">"media_id"</span><span class="w"> </span>int<span class="w"> </span><span class="o">[</span>default:<span class="w"> </span>NULL<span class="o">]</span>
+<span class="w">  </span><span class="s2">"created_at"</span><span class="w"> </span>datetime<span class="w"> </span><span class="o">[</span>not<span class="w"> </span>null<span class="o">]</span>
+<span class="w">  </span><span class="s2">"updated_at"</span><span class="w"> </span>datetime<span class="w"> </span><span class="o">[</span>not<span class="w"> </span>null<span class="o">]</span>
+<span class="w">  </span><span class="s2">"deleted_at"</span><span class="w"> </span>datetime<span class="w"> </span><span class="o">[</span>default:<span class="w"> </span>NULL<span class="o">]</span>
+<span class="w">  </span><span class="s2">"category_id"</span><span class="w"> </span>int<span class="w"> </span><span class="o">[</span>default:<span class="w"> </span>NULL<span class="o">]</span>
+<span class="w">  </span><span class="s2">"assigned_to"</span><span class="w"> </span>int<span class="w"> </span><span class="o">[</span>default:<span class="w"> </span>NULL<span class="o">]</span>
+<span class="w">  </span><span class="s2">"recipient"</span><span class="w"> </span>int<span class="w"> </span><span class="o">[</span>default:<span class="w"> </span>NULL<span class="o">]</span>
+
+<span class="w">  </span>Indexes<span class="w"> </span><span class="o">{</span>
+<span class="w">    </span>ticket_id<span class="w"> </span><span class="o">[</span>name:<span class="w"> </span><span class="s2">"ticket_id"</span><span class="o">]</span>
+<span class="w">    </span>created_by<span class="w"> </span><span class="o">[</span>name:<span class="w"> </span><span class="s2">"created_by"</span><span class="o">]</span>
+<span class="w">    </span>ticket_type_id<span class="w"> </span><span class="o">[</span>name:<span class="w"> </span><span class="s2">"ticket_type_id"</span><span class="o">]</span>
+<span class="w">    </span>assigned_to_user<span class="w"> </span><span class="o">[</span>name:<span class="w"> </span><span class="s2">"assigned_to_user"</span><span class="o">]</span>
+<span class="w">    </span>media_id<span class="w"> </span><span class="o">[</span>name:<span class="w"> </span><span class="s2">"media_id"</span><span class="o">]</span>
+<span class="w">    </span>category_id<span class="w"> </span><span class="o">[</span>name:<span class="w"> </span><span class="s2">"ticket_user_actions_category_id_foreign_idx"</span><span class="o">]</span>
+<span class="w">    </span>assigned_to<span class="w"> </span><span class="o">[</span>name:<span class="w"> </span><span class="s2">"ticket_user_actions_assigned_to_foreign_idx"</span><span class="o">]</span>
+<span class="w">    </span>recipient<span class="w"> </span><span class="o">[</span>name:<span class="w"> </span><span class="s2">"ticket_user_actions_recipient_foreign_idx"</span><span class="o">]</span>
+<span class="w">  </span><span class="o">}</span>
+<span class="o">}</span>
+
+Table<span class="w"> </span><span class="s2">"ticket_types"</span><span class="w"> </span><span class="o">{</span>
+<span class="w">  </span><span class="s2">"id"</span><span class="w"> </span>int<span class="w"> </span><span class="o">[</span>pk,<span class="w"> </span>not<span class="w"> </span>null,<span class="w"> </span>increment<span class="o">]</span>
+<span class="w">  </span><span class="s2">"name"</span><span class="w"> </span>varchar<span class="o">(</span><span class="m">255</span><span class="o">)</span><span class="w"> </span><span class="o">[</span>not<span class="w"> </span>null<span class="o">]</span>
+<span class="w">  </span><span class="s2">"type"</span><span class="w"> </span>varchar<span class="o">(</span><span class="m">255</span><span class="o">)</span><span class="w"> </span><span class="o">[</span>not<span class="w"> </span>null<span class="o">]</span>
+<span class="w">  </span><span class="s2">"icon"</span><span class="w"> </span>varchar<span class="o">(</span><span class="m">255</span><span class="o">)</span><span class="w"> </span><span class="o">[</span>not<span class="w"> </span>null<span class="o">]</span>
+<span class="w">  </span><span class="s2">"color"</span><span class="w"> </span>varchar<span class="o">(</span><span class="m">255</span><span class="o">)</span><span class="w"> </span><span class="o">[</span>not<span class="w"> </span>null<span class="o">]</span>
+<span class="w">  </span><span class="s2">"description"</span><span class="w"> </span>varchar<span class="o">(</span><span class="m">255</span><span class="o">)</span><span class="w"> </span><span class="o">[</span>not<span class="w"> </span>null<span class="o">]</span>
+<span class="w">  </span><span class="s2">"default_sla_id"</span><span class="w"> </span>int<span class="w"> </span><span class="o">[</span>default:<span class="w"> </span>NULL<span class="o">]</span>
+<span class="w">  </span><span class="s2">"form_id"</span><span class="w"> </span>int<span class="w"> </span><span class="o">[</span>default:<span class="w"> </span>NULL<span class="o">]</span>
+<span class="w">  </span><span class="s2">"created_by"</span><span class="w"> </span>int<span class="w"> </span><span class="o">[</span>default:<span class="w"> </span>NULL<span class="o">]</span>
+<span class="w">  </span><span class="s2">"created_at"</span><span class="w"> </span>datetime<span class="w"> </span><span class="o">[</span>not<span class="w"> </span>null<span class="o">]</span>
+<span class="w">  </span><span class="s2">"updated_at"</span><span class="w"> </span>datetime<span class="w"> </span><span class="o">[</span>not<span class="w"> </span>null<span class="o">]</span>
+<span class="w">  </span><span class="s2">"deleted_at"</span><span class="w"> </span>datetime<span class="w"> </span><span class="o">[</span>default:<span class="w"> </span>NULL<span class="o">]</span>
+<span class="w">  </span><span class="s2">"configs"</span><span class="w"> </span>json<span class="w"> </span><span class="o">[</span>default:<span class="w"> </span>NULL<span class="o">]</span>
+
+<span class="w">  </span>Indexes<span class="w"> </span><span class="o">{</span>
+<span class="w">    </span>form_id<span class="w"> </span><span class="o">[</span>name:<span class="w"> </span><span class="s2">"form_id"</span><span class="o">]</span>
+<span class="w">    </span>default_sla_id<span class="w"> </span><span class="o">[</span>name:<span class="w"> </span><span class="s2">"ticket_types_ibfk_1"</span><span class="o">]</span>
+<span class="w">  </span><span class="o">}</span>
+<span class="o">}</span>
+
+Table<span class="w"> </span><span class="s2">"categories"</span><span class="w"> </span><span class="o">{</span>
+<span class="w">  </span><span class="s2">"id"</span><span class="w"> </span>int<span class="w"> </span><span class="o">[</span>pk,<span class="w"> </span>not<span class="w"> </span>null,<span class="w"> </span>increment<span class="o">]</span>
+<span class="w">  </span><span class="s2">"name"</span><span class="w"> </span>varchar<span class="o">(</span><span class="m">255</span><span class="o">)</span><span class="w"> </span><span class="o">[</span>not<span class="w"> </span>null<span class="o">]</span>
+<span class="w">  </span><span class="s2">"type"</span><span class="w"> </span>varchar<span class="o">(</span><span class="m">255</span><span class="o">)</span><span class="w"> </span><span class="o">[</span>not<span class="w"> </span>null<span class="o">]</span>
+<span class="w">  </span><span class="s2">"icon"</span><span class="w"> </span>varchar<span class="o">(</span><span class="m">255</span><span class="o">)</span><span class="w"> </span><span class="o">[</span>not<span class="w"> </span>null<span class="o">]</span>
+<span class="w">  </span><span class="s2">"color"</span><span class="w"> </span>varchar<span class="o">(</span><span class="m">255</span><span class="o">)</span><span class="w"> </span><span class="o">[</span>not<span class="w"> </span>null<span class="o">]</span>
+<span class="w">  </span><span class="s2">"description"</span><span class="w"> </span>varchar<span class="o">(</span><span class="m">255</span><span class="o">)</span><span class="w"> </span><span class="o">[</span>not<span class="w"> </span>null<span class="o">]</span>
+<span class="w">  </span><span class="s2">"form_id"</span><span class="w"> </span>int<span class="w"> </span><span class="o">[</span>default:<span class="w"> </span>NULL<span class="o">]</span>
+<span class="w">  </span><span class="s2">"created_by"</span><span class="w"> </span>int<span class="w"> </span><span class="o">[</span>default:<span class="w"> </span>NULL<span class="o">]</span>
+<span class="w">  </span><span class="s2">"default_sla_id"</span><span class="w"> </span>int<span class="w"> </span><span class="o">[</span>default:<span class="w"> </span>NULL<span class="o">]</span>
+<span class="w">  </span><span class="s2">"default_group_id"</span><span class="w"> </span>int<span class="w"> </span><span class="o">[</span>default:<span class="w"> </span>NULL<span class="o">]</span>
+<span class="w">  </span><span class="s2">"created_at"</span><span class="w"> </span>datetime<span class="w"> </span><span class="o">[</span>not<span class="w"> </span>null<span class="o">]</span>
+<span class="w">  </span><span class="s2">"updated_at"</span><span class="w"> </span>datetime<span class="w"> </span><span class="o">[</span>not<span class="w"> </span>null<span class="o">]</span>
+<span class="w">  </span><span class="s2">"deleted_at"</span><span class="w"> </span>datetime<span class="w"> </span><span class="o">[</span>default:<span class="w"> </span>NULL<span class="o">]</span>
+<span class="w">  </span><span class="s2">"active"</span><span class="w"> </span>tinyint<span class="o">(</span><span class="m">1</span><span class="o">)</span><span class="w"> </span><span class="o">[</span>default:<span class="w"> </span><span class="s1">'1'</span><span class="o">]</span>
+<span class="w">  </span><span class="s2">"duration"</span><span class="w"> </span><span class="nb">time</span><span class="w"> </span><span class="o">[</span>default:<span class="w"> </span>NULL<span class="o">]</span>
+<span class="w">  </span><span class="s2">"bookable"</span><span class="w"> </span>tinyint<span class="o">(</span><span class="m">1</span><span class="o">)</span><span class="w"> </span><span class="o">[</span>not<span class="w"> </span>null,<span class="w"> </span>default:<span class="w"> </span><span class="s1">'0'</span><span class="o">]</span>
+<span class="w">  </span><span class="s2">"concurrency"</span><span class="w"> </span>int<span class="w"> </span><span class="o">[</span>default:<span class="w"> </span>NULL<span class="o">]</span>
+<span class="w">  </span><span class="s2">"min_schedule_time"</span><span class="w"> </span><span class="nb">time</span><span class="w"> </span><span class="o">[</span>default:<span class="w"> </span>NULL<span class="o">]</span>
+<span class="w">  </span><span class="s2">"max_schedule_time"</span><span class="w"> </span><span class="nb">time</span><span class="w"> </span><span class="o">[</span>default:<span class="w"> </span>NULL<span class="o">]</span>
+<span class="w">  </span><span class="s2">"open_for_schedule"</span><span class="w"> </span>tinyint<span class="o">(</span><span class="m">1</span><span class="o">)</span><span class="w"> </span><span class="o">[</span>default:<span class="w"> </span>NULL<span class="o">]</span>
+<span class="w">  </span><span class="s2">"configs"</span><span class="w"> </span>json<span class="w"> </span><span class="o">[</span>default:<span class="w"> </span>NULL<span class="o">]</span>
+
+<span class="w">  </span>Indexes<span class="w"> </span><span class="o">{</span>
+<span class="w">    </span>form_id<span class="w"> </span><span class="o">[</span>name:<span class="w"> </span><span class="s2">"form_id"</span><span class="o">]</span>
+<span class="w">    </span>created_by<span class="w"> </span><span class="o">[</span>name:<span class="w"> </span><span class="s2">"created_by"</span><span class="o">]</span>
+<span class="w">    </span>default_sla_id<span class="w"> </span><span class="o">[</span>name:<span class="w"> </span><span class="s2">"default_sla_id"</span><span class="o">]</span>
+<span class="w">    </span>default_group_id<span class="w"> </span><span class="o">[</span>name:<span class="w"> </span><span class="s2">"default_group_id"</span><span class="o">]</span>
+<span class="w">  </span><span class="o">}</span>
+<span class="o">}</span>
+
+Table<span class="w"> </span><span class="s2">"calendars"</span><span class="w"> </span><span class="o">{</span>
+<span class="w">  </span><span class="s2">"id"</span><span class="w"> </span>int<span class="w"> </span><span class="o">[</span>pk,<span class="w"> </span>not<span class="w"> </span>null,<span class="w"> </span>increment<span class="o">]</span>
+<span class="w">  </span><span class="s2">"title"</span><span class="w"> </span>varchar<span class="o">(</span><span class="m">255</span><span class="o">)</span><span class="w"> </span><span class="o">[</span>not<span class="w"> </span>null<span class="o">]</span>
+<span class="w">  </span><span class="s2">"created_at"</span><span class="w"> </span>datetime<span class="w"> </span><span class="o">[</span>not<span class="w"> </span>null<span class="o">]</span>
+<span class="w">  </span><span class="s2">"updated_at"</span><span class="w"> </span>datetime<span class="w"> </span><span class="o">[</span>not<span class="w"> </span>null<span class="o">]</span>
+<span class="w">  </span><span class="s2">"deleted_at"</span><span class="w"> </span>datetime<span class="w"> </span><span class="o">[</span>default:<span class="w"> </span>NULL<span class="o">]</span>
+<span class="o">}</span>
+
+Table<span class="w"> </span><span class="s2">"calendars_default_hours"</span><span class="w"> </span><span class="o">{</span>
+<span class="w">  </span><span class="s2">"id"</span><span class="w"> </span>int<span class="w"> </span><span class="o">[</span>pk,<span class="w"> </span>not<span class="w"> </span>null,<span class="w"> </span>increment<span class="o">]</span>
+<span class="w">  </span><span class="s2">"calendar_id"</span><span class="w"> </span>int<span class="w"> </span><span class="o">[</span>default:<span class="w"> </span>NULL<span class="o">]</span>
+<span class="w">  </span><span class="s2">"day"</span><span class="w"> </span>calendars_default_hours_day_enum<span class="w"> </span><span class="o">[</span>not<span class="w"> </span>null<span class="o">]</span>
+<span class="w">  </span><span class="s2">"start"</span><span class="w"> </span><span class="nb">time</span><span class="w"> </span><span class="o">[</span>not<span class="w"> </span>null<span class="o">]</span>
+<span class="w">  </span><span class="s2">"end"</span><span class="w"> </span><span class="nb">time</span><span class="w"> </span><span class="o">[</span>not<span class="w"> </span>null<span class="o">]</span>
+<span class="w">  </span><span class="s2">"created_at"</span><span class="w"> </span>datetime<span class="w"> </span><span class="o">[</span>not<span class="w"> </span>null<span class="o">]</span>
+<span class="w">  </span><span class="s2">"updated_at"</span><span class="w"> </span>datetime<span class="w"> </span><span class="o">[</span>not<span class="w"> </span>null<span class="o">]</span>
+<span class="w">  </span><span class="s2">"deleted_at"</span><span class="w"> </span>datetime<span class="w"> </span><span class="o">[</span>default:<span class="w"> </span>NULL<span class="o">]</span>
+
+<span class="w">  </span>Indexes<span class="w"> </span><span class="o">{</span>
+<span class="w">    </span>calendar_id<span class="w"> </span><span class="o">[</span>name:<span class="w"> </span><span class="s2">"calendar_id"</span><span class="o">]</span>
+<span class="w">  </span><span class="o">}</span>
+<span class="o">}</span>
+
+Table<span class="w"> </span><span class="s2">"calendars_special_hours"</span><span class="w"> </span><span class="o">{</span>
+<span class="w">  </span><span class="s2">"id"</span><span class="w"> </span>int<span class="w"> </span><span class="o">[</span>pk,<span class="w"> </span>not<span class="w"> </span>null,<span class="w"> </span>increment<span class="o">]</span>
+<span class="w">  </span><span class="s2">"calendar_id"</span><span class="w"> </span>int<span class="w"> </span><span class="o">[</span>default:<span class="w"> </span>NULL<span class="o">]</span>
+<span class="w">  </span><span class="s2">"date"</span><span class="w"> </span>date<span class="w"> </span><span class="o">[</span>not<span class="w"> </span>null<span class="o">]</span>
+<span class="w">  </span><span class="s2">"start"</span><span class="w"> </span><span class="nb">time</span><span class="w"> </span><span class="o">[</span>not<span class="w"> </span>null<span class="o">]</span>
+<span class="w">  </span><span class="s2">"end"</span><span class="w"> </span><span class="nb">time</span><span class="w"> </span><span class="o">[</span>not<span class="w"> </span>null<span class="o">]</span>
+<span class="w">  </span><span class="s2">"increase_hours"</span><span class="w"> </span>tinyint<span class="o">(</span><span class="m">1</span><span class="o">)</span><span class="w"> </span><span class="o">[</span>not<span class="w"> </span>null<span class="o">]</span>
+<span class="w">  </span><span class="s2">"created_at"</span><span class="w"> </span>datetime<span class="w"> </span><span class="o">[</span>not<span class="w"> </span>null<span class="o">]</span>
+<span class="w">  </span><span class="s2">"updated_at"</span><span class="w"> </span>datetime<span class="w"> </span><span class="o">[</span>not<span class="w"> </span>null<span class="o">]</span>
+<span class="w">  </span><span class="s2">"deleted_at"</span><span class="w"> </span>datetime<span class="w"> </span><span class="o">[</span>default:<span class="w"> </span>NULL<span class="o">]</span>
+
+<span class="w">  </span>Indexes<span class="w"> </span><span class="o">{</span>
+<span class="w">    </span>calendar_id<span class="w"> </span><span class="o">[</span>name:<span class="w"> </span><span class="s2">"calendar_id"</span><span class="o">]</span>
+<span class="w">  </span><span class="o">}</span>
+<span class="o">}</span>
+
+Table<span class="w"> </span><span class="s2">"sla_goals"</span><span class="w"> </span><span class="o">{</span>
+<span class="w">  </span><span class="s2">"id"</span><span class="w"> </span>int<span class="w"> </span><span class="o">[</span>pk,<span class="w"> </span>not<span class="w"> </span>null,<span class="w"> </span>increment<span class="o">]</span>
+<span class="w">  </span><span class="s2">"sla_id"</span><span class="w"> </span>int<span class="w"> </span><span class="o">[</span>default:<span class="w"> </span>NULL<span class="o">]</span>
+<span class="w">  </span><span class="s2">"goal_id"</span><span class="w"> </span>int<span class="w"> </span><span class="o">[</span>default:<span class="w"> </span>NULL<span class="o">]</span>
+<span class="w">  </span><span class="s2">"created_at"</span><span class="w"> </span>datetime<span class="w"> </span><span class="o">[</span>not<span class="w"> </span>null<span class="o">]</span>
+<span class="w">  </span><span class="s2">"updated_at"</span><span class="w"> </span>datetime<span class="w"> </span><span class="o">[</span>not<span class="w"> </span>null<span class="o">]</span>
+<span class="w">  </span><span class="s2">"deleted_at"</span><span class="w"> </span>datetime<span class="w"> </span><span class="o">[</span>default:<span class="w"> </span>NULL<span class="o">]</span>
+
+<span class="w">  </span>Indexes<span class="w"> </span><span class="o">{</span>
+<span class="w">    </span><span class="o">(</span>sla_id,<span class="w"> </span>goal_id<span class="o">)</span><span class="w"> </span><span class="o">[</span>unique,<span class="w"> </span>name:<span class="w"> </span><span class="s2">"sla_goals_slaId_goalId_unique"</span><span class="o">]</span>
+<span class="w">    </span>goal_id<span class="w"> </span><span class="o">[</span>name:<span class="w"> </span><span class="s2">"goal_id"</span><span class="o">]</span>
+<span class="w">  </span><span class="o">}</span>
+<span class="o">}</span>
+
+Table<span class="w"> </span><span class="s2">"slas"</span><span class="w"> </span><span class="o">{</span>
+<span class="w">  </span><span class="s2">"id"</span><span class="w"> </span>int<span class="w"> </span><span class="o">[</span>pk,<span class="w"> </span>not<span class="w"> </span>null,<span class="w"> </span>increment<span class="o">]</span>
+<span class="w">  </span><span class="s2">"name"</span><span class="w"> </span>varchar<span class="o">(</span><span class="m">255</span><span class="o">)</span><span class="w"> </span><span class="o">[</span>default:<span class="w"> </span>NULL<span class="o">]</span>
+<span class="w">  </span><span class="s2">"description"</span><span class="w"> </span>varchar<span class="o">(</span><span class="m">255</span><span class="o">)</span><span class="w"> </span><span class="o">[</span>default:<span class="w"> </span>NULL<span class="o">]</span>
+<span class="w">  </span><span class="s2">"default_assigned_to"</span><span class="w"> </span>int<span class="w"> </span><span class="o">[</span>default:<span class="w"> </span>NULL<span class="o">]</span>
+<span class="w">  </span><span class="s2">"active"</span><span class="w"> </span>tinyint<span class="o">(</span><span class="m">1</span><span class="o">)</span><span class="w"> </span><span class="o">[</span>default:<span class="w"> </span>NULL<span class="o">]</span>
+<span class="w">  </span><span class="s2">"calendar_id"</span><span class="w"> </span>int<span class="w"> </span><span class="o">[</span>default:<span class="w"> </span>NULL<span class="o">]</span>
+<span class="w">  </span><span class="s2">"created_at"</span><span class="w"> </span>datetime<span class="w"> </span><span class="o">[</span>not<span class="w"> </span>null<span class="o">]</span>
+<span class="w">  </span><span class="s2">"updated_at"</span><span class="w"> </span>datetime<span class="w"> </span><span class="o">[</span>not<span class="w"> </span>null<span class="o">]</span>
+<span class="w">  </span><span class="s2">"deleted_at"</span><span class="w"> </span>datetime<span class="w"> </span><span class="o">[</span>default:<span class="w"> </span>NULL<span class="o">]</span>
+
+<span class="w">  </span>Indexes<span class="w"> </span><span class="o">{</span>
+<span class="w">    </span>default_assigned_to<span class="w"> </span><span class="o">[</span>name:<span class="w"> </span><span class="s2">"default_assigned_to"</span><span class="o">]</span>
+<span class="w">    </span>calendar_id<span class="w"> </span><span class="o">[</span>name:<span class="w"> </span><span class="s2">"calendar_id"</span><span class="o">]</span>
+<span class="w">  </span><span class="o">}</span>
+<span class="o">}</span>
+
+Table<span class="w"> </span><span class="s2">"ticket_SLA"</span><span class="w"> </span><span class="o">{</span>
+<span class="w">  </span><span class="s2">"id"</span><span class="w"> </span>int<span class="w"> </span><span class="o">[</span>pk,<span class="w"> </span>not<span class="w"> </span>null,<span class="w"> </span>increment<span class="o">]</span>
+<span class="w">  </span><span class="s2">"assigned_to"</span><span class="w"> </span>int<span class="w"> </span><span class="o">[</span>default:<span class="w"> </span>NULL<span class="o">]</span>
+<span class="w">  </span><span class="s2">"ticket_id"</span><span class="w"> </span>int<span class="w"> </span><span class="o">[</span>default:<span class="w"> </span>NULL<span class="o">]</span>
+<span class="w">  </span><span class="s2">"sla_id"</span><span class="w"> </span>int<span class="w"> </span><span class="o">[</span>default:<span class="w"> </span>NULL<span class="o">]</span>
+<span class="w">  </span><span class="s2">"started_at"</span><span class="w"> </span>datetime<span class="w"> </span><span class="o">[</span>default:<span class="w"> </span>NULL<span class="o">]</span>
+<span class="w">  </span><span class="s2">"finished_at"</span><span class="w"> </span>datetime<span class="w"> </span><span class="o">[</span>default:<span class="w"> </span>NULL<span class="o">]</span>
+<span class="w">  </span><span class="s2">"expires_at"</span><span class="w"> </span>datetime<span class="w"> </span><span class="o">[</span>default:<span class="w"> </span>NULL<span class="o">]</span>
+<span class="w">  </span><span class="s2">"created_at"</span><span class="w"> </span>datetime<span class="w"> </span><span class="o">[</span>not<span class="w"> </span>null<span class="o">]</span>
+<span class="w">  </span><span class="s2">"updated_at"</span><span class="w"> </span>datetime<span class="w"> </span><span class="o">[</span>not<span class="w"> </span>null<span class="o">]</span>
+<span class="w">  </span><span class="s2">"deleted_at"</span><span class="w"> </span>datetime<span class="w"> </span><span class="o">[</span>default:<span class="w"> </span>NULL<span class="o">]</span>
+
+<span class="w">  </span>Indexes<span class="w"> </span><span class="o">{</span>
+<span class="w">    </span><span class="o">(</span>ticket_id,<span class="w"> </span>sla_id<span class="o">)</span><span class="w"> </span><span class="o">[</span>unique,<span class="w"> </span>name:<span class="w"> </span><span class="s2">"ticket_SLA_sla_id_ticket_id_unique"</span><span class="o">]</span>
+<span class="w">    </span>assigned_to<span class="w"> </span><span class="o">[</span>name:<span class="w"> </span><span class="s2">"assigned_to"</span><span class="o">]</span>
+<span class="w">    </span>sla_id<span class="w"> </span><span class="o">[</span>name:<span class="w"> </span><span class="s2">"sla_id"</span><span class="o">]</span>
+<span class="w">  </span><span class="o">}</span>
+<span class="o">}</span>
+
+Ref<span class="w"> </span><span class="s2">"chat_rooms_last_reply_author_foreign_idx"</span>:<span class="s2">"users"</span>.<span class="s2">"id"</span><span class="w"> </span>&lt;<span class="w"> </span><span class="s2">"chat_rooms"</span>.<span class="s2">"last_reply_author"</span>
+
+Ref<span class="w"> </span><span class="s2">"chat_rooms_ticket_id_foreign_idx"</span>:<span class="s2">"tickets"</span>.<span class="s2">"id"</span><span class="w"> </span>&lt;<span class="w"> </span><span class="s2">"chat_rooms"</span>.<span class="s2">"ticket_id"</span>
+
+Ref<span class="w"> </span><span class="s2">"groups_created_by_foreign_idx"</span>:<span class="s2">"users"</span>.<span class="s2">"id"</span><span class="w"> </span>&lt;<span class="w"> </span><span class="s2">"groups"</span>.<span class="s2">"created_by"</span><span class="w"> </span><span class="o">[</span>update:<span class="w"> </span>cascade<span class="o">]</span>
+
+Ref<span class="w"> </span><span class="s2">"sla_ibfk_1"</span>:<span class="s2">"groups"</span>.<span class="s2">"id"</span><span class="w"> </span>&lt;<span class="w"> </span><span class="s2">"slas"</span>.<span class="s2">"default_assigned_to"</span><span class="w"> </span><span class="o">[</span>update:<span class="w"> </span>cascade,<span class="w"> </span>delete:<span class="w"> </span><span class="nb">set</span><span class="w"> </span>null<span class="o">]</span>
+
+Ref<span class="w"> </span><span class="s2">"ticket_SLA_ibfk_1"</span>:<span class="s2">"groups"</span>.<span class="s2">"id"</span><span class="w"> </span>&lt;<span class="w"> </span><span class="s2">"ticket_SLA"</span>.<span class="s2">"assigned_to"</span><span class="w"> </span><span class="o">[</span>update:<span class="w"> </span>cascade,<span class="w"> </span>delete:<span class="w"> </span><span class="nb">set</span><span class="w"> </span>null<span class="o">]</span>
+
+Ref<span class="w"> </span><span class="s2">"ticket_SLA_ibfk_2"</span>:<span class="s2">"tickets"</span>.<span class="s2">"id"</span><span class="w"> </span>&lt;<span class="w"> </span><span class="s2">"ticket_SLA"</span>.<span class="s2">"ticket_id"</span><span class="w"> </span><span class="o">[</span>update:<span class="w"> </span>cascade,<span class="w"> </span>delete:<span class="w"> </span>cascade<span class="o">]</span>
+
+Ref<span class="w"> </span><span class="s2">"ticket_SLA_ibfk_3"</span>:<span class="s2">"slas"</span>.<span class="s2">"id"</span><span class="w"> </span>&lt;<span class="w"> </span><span class="s2">"ticket_SLA"</span>.<span class="s2">"sla_id"</span><span class="w"> </span><span class="o">[</span>update:<span class="w"> </span>cascade,<span class="w"> </span>delete:<span class="w"> </span>cascade<span class="o">]</span>
+
+Ref<span class="w"> </span><span class="s2">"ticket_user_actions_recipient_foreign_idx"</span>:<span class="s2">"users"</span>.<span class="s2">"id"</span><span class="w"> </span>&lt;<span class="w"> </span><span class="s2">"ticket_user_actions"</span>.<span class="s2">"recipient"</span>
+
+Ref<span class="w"> </span><span class="s2">"tickets_approval_group_id_foreign_idx"</span>:<span class="s2">"groups"</span>.<span class="s2">"id"</span><span class="w"> </span>&lt;<span class="w"> </span><span class="s2">"tickets"</span>.<span class="s2">"approval_group_id"</span>
+
+Ref<span class="w"> </span><span class="s2">"tickets_shared_group_id_foreign_idx"</span>:<span class="s2">"groups"</span>.<span class="s2">"id"</span><span class="w"> </span>&lt;<span class="w"> </span><span class="s2">"tickets"</span>.<span class="s2">"shared_group_id"</span>
+
+Ref:<span class="w"> </span><span class="s2">"calendars_special_hours"</span>.<span class="s2">"calendar_id"</span><span class="w"> </span>&lt;<span class="w"> </span><span class="s2">"calendars"</span>.<span class="s2">"id"</span>
+
+Ref:<span class="w"> </span><span class="s2">"calendars_default_hours"</span>.<span class="s2">"calendar_id"</span><span class="w"> </span>&lt;<span class="w"> </span><span class="s2">"calendars"</span>.<span class="s2">"id"</span>
+
+Ref:<span class="w"> </span><span class="s2">"sla_goals"</span>.<span class="s2">"sla_id"</span><span class="w"> </span>&lt;<span class="w"> </span><span class="s2">"slas"</span>.<span class="s2">"id"</span>
+
+Ref:<span class="w"> </span><span class="s2">"users"</span>.<span class="s2">"user_profile_id"</span><span class="w"> </span>&lt;<span class="w"> </span><span class="s2">"users_profiles"</span>.<span class="s2">"id"</span>
+
+Ref:<span class="w"> </span><span class="s2">"tickets"</span>.<span class="s2">"category_id"</span><span class="w"> </span>&lt;<span class="w"> </span><span class="s2">"categories"</span>.<span class="s2">"id"</span>
+
+Ref:<span class="w"> </span><span class="s2">"tickets"</span>.<span class="s2">"ticket_type_id"</span><span class="w"> </span>&lt;<span class="w"> </span><span class="s2">"ticket_types"</span>.<span class="s2">"id"</span>
+
+Ref:<span class="w"> </span><span class="s2">"tickets"</span>.<span class="s2">"recipient"</span><span class="w"> </span>&lt;<span class="w"> </span><span class="s2">"users"</span>.<span class="s2">"id"</span>
+
+Ref:<span class="w"> </span><span class="s2">"tickets"</span>.<span class="s2">"created_by"</span><span class="w"> </span>&lt;<span class="w"> </span><span class="s2">"users"</span>.<span class="s2">"id"</span>
+
+Ref:<span class="w"> </span><span class="s2">"tickets"</span>.<span class="s2">"assigned_to_user"</span><span class="w"> </span>&lt;<span class="w"> </span><span class="s2">"users"</span>.<span class="s2">"id"</span>
+</code></pre></div>
+<br>    </li>
+</ul>
+<iframe src="https://dbdiagram.io/d/Tabelas-usadas-no-QSM-6810d69d1ca52373f5d405f0" style="width: 800px; height: 600px; border: none;"></iframe>
+
+<h2 id="principais-tabelas">Principais tabelas<a class="headerlink" href="#principais-tabelas" title="Permanent link">¶</a></h2>
+<p>A seguir será explicado as principais tabelas para o contexto QSM.</p>
+<h3 id="users">users<a class="headerlink" href="#users" title="Permanent link">¶</a></h3>
+<p><strong>Principal função:</strong> Salvar informações básicas dos usuários da plataforma. </p>
+<p><img alt="image.png" src="https://storage.googleapis.com/quoti-docs-pictures/DataMapping/imagem%203%20-%20Users.png"></p>
+<ul>
+<li>Principais colunas:<p>1. <strong>user:</strong> informação usada para fazer login na plataforma.</p>
+<p>2. <strong>name, email, telefone:</strong> colunas auto explicativas.</p>
+<p>3. <strong>cpf:</strong> dê preferência a salvar apenas números.</p>
+<p>4. <strong>formResponseId:</strong> indica a resposta do formulário presente no perfil do usuário.</p>
+<p>As demais colunas são autoexplicativas.</p>
+</li>
+</ul>
+<blockquote>
+<p>Observação: Evite realizar mudanças diretamente nessas tabelas, pois muitas das informações dos usuários ficam em cache. Exemplo: caso mude o perfil desse usuário, é possível que suas novas permissões atreladas a esse perfil não sejam atualizadas.
+A maneira mais fácil de atualizar a cache de um usuário, se você realmente precisar, é ir na tela <code>/userprofiles</code> e adicionar uma permissão para o perfil na qual seu usuário faz parte
+</p>
+</blockquote>
+<h3 id="users_profiles">users_profiles<a class="headerlink" href="#users_profiles" title="Permanent link">¶</a></h3>
+<p><strong>Principal função:</strong> salvar informações dos perfis de usuários.</p>
+<p><img alt="image.png" src="https://storage.googleapis.com/quoti-docs-pictures/DataMapping/imagem%204%20-%20Users_profiles.png"></p>
+<ul>
+<li>Principais colunas:<p>1.<strong>slug:</strong> nome identificador do perfil.</p>
+<p>2.<strong>form_id:</strong> aponta para um formulário adicional presente em cada usuário. Essa coluna permite salvarmos informações adicionais para cada usuário baseado em seu perfil de usuário. Exemplo: Todos os clientes deverão ter a opção de salvar número do cartão.</p>
+<p>3.<strong>config_login_method_id:</strong> nosso sistema permite escolher tipos de login conforme o perfil que exercem na organização. Exemplo: todos os atendentes irão acessar a plataforma com cpf e senha, enquanto que os clientes acessarão com a conta da Google.</p>
+</li>
+</ul>
+<h3 id="groups">groups<a class="headerlink" href="#groups" title="Permanent link">¶</a></h3>
+<p><strong>Principal função:</strong> Contém todos os grupos que existem na plataforma. </p>
+<p><img alt="image.png" src="https://storage.googleapis.com/quoti-docs-pictures/DataMapping/imagem%205%20-%20Groups.png"></p>
+<ul>
+<li>Principais colunas:<p>1. <strong>type:</strong> é uma chave estrangeira para <code>groups_types</code>. Dentro da tabela groups_types temos a possibilidade de configurar formulários específicos.</p>
+<p>2. <strong>form_response_id:</strong> indica a resposta do formulário presente em group_types. Exemplo: no QSM cada fila é um grupo do tipo <code>fila</code>. Nesse tipo temos a presença de um formulário contendo a pergunta calendarId. Dessa forma, conseguimos especificar um calendário específico para cada fila.</p>
+</li>
+</ul>
+<blockquote>
+<p>Para indicar quais usuários estão em quais grupos, consulte a tabela <code>users_groups</code>
+</p>
+</blockquote>
+<aside>
+⚠️
+
+Ao adicionar um novo usuário para um grupo, é necessário atualizar o perfil do usuário adicionando qualquer permissão. Isso fará atualização na cache dos usuários do perfil modificado.
+
+</aside>
+
+<h3 id="permissions">permissions<a class="headerlink" href="#permissions" title="Permanent link">¶</a></h3>
+<p><strong>Principal função:</strong> contém todas as permissões utilizadas na plataforma.</p>
+<p>Sempre que queremos proteger uma determinada funcionalidade, utilizamos o conceito de permissões. Por exemplo: apenas usuários com a permissão <code>ticket.list</code> é capaz de listar qualquer ticket.</p>
+<p><img alt="image.png" src="https://storage.googleapis.com/quoti-docs-pictures/DataMapping/imagem%206%20-%20Permissions.png"></p>
+<ul>
+<li>Principais colunas:<p>1. <strong>name:</strong> indica o nome da permissão. Use no formato similar das colunas slug.</p>
+</li>
+</ul>
+<h3 id="databases">databases<a class="headerlink" href="#databases" title="Permanent link">¶</a></h3>
+<p><strong>Principal função: permitir salvar informações customizadas em nosso sistema</strong></p>
+<p>Database é um dos núcleos da nossa plataforma low-code, permitindo que organizações crie databases específicos para suas necessidades. </p>
+<p>Todos os databases não materializados possuem 2 visualizações do MySQL e começam com o prefixo <code>tables_data_</code>. Uma dessas visualizações termina com o sufixo <code>no_types</code> e serve apenas para uso interno. Sempre de preferência as views que terminam sem esse sufixo.</p>
+<ul>
+<li>Principais colunas:<p>Não possuem principais colunas, pois cada database terá colunas específicas para atender um determinado problema, porém podemos ressaltar colunas comuns a todos os databases: <code>created_by, created_at, updated_at, deleted_at, form_id</code>.</p>
+</li>
+</ul>
+<p>Databases materializados deixam de ser views e se tornam tabelas do MySQL com o prefixo <code>tables_</code> mais o nome do database.</p>
+<aside>
+⚠️
+
+CUIDADO: quando um database é materializado, não geramos mais itens na tabela formResponses. O formulário ainda existe, porém os dados são salvos na nova tabela.
+
+</aside>
+
+<h3 id="tickets">tickets<a class="headerlink" href="#tickets" title="Permanent link">¶</a></h3>
+<p><strong>Principal função:</strong> contém informações de todos os chamados do QSM.</p>
+<p><img alt="image.png" src="https://storage.googleapis.com/quoti-docs-pictures/DataMapping/imagem%207%20-%20Tickets.png"></p>
+<ul>
+<li>Principais colunas:<p>1. <strong>ticket_type_form_response_id:</strong> id da resposta do formulário do tipo do chamado.</p>
+<p>2. <strong>form_response_id:</strong> id da resposta do formulário da categoria do chamado.</p>
+<p>3. <strong>assigned_to_user:</strong> id do atendente do chamado**.**</p>
+<p>4. <strong>assigned_to:</strong> id da fila do chamado.</p>
+<p>5. <strong>recipient:</strong> id do destinatário, em alguns contextos chamados de “cliente” ou “beneficiário”, do chamado.</p>
+<p>6. <strong>status:</strong> indica o status do chamado.</p>
+<p>7. <strong>ticket_type_id:</strong> indica o id do tipo do chamado.</p>
+<p>8. <strong>category_id:</strong> indica o id da categoria do chamado.</p>
+<p>9. <strong>description:</strong> resumo do chamado, geralmente um texto com menos de 250 caracteres.</p>
+<p>10. <strong>body:</strong> texto explicativo do chamado, usado para detalhar mais informações à respeito daquele chamado. Aceitando inclusive passar um HTML.</p>
+<p><aside>
+  ⚠️</aside></p>
+<p>Não usamos mais as colunas ‘e-mails’ e ‘name’, presente em tickets. </p>
+
+</li>
+</ul>
+<h3 id="chat_rooms">chat_rooms<a class="headerlink" href="#chat_rooms" title="Permanent link">¶</a></h3>
+<p><strong>Principal função:</strong> contém todos os atendimentos live chats da plataforma.</p>
+<p><img alt="image.png" src="https://storage.googleapis.com/quoti-docs-pictures/DataMapping/imagem%208%20-%20Chat_rooms.png"></p>
+<p>Não temos salvos em nosso banco relacional as mensagens dos usuários, caso deseje consultar essas informações é necessário solicitar acesso ao nosso outro banco.</p>
+<ul>
+<li>Principais colunas<p><strong>id:</strong> é o mesmo id usado em nosso outro banco.</p>
+<p><strong>webhook_url:</strong> é o webhook que iremos acionar quando uma nova mensagem for enviada/recebida.</p>
+<p><strong>json_data:</strong> coluna json para salvar informações gerais sobre a conversa. Exemplo: salvar o id do cliente presente em outro sistema.</p>
+<p><strong>ticket_id:</strong> é a FK da tabela de tickets. Todos nossos atendimentos válidos possuem essa FK diferente de vazio.</p>
+<p><strong>first_reply_at</strong>, <strong>last_reply_at</strong> e <strong>last_reply_author:</strong> são colunas importantes e autoexplicativas.</p>
+</li>
+</ul>
+<blockquote>
+<p>Observação: colunas que não usamos no QSM. requester_id, empty, product_id, members_count, icon, type, chat_status_id, name, assigned_to.
+</p>
+</blockquote>
+<h2 id="slas">SLAS<a class="headerlink" href="#slas" title="Permanent link">¶</a></h2>
+<p>Em atendimentos live-chat, utilizamos 3 SLAs conforme mostrados na imagem abaixo.</p>
+<p><img alt="image.png" src="https://storage.googleapis.com/quoti-docs-pictures/DataMapping/imagem%2012%20-SLAS.png"></p>
+<p>No banco, essas informações são salvas nas tabelas ticket_slas, ticket_goals, slas, slas_goals e goals. O id do SLA para atendimentos é 1. Portanto, caso queira ver, no banco, detalhes de um SLA de ticketId 407438, faça:</p>
+<div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="n">x</span><span class="p">.</span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">org_slug</span><span class="p">.</span><span class="n">ticket_slas</span><span class="w"> </span><span class="n">x</span><span class="w"> </span>
+<span class="k">WHERE</span><span class="w"> </span><span class="n">ticket_id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">407438</span>
+</code></pre></div>
+<p><img alt="image.png" src="https://storage.googleapis.com/quoti-docs-pictures/DataMapping/imagem%2013%20-SLAS.png"></p>
+<p>E caso queira ver as metas de SLA desse ticket, faça:</p>
+<div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="n">x</span><span class="p">.</span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">org_slug</span><span class="p">.</span><span class="n">ticket_goals</span><span class="w"> </span><span class="n">x</span>
+<span class="k">WHERE</span><span class="w"> </span><span class="n">ticket_id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">407438</span>
+</code></pre></div>
+<p><img alt="image.png" src="https://storage.googleapis.com/quoti-docs-pictures/DataMapping/imagem%2014%20-SLAS.png"></p>
+<h3 id="ticket_user_actions">ticket_user_actions<a class="headerlink" href="#ticket_user_actions" title="Permanent link">¶</a></h3>
+<p><strong>Principal função:</strong> Contém os eventos dos chamados.</p>
+<p><img alt="image.png" src="https://storage.googleapis.com/quoti-docs-pictures/DataMapping/imagem%2015%20-%20ticket_user_actions.png"></p>
+<ul>
+<li>Principais colunas<p><strong>details:</strong> armazena o texto de uma mensagem. Também aceita string no formato HTML.</p>
+<p><strong>data:</strong> uma coluna json para armazenar qualquer informação considerada útil para aquela ticketUserAction. Por padrão, costumamos salvar a alteração do ticket antes da mudança, além de registar o tipo e a categoria do chamado.</p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">"old"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nt">"assignedToUserName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Luiz Antonio de Albuquerque Junior"</span><span class="w"> </span><span class="p">},</span><span class="w"> </span><span class="c1">// salvamos apenas as propriedades que mudamos</span>
+<span class="w">  </span><span class="nt">"ticket"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">"categoryName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Produto precisando de revisão"</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"ticketTypeName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Incidente/Problema"</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<p><strong>is_automatic_message:</strong> indica se a mensagem é automática.</p>
+<p><strong>ticket_id:</strong> indica qual ticket pertence aquela alteração.</p>
+<p><strong>type, description, ticket_type_id, assigned_to_user, status, priority, media_id, category_id, assigned_to, recipient:</strong> são informações que mudaram no ticket. Se o usuário mudou apenas o status para resolvido, então apenas a coluna status estará preenchida, enquanto as demais colunas estarão vazias.</p>
+</li>
+</ul>
+<h3 id="ticket_types-e-categories">ticket_types e categories<a class="headerlink" href="#ticket_types-e-categories" title="Permanent link">¶</a></h3>
+<p><strong>Principal função:</strong> contém dados do tipo/categoria do chamado.</p>
+<p><img alt="image.png" src="https://storage.googleapis.com/quoti-docs-pictures/DataMapping/imagem%2016%20-%20ticket_types.png"></p>
+<p><img alt="image.png" src="https://storage.googleapis.com/quoti-docs-pictures/DataMapping/imagem%2017%20-%20categories.png"></p>
+<ul>
+<li>Principais colunas<p><strong>name:</strong> indica o nome da categoria/tipo.</p>
+<p><strong>type:</strong> é uma coluna slug do name. Serve como identificador memorável do tipo. Em automações de preferência pelo type, pois o name é algo mais provável de mudar no decorrer do projeto.</p>
+<p><strong>icon, color:</strong> são ícones que serão mostrados na mainTab do workspace.</p>
+<p><img alt="image.png" src="https://storage.googleapis.com/quoti-docs-pictures/DataMapping/imagem%2018%20-%20Principais%20colunas.png"></p>
+<p><strong>form_id:</strong> FK para forms. Útil para customizar formulários adicionais para tipo/categoria do chamado.</p>
+<p><strong>default_sla_id:</strong> indica SLA padrão (presente apenas na categoria).</p>
+<p><strong>default_group_id:</strong> indica a fila daquela categoria. (presente apenas na categoria).</p>
+<p><strong>active:</strong> indica se é possível criar chamados para aquela categoria.</p>
+<p><strong>configs:</strong> apresenta customizações para a tela do workspace, agentOverview e qsm-api. Saiba mais em ‣.</p>
+</li>
+</ul>
+<blockquote>
+<p>Observação: a tabela de tipo e categoria são similares em conceito e em colunas. Em caso de sobreposição de configuração, damos sempre preferência à categoria.
+</p>
+</blockquote>
+<h3 id="tickettypeadditionalinfos-e-categoryadditionalinfos">ticketTypeAdditionalInfos e categoryAdditionalInfos<a class="headerlink" href="#tickettypeadditionalinfos-e-categoryadditionalinfos" title="Permanent link">¶</a></h3>
+<p><strong>Principal função:</strong> Informações adicionais da categoria ou tipo do chamado.</p>
+<p>Como já dito anteriormente, toda informação adicional é uma view do MySQL com prefixo <code>table_data</code> ou uma tabela materializada com prefixo <code>tables_</code>. </p>
+<p><img alt="image.png" src="https://storage.googleapis.com/quoti-docs-pictures/DataMapping/imagem%2019%20-%20ticketTypeAdditionalInfos%20e%20categoryAdditionalInfos.png"></p>
+<p>No exemplo acima, a view <code>tables_data_category_table_100320</code> pertence à categoria cujo form_Id é <code>100320</code>.</p>
+<p>Podemos identificar essa categoria com a seguinte query:</p>
+<div class="highlight"><pre><span></span><code><span class="nx">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="nx">categories</span><span class="w"> </span><span class="nx">c</span><span class="w"> </span><span class="nx">where</span><span class="w"> </span><span class="nx">c</span><span class="p">.</span><span class="nx">form_id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">100320</span>
+</code></pre></div>
+<p><img alt="image.png" src="https://storage.googleapis.com/quoti-docs-pictures/DataMapping/imagem%2020%20-%20ticketTypeAdditionalInfos%20e%20categoryAdditionalInfos.png"></p>
+<ul>
+<li>Principais colunas<p>Como um database consiste na criação de tabelas baseadas em contextos específicos, as colunas principais variam conforme a necessidade de cada problema.</p>
+</li>
+</ul>
+<blockquote>
+<p>O mesmo raciocínio se aplica a qualquer informação adicional; porém às vezes colocamos o id do item em vez do form_id.
+</p>
+</blockquote>
+<h3 id="calendars">calendars<a class="headerlink" href="#calendars" title="Permanent link">¶</a></h3>
+<p><strong>Principal função: Contém informações sobre horário útil e feriados</strong></p>
+<p>A tabela <code>calendars</code> contém apenas o nome do calendário.</p>
+<p><img alt="image.png" src="https://storage.googleapis.com/quoti-docs-pictures/DataMapping/imagem%2021%20-%20calendars.png"></p>
+<p>A tabela <code>calendars_default_hours</code> contém informações sobre horários úteis.</p>
+<p><img alt="image.png" src="https://storage.googleapis.com/quoti-docs-pictures/DataMapping/imagem%2022%20-%20calendars_default_hours.png"></p>
+<p>A tabela <code>calendars_special_hours</code> contém informações sobre feriados.</p>
+<p><img alt="image.png" src="https://storage.googleapis.com/quoti-docs-pictures/DataMapping/imagem%2023%20-%20calendars_special_hours.png"></p>
+<blockquote>
+<p>Observação 1: Nunca grave o end sendo menor que o start
+Observação 2: Para calendários 24 horas, utilize o formato abaixo</p>
+<p><img alt="image.png" src="https://storage.googleapis.com/quoti-docs-pictures/DataMapping/imagem%2024.png">
+</p>
+</blockquote>
+<h3 id="slas-e-goals">slas e goals<a class="headerlink" href="#slas-e-goals" title="Permanent link">¶</a></h3>
+<p><strong>Principal função:</strong> Contém informações sobre SLAs.</p>
+<p><img alt="image.png" src="https://storage.googleapis.com/quoti-docs-pictures/DataMapping/imagem%2025%20-%20slas%20e%20goals.png"></p>
+<p><img alt="image.png" src="https://storage.googleapis.com/quoti-docs-pictures/DataMapping/imagem%2026%20-%20slas%20e%20goals.png"></p>
+<p>Em nossa estrutura, um SLA pode possuir mais de uma meta. Meta é um objetivo, geralmente medido em tempo, para garantir a qualidade do serviço.</p>
+<p>O cálculo das metas do SLA só faz sentido quando usamos um calendário, geralmente obtemos essa informação através da fila presente na categoria do chamado.</p>
+<p>Por padrão, temos 3 metas para os atendimentos live-chats:</p>
+<ol>
+<li><strong>chatTimeToResolve:</strong> tempo para resolver aquele atendimento.</li>
+<li><strong>chatTimeBetweenResponses:</strong> tempo entre respostas.</li>
+<li><strong>chatTimeToFirstReplyAt:</strong> tempo para a primeira resposta.</li>
+</ol>
+<p>Já para os chamados que não são atendimentos, costumamos ter apenas um SLA chamado <code>resolutionTime</code> para medir o tempo total para um chamado ser resolvido.</p>
+<ul>
+<li>Principais colunas da tabela SLAs<p><strong>name:</strong> indica o nome do SLA.</p>
+<p><strong>default_group_id:</strong> indica a fila que aquele SLA se aplica, na prática, essa coluna não é usada, pois obtemos a fila pela própria categoria do chamado, mas fica a critério do desenvolvedor usar essa coluna em alguma automação customizada. </p>
+<p>A fila é importante para obtermos o calendário que o SLA utilizará.</p>
+</li>
+</ul>
+<ul>
+<li>Principais colunas da tabela goals<p><strong>slug:</strong> identificador da meta. Usada em automações do cálculo do SLA</p>
+<p><strong>value:</strong> tempo em minutos</p>
+</li>
+</ul>
+<blockquote>
+<p>A tabela usada em nosso sistema é slas (no plural) e não sla.
+</p>
+</blockquote></div>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Voltar para o topo
+</button>
+        
+      </main>
+      
+        <!--
+  Copyright (c) 2016-2025 Martin Donath <martin.donath@squidfunk.com>
+
+  Permission is hereby granted, free of charge, to any person obtaining a copy
+  of this software and associated documentation files (the "Software"), to
+  deal in the Software without restriction, including without limitation the
+  rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
+  sell copies of the Software, and to permit persons to whom the Software is
+  furnished to do so, subject to the following conditions:
+
+  The above copyright notice and this permission notice shall be included in
+  all copies or substantial portions of the Software.
+
+  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+  FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT. IN NO EVENT SHALL THE
+  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+  FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
+  IN THE SOFTWARE.
+-->
+
+<!-- Footer -->
+<footer class="md-footer">
+
+  <!-- Link to previous and/or next page -->
+  
+    
+      
+      <nav
+        class="md-footer__inner md-grid"
+        aria-label="Rodapé"
+        
+      >
+
+        <!-- Link to previous page -->
+        
+          
+          <a
+            href="../../qsm/permissions/"
+            class="md-footer__link md-footer__link--prev"
+            aria-label="Anterior: Permissões"
+          >
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Anterior
+              </span>
+              <div class="md-ellipsis">
+                Permissões
+              </div>
+            </div>
+          </a>
+        
+
+        <!-- Link to next page -->
+        
+          
+          <a
+            href="../../qsm/configLayout/"
+            class="md-footer__link md-footer__link--next"
+            aria-label="Próximo: Configurações avançadas de layout"
+          >
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Próximo
+              </span>
+              <div class="md-ellipsis">
+                Configurações avançadas de layout
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+
+  <!-- Further information -->
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <!--
+  Copyright (c) 2016-2025 Martin Donath <martin.donath@squidfunk.com>
+
+  Permission is hereby granted, free of charge, to any person obtaining a copy
+  of this software and associated documentation files (the "Software"), to
+  deal in the Software without restriction, including without limitation the
+  rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
+  sell copies of the Software, and to permit persons to whom the Software is
+  furnished to do so, subject to the following conditions:
+
+  The above copyright notice and this permission notice shall be included in
+  all copies or substantial portions of the Software.
+
+  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+  FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT. IN NO EVENT SHALL THE
+  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+  FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
+  IN THE SOFTWARE.
+-->
+
+<!-- Copyright and theme information -->
+<div class="md-copyright">
+  
+  <div class="md-copyright__highlight">
+    <img src="https://beyondcompany.com.br/img/logo.62069458.svg" /> 
+  </div>
+  
+  
+  Made with ♥ by
+  <a href="https://beyondcompany.com.br/" target="_blank" rel="noopener">
+    Beyond Co
+  </a>
+  
+</div>
+
+      <!-- Social links -->
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../..", "features": ["search.suggest", "content.code.annotate", "navigation.footer", "navigation.indexes", "navigation.sections", "navigation.tabs", "navigation.top", "navigation.tracking"], "search": "../../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copiado para \u00e1rea de transfer\u00eancia", "clipboard.copy": "Copiar para \u00e1rea de transfer\u00eancia", "search.result.more.one": "mais 1 nesta p\u00e1gina", "search.result.more.other": "# mais nesta p\u00e1gina", "search.result.none": "Nenhum documento encontrado", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Digite para iniciar a busca", "search.result.term.missing": "Ausente", "select.version": "Selecione a vers\u00e3o"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.50899def.min.js"></script>
+      
+    
+  </body>
+</html>
