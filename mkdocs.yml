@@ -60,6 +60,7 @@ nav:
       - Permissões: ./qsm/permissions.md
       - Data Mapping: ./qsmDataMapping/dataMapping.md
       - Configurações avançadas de layout: ./qsm/configLayout.md
+      - Regras de SLA: ./qsm/sla-rules.md
     - 👨‍💻 Desenvolvimento:
       - Componentes:
         - QtDatabase: ./dev/qt-database.md
@@ -202,5 +203,3 @@ markdown_extensions:
           class: mermaid
           format:
             !!python/name:pymdownx.superfences.fence_code_format # locale: pt_BR
-
-
